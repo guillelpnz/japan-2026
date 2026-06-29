@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japón · Noviembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --washi:#f4efe4;
+    --washi-2:#ece4d3;
+    --paper:#fbf8f0;
+    --sumi:#23201c;
+    --sumi-soft:#4a443c;
+    --vermilion:#c0392b;
+    --vermilion-deep:#9b2d20;
+    --indigo:#2b3a55;
+    --indigo-soft:#3d5176;
+    --gold:#b08442;
+    --moss:#5a6b3b;
+    --line:#d8cdb6;
+    --shadow:rgba(40,32,20,.12);
+    --r:16px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Zen Maru Gothic',sans-serif;
+    background:var(--washi);
+    color:var(--sumi);
+    line-height:1.6;
+    font-size:16px;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(192,57,43,.04), transparent 30%),
+      radial-gradient(circle at 88% 72%, rgba(43,58,85,.045), transparent 32%);
+    padding-bottom:90px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    text-align:center;
+    padding:54px 18px 40px;
+    overflow:hidden;
+  }
+  header.hero::before{
+    content:"日本";
+    position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+    font-family:'Shippori Mincho',serif;font-weight:800;
+    font-size:170px;color:rgba(192,57,43,.06);letter-spacing:10px;
+    pointer-events:none;line-height:1;
+  }
+  .hero .sun{
+    width:74px;height:74px;border-radius:50%;
+    background:radial-gradient(circle at 38% 36%, #d9543f, var(--vermilion-deep));
+    margin:0 auto 18px;position:relative;z-index:2;
+    box-shadow:0 8px 26px rgba(155,45,32,.4);
+    animation:rise 1.1s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.8)}to{opacity:1;transform:none}}
+  .hero h1{
+    font-family:'Shippori Mincho',serif;font-weight:800;
+    font-size:clamp(34px,9vw,56px);line-height:1.05;
+    color:var(--sumi);position:relative;z-index:2;letter-spacing:-.5px;
+    animation:rise 1.1s .1s cubic-bezier(.22,1,.36,1) both;
+  }
+  .hero .sub{
+    font-size:15px;color:var(--vermilion-deep);font-weight:700;margin-top:12px;
+    letter-spacing:1px;position:relative;z-index:2;
+    animation:rise 1.1s .2s cubic-bezier(.22,1,.36,1) both;
+  }
+  .hero .meta{
+    font-size:14px;color:var(--sumi-soft);margin-top:6px;position:relative;z-index:2;
+    animation:rise 1.1s .3s cubic-bezier(.22,1,.36,1) both;
+  }
+  .hero .chips{margin-top:18px;display:flex;gap:7px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2;
+    animation:rise 1.1s .4s cubic-bezier(.22,1,.36,1) both;}
+  .chip{
+    background:var(--paper);border:1px solid var(--line);border-radius:30px;
+    padding:5px 13px;font-size:12.5px;font-weight:700;color:var(--indigo);
+    box-shadow:0 2px 6px var(--shadow);
+  }
+
+  /* ---------- SECTION TITLES ---------- */
+  h2.sec{
+    font-family:'Shippori Mincho',serif;font-weight:700;
+    font-size:24px;margin:34px 0 16px;color:var(--sumi);
+    display:flex;align-items:center;gap:10px;
+  }
+  h2.sec::before{
+    content:"";width:6px;height:26px;background:var(--vermilion);
+    border-radius:3px;display:inline-block;flex:none;
+  }
+
+  /* ---------- OVERVIEW TABLE ---------- */
+  .overview{
+    background:var(--paper);border-radius:var(--r);overflow:hidden;
+    box-shadow:0 4px 20px var(--shadow);border:1px solid var(--line);
+  }
+  .ov-row{
+    display:grid;grid-template-columns:46px 78px 1fr;gap:8px;align-items:center;
+    padding:11px 14px;border-bottom:1px solid var(--line);
+    text-decoration:none;color:inherit;transition:background .15s;
+  }
+  .ov-row:last-child{border-bottom:none}
+  .ov-row:active{background:var(--washi-2)}
+  .ov-row:hover{background:var(--washi-2)}
+  .ov-day{
+    font-family:'Shippori Mincho',serif;font-weight:800;font-size:18px;
+    color:var(--vermilion);text-align:center;
+  }
+  .ov-date{font-size:12.5px;font-weight:700;color:var(--indigo)}
+  .ov-desc{font-size:13.5px;color:var(--sumi-soft);line-height:1.4}
+  .ov-fiesta{color:var(--vermilion-deep);font-weight:700}
+
+  /* ---------- DAY CARDS ---------- */
+  .day{
+    background:var(--paper);border-radius:var(--r);margin-bottom:16px;
+    box-shadow:0 4px 18px var(--shadow);border:1px solid var(--line);
+    overflow:hidden;scroll-margin-top:14px;
+  }
+  .day-head{
+    padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;
+    background:linear-gradient(135deg, var(--paper), var(--washi-2));
+    border-bottom:1px solid transparent;transition:border-color .2s;
+    user-select:none;
+  }
+  .day.open .day-head{border-bottom-color:var(--line)}
+  .day-num{
+    font-family:'Shippori Mincho',serif;font-weight:800;font-size:21px;
+    color:#fff;background:var(--indigo);width:42px;height:42px;flex:none;
+    border-radius:11px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(43,58,85,.35);
+  }
+  .day.fiesta .day-num{background:var(--vermilion);box-shadow:0 3px 8px rgba(155,45,32,.35)}
+  .day-titles{flex:1;min-width:0}
+  .day-date{font-size:12px;font-weight:700;color:var(--vermilion-deep);letter-spacing:.5px}
+  .day-name{font-family:'Shippori Mincho',serif;font-weight:600;font-size:16.5px;color:var(--sumi);line-height:1.3;margin-top:2px}
+  .day-base{font-size:12px;color:var(--sumi-soft);margin-top:3px}
+  .arrow{flex:none;width:22px;height:22px;color:var(--sumi-soft);transition:transform .3s}
+  .day.open .arrow{transform:rotate(180deg)}
+
+  .day-body{display:none;padding:6px 0 4px}
+  .day.open .day-body{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  .geo{
+    font-size:12.5px;color:var(--indigo-soft);font-style:italic;
+    padding:10px 18px;background:rgba(43,58,85,.04);margin:0 0 4px;
+    border-left:3px solid var(--indigo-soft);
+  }
+
+  .sched{padding:4px 14px 8px}
+  .slot{display:flex;gap:12px;padding:8px 4px;border-bottom:1px dashed var(--line)}
+  .slot:last-child{border-bottom:none}
+  .slot-time{
+    font-family:'Shippori Mincho',serif;font-weight:700;font-size:13px;
+    color:var(--indigo);flex:none;width:52px;padding-top:1px;
+  }
+  .slot-txt{font-size:13.5px;color:var(--sumi);line-height:1.45}
+
+  /* ---------- CALLOUTS ---------- */
+  .note{margin:10px 14px;padding:11px 14px;border-radius:11px;font-size:13px;line-height:1.5}
+  .note b{font-weight:700}
+  .note.tip{background:rgba(90,107,59,.1);border-left:3px solid var(--moss)}
+  .note.warn{background:rgba(192,57,43,.09);border-left:3px solid var(--vermilion)}
+  .note.info{background:rgba(176,132,66,.12);border-left:3px solid var(--gold)}
+  .note.good{background:rgba(43,58,85,.08);border-left:3px solid var(--indigo)}
+
+  .badge{
+    display:inline-block;font-size:10.5px;font-weight:700;padding:2px 8px;
+    border-radius:20px;margin-left:6px;vertical-align:middle;letter-spacing:.3px;
+  }
+  .b-fiesta{background:var(--vermilion);color:#fff}
+  .b-opt{background:var(--washi-2);color:var(--sumi-soft);border:1px solid var(--line)}
+
+  /* ---------- GENERIC INFO BLOCKS ---------- */
+  .block{
+    background:var(--paper);border-radius:var(--r);padding:18px;margin-bottom:14px;
+    box-shadow:0 4px 18px var(--shadow);border:1px solid var(--line);
+  }
+  .block h3{font-family:'Shippori Mincho',serif;font-size:16px;margin:14px 0 6px;color:var(--indigo)}
+  .block h3:first-child{margin-top:0}
+  .block p{font-size:13.5px;color:var(--sumi-soft);margin-bottom:8px}
+  .block ul{list-style:none;margin:6px 0}
+  .block li{font-size:13.5px;color:var(--sumi-soft);padding:5px 0 5px 22px;position:relative;line-height:1.45}
+  .block li::before{content:"●";color:var(--vermilion);position:absolute;left:4px;top:5px;font-size:9px}
+  .block ol{margin:6px 0 6px 4px;counter-reset:n}
+  .block ol li{padding-left:30px}
+  .block ol li::before{
+    content:counter(n);counter-increment:n;background:var(--indigo);color:#fff;
+    width:18px;height:18px;border-radius:50%;font-size:11px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;top:6px;left:2px;
+  }
+
+  /* transfers table */
+  .tbl{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:4px}
+  .tbl th{background:var(--indigo);color:#fff;padding:8px 9px;text-align:left;font-weight:700;font-size:11.5px}
+  .tbl td{padding:7px 9px;border-bottom:1px solid var(--line);color:var(--sumi-soft);vertical-align:top}
+  .tbl tr:nth-child(even) td{background:var(--washi)}
+
+  /* ---------- BOTTOM NAV ---------- */
+  nav.bottom{
+    position:fixed;bottom:0;left:0;right:0;z-index:50;
+    background:rgba(251,248,240,.94);backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);display:flex;justify-content:space-around;
+    padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 18px var(--shadow);
+  }
+  nav.bottom a{
+    text-decoration:none;color:var(--sumi-soft);font-size:10.5px;font-weight:700;
+    display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;
+    padding:3px;border-radius:9px;transition:color .15s;
+  }
+  nav.bottom a:active,nav.bottom a:hover{color:var(--vermilion)}
+  nav.bottom .ico{font-size:18px}
+
+  .toolbar{display:flex;gap:8px;margin:0 0 14px}
+  .tbtn{
+    flex:1;padding:9px;border-radius:11px;border:1px solid var(--line);
+    background:var(--paper);color:var(--indigo);font-family:'Zen Maru Gothic',sans-serif;
+    font-weight:700;font-size:12.5px;cursor:pointer;box-shadow:0 2px 6px var(--shadow);
+    transition:transform .1s,background .15s;
+  }
+  .tbtn:active{transform:scale(.97);background:var(--washi-2)}
+
+  footer{text-align:center;padding:30px 18px 10px;color:var(--sumi-soft);font-size:13px}
+  footer .jp{font-family:'Shippori Mincho',serif;font-size:18px;color:var(--vermilion-deep);font-weight:700}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:24px 0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="sun"></div>
+  <h1>Japón</h1>
+  <div class="sub">NOVIEMBRE 2026 · 13 NOCHES</div>
+  <div class="meta">4 al 17 de noviembre · Grupo de 10</div>
+  <div class="chips">
+    <span class="chip">Tokio 6n</span>
+    <span class="chip">Fuji 1n</span>
+    <span class="chip">Kioto 3n</span>
+    <span class="chip">Osaka 3n</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- OVERVIEW -->
+  <h2 class="sec" id="resumen">Resumen</h2>
+  <div class="overview" id="ovTable"></div>
+
+  <!-- DAYS -->
+  <h2 class="sec" id="dias">Día a día</h2>
+  <div class="toolbar">
+    <button class="tbtn" onclick="setAll(true)">▼ Abrir todos</button>
+    <button class="tbtn" onclick="setAll(false)">▲ Cerrar todos</button>
+  </div>
+  <div id="days"></div>
+
+  <!-- TRANSFERS -->
+  <h2 class="sec" id="traslados">Traslados</h2>
+  <div class="block">
+    <table class="tbl">
+      <thead><tr><th>Trayecto</th><th>Transporte</th><th>Precio</th></tr></thead>
+      <tbody id="transfers"></tbody>
+    </table>
+    <div class="note tip" style="margin:12px 0 0"><b>Suica para todo · NO compréis JR Pass.</b> Para este recorrido (base larga en cada ciudad + saltos puntuales) los billetes sueltos salen mucho más baratos que el Pass para los 10. El único billete a reservar con tiempo es el Shinkansen Mishima → Kioto.</div>
+    <div class="note info" style="margin:12px 0 0"><b>🧳 Vais cargando las maletas (sin envío Yamato). Regla única:</b> la maleta va al alojamiento o a una consigna; nunca a escaleras, estanques ni e-bikes. Puntos calientes ya resueltos: <b>Fuji</b> (maletas al ryokan nada más llegar; a Chureito solo con mochila) y <b>Nara</b> (consigna en Kintetsu-Nara mientras veis el parque). Para los 10, <b>maleta de cabina</b> (&lt;55 cm) os ahorra el recargo de equipaje grande del Shinkansen y entra en cualquier taquilla.</div>
+  </div>
+
+  <!-- GROUP OF 10 -->
+  <h2 class="sec" id="grupo">Grupo de 10</h2>
+  <div class="block">
+    <h3>🎯 Regla de oro: 2 grupos de 5 por defecto</h3>
+    <p>Una mesa de 5 entra en casi cualquier sitio sin reserva; una de 10, en casi ninguno. Reservad los 10 juntos SOLO para las 3 cenas-evento (kaiseki del ryokan, despedida Osaka, alguna izakaya señalada). El resto, modo guerrilla en grupos de 5 que se reúnen después.</p>
+    <h3>🍜 Qué NO necesita reserva</h3>
+    <ul>
+      <li>Ramen / tsukemen — rotación altísima, asientos individuales. Ichiran (boxes) ideal para grupo</li>
+      <li>Kaiten-zushi (sushi de cinta) — 10 personas repartidas en la barra sin problema</li>
+      <li>Cadenas teishoku/gyudon (Matsuya, Yoshinoya) — vuestro almuerzo base, barato y rápido</li>
+      <li>Mercados y depachika (Nishiki, Kuromon) — cada uno pilla lo suyo, cero fricción</li>
+      <li>Konbini — desayunos de 10 resueltos, ~400–600 ¥/persona</li>
+    </ul>
+    <h3>🍱 Qué SÍ reservar para 10</h3>
+    <p>Kaiseki del ryokan (Día 7, ya incluido) · cena de despedida Osaka (Día 13) · cualquier izakaya concreto. Un grupo de 10–11 entra perfectamente CON reserva; los izakayas grandes suelen pre-servir el menú (pedid platos que aguanten, la tempura se enfría).</p>
+    <h3>🛠️ Cómo reservar siendo extranjeros</h3>
+    <ol>
+      <li>Conserje del hotel (mejor arma): el día del check-in, que reserve las cenas-evento para 10. Gratis y en japonés.</li>
+      <li>Apps: Tabelog (la líder, filtra por grupo; comisión ~440 ¥) y TableCheck (sin comisión). Instaladlas todos antes de viajar.</li>
+      <li>Servicios de concierge para grupos de 10+ si queréis una cena-evento garantizada.</li>
+    </ol>
+    <h3>💴 Presupuesto (×10 multiplica todo)</h3>
+    <ul>
+      <li>Almuerzos baratos (800–1.200 ¥), gasto concentrado en 3 cenas-evento</li>
+      <li>Nomihodai/tabehodai: menú cerrado para grupos ~1.500–2.500 ¥. Predecible y resuelve la reserva</li>
+      <li>Evitad el «impuesto de turista»: una calle más allá del sitio con menú en inglés, mitad de precio</li>
+      <li>Contad el otoshi (cubierto obligatorio izakaya, ~300–500 ¥/persona) + posible service charge: con 10 son 3.000–5.000 ¥ antes de pedir</li>
+    </ul>
+  </div>
+
+  <!-- RESERVATIONS -->
+  <h2 class="sec" id="reservas">Reservas clave</h2>
+  <div class="block">
+    <p style="margin-bottom:12px">Sin estas reservas el itinerario se rompe. Por orden de urgencia:</p>
+    <ul>
+      <li><b>Ryokan Kawaguchiko</b> — MESES antes. Noviembre (koyo) es temporada alta absoluta</li>
+      <li><b>Universal + Express Pass</b> — online antes de viajar. Imprescindible en koyo</li>
+      <li><b>teamLab Planets</b> (~3.600 ¥) — se agota semanas antes. Reconfirmad calendario de noviembre</li>
+      <li><b>Bus Shinjuku → Kawaguchiko</b> — semanas antes en koyo (keio-bus.co.jp)</li>
+      <li><b>Shibuya Sky</b> — días antes, slot atardecer</li>
+      <li><b>WOMB o Vision</b> (Tokio, Día 3) · <b>Joule o Circus</b> (Osaka, Día 11) — comprobad si admiten reserva de grupo/área para los 10</li>
+      <li><b>Cenas-evento de 10</b> — vía Tabelog/TableCheck o conserje del hotel</li>
+    </ul>
+  </div>
+
+  <!-- TIMING -->
+  <h2 class="sec" id="ajustes">Ajustes de tiempo</h2>
+  <div class="block">
+    <p>Comparado con itinerarios de referencia (first-timers 2025–26), este plan es más eficiente y mejor secuenciado que la media. Solo 3 cosas que vigilar:</p>
+    <h3>Flexibilizar</h3>
+    <ol>
+      <li>Día 9 (Kioto) es el único sin colchón. Trata Nijo como opcional: si vais arrastrándoos a las 15h, saltadlo</li>
+      <li>Fushimi Inari: 2–2,5h bastan si no subís a la cima. La mayoría lo ve en menos de 1h</li>
+      <li>Meiji Jingu (Día 4): recortable si vais lentos — repite «templo» con Senso-ji</li>
+    </ol>
+    <h3>Lo que ya está bien (no tocar)</h3>
+    <ul>
+      <li>Sin Tokyo Skytree → evita torre redundante con Shibuya Sky</li>
+      <li>Arashiyama a las 7:45h → esquiva la masificación</li>
+      <li>No mezcla Arashiyama con Fushimi → evita el cruce de ciudad</li>
+      <li>Nara de camino a Osaka → coste cero en transporte</li>
+    </ul>
+    <div class="note info" style="margin:14px 0 0"><b>🍁 Realidad del koyo (importante):</b> en Kioto el pico de arces (rojo intenso) suele caer en la ÚLTIMA semana de noviembre / principios de diciembre. A mediados de mes (vuestros días 12–13) lo normal es koyo TEMPRANO: verde-amarilleando con rojos sueltos, no la postal incendiada. Sigue siendo precioso, pero ajustad expectativas con el grupo. Si buscáis rojo de verdad, las cotas altas (Kibune/Kurama o el norte de Arashiyama) cambian unos días antes que el centro.</div>
+  </div>
+
+  <div class="divider"></div>
+  <footer>
+    <div class="jp">いってらっしゃい</div>
+    <p style="margin-top:6px">¡Buen viaje! 🍁</p>
+  </footer>
+</div>
+
+<nav class="bottom">
+  <a href="#resumen"><span class="ico">📋</span>Resumen</a>
+  <a href="#dias"><span class="ico">🗓️</span>Días</a>
+  <a href="#traslados"><span class="ico">🚆</span>Trenes</a>
+  <a href="#grupo"><span class="ico">👥</span>Grupo</a>
+  <a href="#reservas"><span class="ico">📌</span>Reservas</a>
+</nav>
+
+<script>
+// ---------- DATA ----------
+const overview = [
+  ["01","Mié 4","Llegada · Shinjuku nocturno"],
+  ["02","Jue 5","Kamakura + Enoshima"],
+  ["03","Vie 6","Akiba→Asakusa→Yanaka · <span class='ov-fiesta'>🎉 FIESTA Shibuya</span>"],
+  ["04","Sáb 7","Harajuku→Shibuya→Shimokitazawa"],
+  ["05","Dom 8","Hamarikyu→Tsukiji→Ginza→Shibuya Sky"],
+  ["06","Lun 9","teamLab Planets→Odaiba"],
+  ["07","Mar 10","Tokio→Kawaguchiko · Ryokan + Onsen"],
+  ["08","Mié 11","Amanecer Chureito→Kioto·Fushimi"],
+  ["09","Jue 12","Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo"],
+  ["10","Vie 13","Kiyomizudera→Higashiyama→Ginkaku-ji"],
+  ["11","Sáb 14","Nara→Osaka · <span class='ov-fiesta'>🎉 FIESTA Namba</span>"],
+  ["12","Dom 15","Osaka clásica: Castillo→Shinsekai→Kuromon"],
+  ["13","Lun 16","GRUPO DIVIDIDO: Universal / Himeji"],
+  ["14","Mar 17","Osaka→KIX→Vuelo CX567 09:25"],
+];
+
+const days = [
+  {n:"01",date:"MIÉ 4 NOV",name:"🛬 Llegada · Shinjuku nocturno",base:"Tokio — Shinjuku (6 noches)",
+   sched:[["14:10","✈️ Aterrizaje Narita T2"],["14:45","🎫 Comprar/activar Suica. NO compréis JR Pass"],["15:10","🚆 Narita Express → Shinjuku (59 min, ~3.070 ¥)"],["16:15","🏨 Check-in. Dejar maletas"],["17:30","🌆 Paseo Shinjuku: Kabukicho, neones"],["19:00","🍜 Cena: ramen en Fuunji o Ichiran"],["21:00","🥃 Opcional: Golden Gai"]],
+   notes:[["tip","<b>Día suave:</b> jet lag garantizado. No programar nada exigente."]]},
+
+  {n:"02",date:"JUE 5 NOV",name:"🌊 Excursión Kamakura + Enoshima",base:"Tokio — Shinjuku",
+   notes:[["good","<b>✅ Movido a entre semana:</b> Kamakura+Enoshima en sábado de koyo es una romería; el jueves está mucho más tranquilo."]],
+   sched:[["07:30","🚆 Shinjuku → Kamakura (JR, 59 min, ~940 ¥)"],["08:30","🏯 Gran Buda (Kotoku-in), 300 ¥"],["09:30","🌸 Hase-dera — jardín y vistas al mar, 400 ¥"],["11:00","🚶 Komachi-dori — tiendas y dulces"],["12:00","🐟 Almuerzo: shirasu-don (local)"],["13:00","🚋 Enoden a Enoshima (tren costa vintage, 30 min)"],["13:30","🏝️ Enoshima — puente, pagoda, cuevas Iwaya"],["16:00","🌅 Atardecer marítimo — Fuji en días claros"],["17:00","🚆 Odakyu → Shinjuku (~70 min)"]],
+   notes2:[["warn","<b>Día de ~30.000 pasos.</b> Zapatillas cómodas. Plan B si flaqueáis: saltad las cuevas y quedaos con el faro y el atardecer."]]},
+
+  {n:"03",date:"VIE 6 NOV",name:"🏮 Akihabara→Asakusa→Ueno→Yanaka",base:"Tokio — Shinjuku",fiesta:true,
+   geo:"Ruta lineal NE: Akihabara → Asakusa → Ueno → Yanaka.",
+   sched:[["10:00","🎮 Akihabara — anime/manga/gaming, arcades"],["12:30","🍜 Almuerzo Akiba"],["13:30","🚆 Tren a Asakusa (Ginza Line, 3 min)"],["14:00","🏯 Senso-ji — Kaminarimon, Nakamise"],["15:30","🦒 Ueno Park"],["16:30","🏘️ Yanaka Ginza — barrio old-school, gatos"],["18:30","🍢 Cena temprana en Ueno o cambiarse en hotel"],["20:30","🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"],["21:00","🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"],["23:00","🍜 Picoteo o ramen antes del club"],["00:00","🕺 CLUB: WOMB (4 plantas, icónico) o Vision. Entrada ~2.000–3.500 ¥, incluye 1–2 copas. Hasta ~5h"]],
+   notes:[["warn","<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> WOMB en Dogenzaka es el club de referencia — techno/house, uno de los mejores sonidos de Asia. Para 10: id antes de medianoche para evitar la cola del viernes y entrad juntos. Reservad área solo si queréis garantizar sitio para los 10."]]},
+
+  {n:"04",date:"SÁB 7 NOV",name:"🏙️ Harajuku→Omotesando→Shibuya→Shimokitazawa",base:"Tokio — Shinjuku",
+   geo:"Ruta lineal sur. Sábado = ambiente joven, perfecto para esta zona.",
+   sched:[["09:00","⛩️ Meiji Jingu <span class='badge b-opt'>recortable</span> — bosque de 70.000 árboles"],["10:30","🛍️ Takeshita St (Harajuku) — kawaii, crepes"],["11:30","🌿 Omotesando — diseño y arquitectura"],["13:00","🍱 Almuerzo: Gyukatsu Motomura"],["14:30","🚦 Shibuya Crossing — foto desde Starbucks"],["15:30","🛒 Scramble Square / Shibuya 109"],["17:00","🎸 Shimokitazawa — vintage, vinilos"],["19:30","🍢 Cena en Shimokitazawa: izakaya local"]],
+   notes:[["info","<b>Meiji recortable:</b> es más paseo de bosque que templo y repite con Senso-ji (Día 3). Si vais lentos esa mañana, saltadlo."]]},
+
+  {n:"05",date:"DOM 8 NOV",name:"🎨 Hamarikyu→Tsukiji→Ginza→Shibuya Sky",base:"Tokio — Shinjuku",
+   geo:"Hamarikyu y Tsukiji a 10 min a pie. Ginza a 15 min. Luego Shibuya en metro.",
+   sched:[["09:00","🌿 Jardines Hamarikyu — shogunal, ~300 ¥"],["10:30","🦞 Mercado Tsukiji — el mejor picoteo de Tokio"],["12:30","💎 Ginza — Itoya (papelería 12 plantas, gratis)"],["14:30","🚇 Vuelta a Shibuya. Descanso / Tokyu Hands"],["17:00","🌅 Shibuya Sky — mirador 360°, ~2.000 ¥. Atardecer brutal"],["19:30","🎤 Karaoke en grupo (Big Echo)"],["22:00","🥃 Cócteles en Shinjuku"]],
+   notes:[["warn","<b>⚠️ RESERVA:</b> Shibuya Sky antes de viajar. El slot de atardecer (17:00–18:00) se agota."]]},
+
+  {n:"06",date:"LUN 9 NOV",name:"🎭 teamLab Planets→Odaiba→Despedida Tokio",base:"Tokio — Shinjuku (última noche)",
+   notes:[["good","<b>✅ Lunes esquiva el finde.</b> teamLab no cierra hasta finales de 2027 y se amplió 1,5× en 2025 — calcula 2h. Sus cierres publicados (jun/jul) NO afectan a noviembre, pero reconfirma el calendario."]],
+   sched:[["10:00","🎨 teamLab Planets (Toyosu) — ~3.600 ¥. Primer slot = menos cola. ~2h"],["12:00","🌉 Odaiba — Estatua Libertad, Rainbow Bridge"],["13:00","🍱 Almuerzo en DiverCity / Aqua City"],["14:30","🤖 Opcional: Gundam tamaño real (gratis)"],["16:30","🚆 Vuelta al centro. Duchazo, maletas"],["20:00","🥂 Última noche: Omoide Yokocho o Golden Gai"]],
+   notes2:[["info","<b>Horario teamLab:</b> 8:30–22:00, última entrada 1h antes. Puede haber 30–60 min de espera aunque tengáis hora. Comprad todos a la vez para coincidir en slot."]]},
+
+  {n:"07",date:"MAR 10 NOV",name:"🗻 Tokio→Kawaguchiko · Ryokan + Onsen ⭐",base:"Kawaguchiko — Ryokan (ÚNICA noche)",
+   notes:[["good","<b>✅ Fuji a 1 noche.</b> Se elimina el relleno (barco + museo de kimonos). Conservas lo esencial: ryokan/onsen/kaiseki + amanecer en Chureito. La noche ganada va a Osaka. <b>El Fuji se esconde a menudo tras nubes</b> y con una sola noche no hay segundo intento: el onsen + el kaiseki ya justifican la parada pase lo que pase."],["warn","<b>🧳 Maletas a cuestas:</b> al llegar a Kawaguchiko, dejad TODAS las maletas en el ryokan ANTES de las e-bikes (avisad al reservar que llegáis sobre las 11h y dejáis equipaje pre-check-in: es lo estándar). Nadie pedalea ni almuerza arrastrando la maleta."]],
+   sched:[["08:30","🧳 Check-out Shinjuku. Ir a Busta Shinjuku (planta 4)"],["09:00","🚌 Bus Keio → Kawaguchiko (2h, ~1.800 ¥)"],["11:00","🏔️ Llegada. Primera vista al Fuji"],["11:15","🛎️ Al ryokan: dejar las maletas (pre-check-in)"],["11:45","🚲 e-bikes para rodear el lago norte (solo mochila)"],["13:00","🍜 Almuerzo: Hoto Fudou (local)"],["15:00","🏨 Check-in formal ryokan. Té verde"],["15:30","♨️ Onsen — rotenburo con vistas al Fuji"],["18:30","🍱 Cena kaiseki (8–12 platos)"],["21:00","🌙 Onsen nocturno — cielo estrellado"]],
+   notes2:[["warn","<b>⚠️ RESERVA:</b> ryokan con MESES de antelación, y <b>reservad asiento en el bus Keio</b> — en koyo se llena y la bodega para 10 maletas grandes es limitada (llegad pronto a Busta y subidlas todas juntas). El rotenburo nocturno con el Fuji es de lo más memorable del viaje."]]},
+
+  {n:"08",date:"MIÉ 11 NOV",name:"🌄 Amanecer Chureito→Kioto·Fushimi",base:"Kioto — Gion (1ª de 3)",
+   notes:[["tip","<b>Día doble:</b> exprimes el amanecer de Fuji y, sin envío de maletas, vais DIRECTOS a Kioto. Llegáis bastante antes que en el plan original → tarde de Kioto mucho más relajada."],["good","<b>🧳 Truco clave:</b> a Chureito subís solo con mochila — las maletas se quedan en el ryokan (seguís alojados, las recogéis en el check-out de las 9:15). Nadie sube los 398 escalones con equipaje."]],
+   sched:[["05:30","⏰ Despertar muy temprano. Taxi/bus a Fujiyoshida (solo mochila)"],["06:15","📸 Chureito Pagoda — 398 escalones. Foto icónica al amanecer. Hay rampa suave. Gratis. Abrigaos: a esa hora baja de 5 °C"],["08:00","🍳 Vuelta al ryokan: desayuno japonés"],["09:15","🧳 Check-out. Recoger maletas. Al apeadero del bus"],["09:45","🚌 Bus Kawaguchiko → Mishima (~60 min, ~1.500 ¥)"],["11:15","🚄 Shinkansen Mishima → Kioto (Hikari, ~1h40, ~6.500 ¥). Asiento derecha (D/E) para el Fuji"],["13:00","🏨 Llegada Kioto. Check-in / dejar maletas en el hotel"],["14:15","🦊 Fushimi Inari — torii naranjas. A Yotsutsuji (~45 min) o parte baja (~1h). Gratis, 24h"],["16:30","🛍️ Vuelta a Gion. Descanso"],["18:30","🌆 Gion. Hanamikoji al atardecer (posible maiko)"],["20:00","🍶 Cena en izakaya de Pontocho"]],
+   notes2:[["info","<b>🚄 Maletas en el Shinkansen:</b> el equipaje normal (suma de medidas <160 cm) va detrás de la última fila o en las baldas. Reservad para los 10 los asientos de la <b>ÚLTIMA FILA</b> del vagón (usáis el hueco trasero) o la zona de equipaje grande. <b>Oshino Hakkai sale del plan</b> por las maletas; si lo queréis, dejadlas en la consigna de la estación de Kawaguchiko y hacedlo en bus ida/vuelta antes de coger el de Mishima."],["tip","<b>Fushimi Inari: 2–2,5h bastan</b> si no subís a la cima. Tarde-noche tiene mucha menos gente (y es gratis)."]]},
+
+  {n:"09",date:"JUE 12 NOV",name:"🎋 Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo",base:"Kioto — Gion",
+   geo:"Todo el noroeste: Arashiyama → Kinkaku-ji (40 min bus) → Ryoan-ji (10 min a pie) → Nijo.",
+   sched:[["07:00","⏰ Madrugar es ESENCIAL. Bus 11 o Sagano Line"],["07:45","🎋 Bosque de bambú — antes de las 8h. A las 10h es romería"],["08:30","⛩️ Tenryu-ji — jardín zen UNESCO, ~500 ¥"],["09:30","🐒 Opcional: Iwatayama Monkey Park"],["10:30","🚌 Bus a Kinkaku-ji (~40 min)"],["11:00","✨ Kinkaku-ji — templo dorado. A mediados de nov, koyo temprano: primeros rojos/amarillos"],["12:00","🪨 Ryoan-ji — jardín zen de piedras"],["13:00","🍱 Almuerzo: tofu kaiseki"],["15:00","🏰 Nijo <span class='badge b-opt'>opcional</span> — suelos «nightingale»"],["17:30","🛍️ Vuelta a Gion. Compras"],["19:30","🍣 Cena: Musashi Sushi (cinta) o izakaya"]],
+   notes:[["warn","<b>⚠️ El día más denso:</b> único día de Kioto sin colchón. Si a las 15h vais arrastrándoos, saltad Nijo: Arashiyama + Kinkaku-ji + Ryoan-ji ya es un día redondo."]]},
+
+  {n:"10",date:"VIE 13 NOV",name:"🌸 Kiyomizudera→Higashiyama→Path→Ginkaku-ji",base:"Kioto — Gion (última noche)",
+   geo:"Ruta a pie por el este: 4–5 km lineales sur→norte, cero transporte.",
+   sched:[["08:00","⛩️ Kiyomizudera — el más icónico. A mediados de nov, koyo temprano (rojos parciales)"],["09:30","🚶 Ninenzaka + Sannenzaka — callejuelas, casas de té"],["11:00","🌿 Heian Jingu y jardines, ~600 ¥"],["12:30","🍱 Almuerzo: Omen (udon)"],["13:30","🚶 Philosopher's Path — 2 km junto al canal, primeras hojas de otoño"],["14:30","🌿 Ginkaku-ji (Pabellón de Plata)"],["16:30","🛍️ Compras: té, cerámica, incienso"],["19:00","🎎 Cena despedida Kioto: Chao Chao Gyoza o Nishiki"]],
+   notes:[["good","<b>✅ Nara mañana:</b> se hace la mañana del Día 11 de camino a Osaka (coste cero en transporte). Hoy queda como día de Kioto a pie, completo y relajado."]]},
+
+  {n:"11",date:"SÁB 14 NOV",name:"🦌 Nara→Osaka→Dotonbori",base:"Osaka — Namba (1ª de 3)",fiesta:true,
+   geo:"Nara está entre Kioto y Osaka. Nara por la mañana, llegada a Osaka por la tarde.",
+   sched:[["08:30","🚆 Kioto → Nara (Kintetsu, ~45 min, ~760 ¥). Bajáis en Kintetsu-Nara, pegado al parque"],["09:15","🔐 Consigna en Kintetsu-Nara: dejar TODAS las maletas (es vuestra estación de salida a Osaka)"],["09:30","🦌 Nara Park — 1.200 ciervos. Sembei ~200 ¥ (solo mochila)"],["10:00","🏯 Todai-ji — mayor Buda de bronce (15 m), 600 ¥"],["11:30","⛩️ Kasuga Taisha — 3.000 linternas"],["13:00","🍱 Almuerzo: kakinoha-zushi"],["14:30","🚆 Recoger maletas. Nara → Osaka (Kintetsu Namba, 35 min)"],["15:30","🏨 Check-in Namba. SIESTA estratégica antes de la noche"],["18:00","🦑 Dotonbori — Glico, takoyaki. Empieza la noche"],["19:30","🍢 Cena: yakiniku/okonomiyaki. Nomihodai (~1.500–2.500 ¥/90 min)"],["21:30","🍻 Bar-hopping por Soemoncho y el canal"],["23:30","🕺 CLUB: Joule (Amerikamura) o Circus. Entrada ~2.000–3.000 ¥. Hasta ~5h"]],
+   notes:[["warn","<b>🎉 FIESTA OSAKA (sábado · noche fuerte):</b> el sábado es la mejor noche y Namba es el epicentro: Dotonbori + Soemoncho + Amerikamura, todo andando. Joule es el club serio de electrónica. Como la fiesta gorda va hoy (no la última noche), podéis darlo todo sin pagar el madrugón del vuelo. La siesta tras el check-in es clave: venís de Nara + traslado."],["info","<b>🔐 Consigna en Nara:</b> taquillas en Kintetsu-Nara (y oficina de equipaje detrás de las taquillas si se llenan en koyo). Con 10 maletas, al bajar del tren id un par directos a por las taquillas grandes. El parque está a 5 min andando: cero maletas entre los ciervos."]]},
+
+  {n:"12",date:"DOM 15 NOV",name:"🏯 Osaka clásica",base:"Osaka — Namba",
+   geo:"Castillo (norte) → Shinsekai (sur) → Kuromon y Amerikamura (Namba). Domingo: evitamos Universal (finde = colas máximas).",
+   sched:[["09:00","🏯 Castillo de Osaka — koyo + museo Sengoku, ~600 ¥"],["11:00","🌆 Mirador, fosos y murallas"],["12:00","🚇 Metro a Shinsekai (~20 min)"],["12:30","🍢 Almuerzo: kushikatsu (NO mojar dos veces). Daruma"],["14:00","🗼 Tsutenkaku Tower — icono retro"],["15:30","🐙 Kuromon Ichiba — fugu, wagyu, ostras. Para picar"],["17:00","👟 Amerikamura — moda alternativa, vinilos"],["19:00","🌆 Umeda Sky Building — mirador flotante 360°"],["21:00","🍺 Hozenji Yokocho + bares de Namba"]]},
+
+  {n:"13",date:"LUN 16 NOV",name:"🎢 GRUPO DIVIDIDO: Universal / Himeji",base:"Osaka — Namba (última noche)",
+   notes:[["good","<b>⭐ Por qué hoy:</b> el lunes es el mejor día de la ventana para Universal (sábado y domingo son los más concurridos). Un subgrupo a Universal, otro a Himeji, y todos a la cena de despedida."]],
+   sched:[["—","🎢 SUBGRUPO A — UNIVERSAL STUDIOS"],["07:30","🚆 Namba → Universal City (~25 min)"],["08:00","🎫 Llegar antes de apertura. Entrada + Express Pass YA comprados online"],["08:30","🎮 A Super Nintendo World o Harry Potter primero"],["—","🏯 SUBGRUPO B — HIMEJI"],["08:30","🚆 Namba → Himeji (~1h15, ~1.520 ¥)"],["10:00","🏯 Castillo «Garza Blanca», ~1.000 ¥"],["12:00","🌿 Jardín Koko-en — koyo temprano (rojos parciales a mediados de nov)"],["13:00","🍱 Almuerzo: anago (anguila local)"],["17:30","🚆 Vuelta a Namba para la cena común"],["—","🍻 REUNIÓN — CENA DE DESPEDIDA"],["19:30","📱 Check-in online vuelo CX567 (sobrios) + maletas casi listas"],["20:30","🥂 Cena despedida: yakiniku/okonomiyaki. Nomihodai"],["22:30","🍶 Última ronda tranquila: Hozenji Yokocho"],["00:00","🛏️ A la cama — el vuelo sale a las 9:25"]],
+   notes2:[["info","<b>Despedida suave a propósito:</b> la fiesta fuerte ya fue el sábado, así que hoy es cena + bares tranquilos sin destrozar el madrugón. ⚠️ Comprad Universal + Express Pass online antes de viajar: en koyo es casi obligatorio."]]},
+
+  {n:"14",date:"MAR 17 NOV",name:"✈️ Osaka → KIX → Vuelo CX567 09:25",base:"Osaka → ✈️ Vuelo a casa",
+   geo:"Check-in online la víspera + Nankai de las 6:35h = llegada KIX 7:12h = 2h15 antes del vuelo.",
+   sched:[["06:00","⏰ Despertar. Maletas listas. Check-out express"],["06:35","🚆 Nankai Rapid Namba → KIX (37 min, ~1.450 ¥)"],["07:15","🛫 KIX. Check-in hecho → directos a seguridad"],["09:25","✈️ CX567 despega. Sayonara, Japón"]]},
+];
+
+const transfers = [
+  ["Narita T2 → Shinjuku","JR Narita Express, 59 min","~3.070 ¥"],
+  ["Shinjuku → Kamakura","JR Shonan-Shinjuku, 59 min","~940 ¥"],
+  ["Kamakura → Enoshima","Enoden, 30 min","260 ¥"],
+  ["Enoshima → Shinjuku","Odakyu, 70 min","~580 ¥"],
+  ["Busta Shinjuku → Kawaguchiko","Bus Keio, 2h","~1.800 ¥"],
+  ["Kawaguchiko → Mishima","Fujikyu bus, ~60 min","~1.500 ¥"],
+  ["Mishima → Kioto","Shinkansen Hikari, ~1h40","~6.500 ¥"],
+  ["Kioto → Nara","Kintetsu, ~45 min","~760 ¥"],
+  ["Nara → Osaka (Namba)","Kintetsu, 35 min","~560 ¥"],
+  ["Namba → Universal","JR vía Nishikujo, ~25 min","~190 ¥"],
+  ["Osaka Namba → KIX","Nankai Rapid, 37 min","~1.450 ¥"],
+];
+
+// ---------- RENDER ----------
+const ovHtml = overview.map(([n,d,desc])=>
+  `<a class="ov-row" href="#d${n}" onclick="openDay('${n}')">
+     <div class="ov-day">${n}</div>
+     <div class="ov-date">${d}</div>
+     <div class="ov-desc">${desc}</div>
+   </a>`).join("");
+document.getElementById("ovTable").innerHTML = ovHtml;
+
+const arrow = `<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
+
+function noteHtml(arr){return (arr||[]).map(([t,h])=>`<div class="note ${t}">${h}</div>`).join("")}
+function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
+  t==="—"
+   ? `<div class="slot" style="border-bottom:none;padding-bottom:2px"><div class="slot-txt" style="font-family:'Shippori Mincho',serif;font-weight:700;color:var(--vermilion-deep);font-size:13px">${x}</div></div>`
+   : `<div class="slot"><div class="slot-time">${t}</div><div class="slot-txt">${x}</div></div>`
+).join("")+`</div>`}
+
+const daysHtml = days.map(d=>`
+  <div class="day${d.fiesta?' fiesta':''}" id="d${d.n}">
+    <div class="day-head" onclick="toggleDay(this)">
+      <div class="day-num">${d.n}</div>
+      <div class="day-titles">
+        <div class="day-date">${d.date}${d.fiesta?'<span class="badge b-fiesta">FIESTA</span>':''}</div>
+        <div class="day-name">${d.name}</div>
+        <div class="day-base">🏨 ${d.base}</div>
+      </div>
+      ${arrow}
+    </div>
+    <div class="day-body">
+      ${d.geo?`<div class="geo">📍 ${d.geo}</div>`:""}
+      ${noteHtml(d.notes)}
+      ${schedHtml(d.sched)}
+      ${noteHtml(d.notes2)}
+    </div>
+  </div>`).join("");
+document.getElementById("days").innerHTML = daysHtml;
+
+document.getElementById("transfers").innerHTML =
+  transfers.map(([a,b,c])=>`<tr><td><b>${a}</b></td><td>${b}</td><td>${c}</td></tr>`).join("");
+
+// ---------- INTERACTION ----------
+function toggleDay(head){head.parentElement.classList.toggle("open")}
+function openDay(n){const el=document.getElementById("d"+n);if(el)el.classList.add("open")}
+function setAll(open){document.querySelectorAll(".day").forEach(d=>d.classList.toggle("open",open))}
+// open day 1 by default
+document.getElementById("d01").classList.add("open");
+</script>
+</body>
+</html>
