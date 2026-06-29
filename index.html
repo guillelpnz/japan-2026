@@ -185,6 +185,13 @@
   .block h3{font-family:'Shippori Mincho',serif;font-size:16px;margin:14px 0 6px;color:var(--indigo)}
   .block h3:first-child{margin-top:0}
   .block p{font-size:13.5px;color:var(--sumi-soft);margin-bottom:8px}
+  .block a,.slot-txt a,.ov-desc a,.tbl a{color:var(--vermilion-deep);font-weight:700;text-decoration:none;border-bottom:1px dotted rgba(155,45,32,.55)}
+  .block a:hover,.slot-txt a:hover,.ov-desc a:hover,.tbl a:hover{color:var(--indigo);border-bottom-color:var(--indigo)}
+  .quick-links{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+  .quick-card{border:1px solid var(--line);background:var(--washi);border-radius:12px;padding:12px}
+  .quick-card h4{font-family:'Shippori Mincho',serif;font-size:14px;color:var(--indigo);margin-bottom:6px}
+  .quick-card .mini{display:flex;flex-wrap:wrap;gap:7px}
+  .quick-card .mini a{font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px 9px;box-shadow:0 1px 4px var(--shadow)}
   .block ul{list-style:none;margin:6px 0}
   .block li{font-size:13.5px;color:var(--sumi-soft);padding:5px 0 5px 22px;position:relative;line-height:1.45}
   .block li::before{content:"●";color:var(--vermilion);position:absolute;left:4px;top:5px;font-size:9px}
@@ -275,22 +282,77 @@
   <!-- ACCOMMODATIONS -->
   <h2 class="sec" id="alojamientos">Alojamientos</h2>
   <div class="block">
-    <p style="margin-bottom:12px"><b>Estado:</b> bases principales cerradas para Kioto y Osaka. Si Tokio + Maruei ya están reservados, la columna vertebral del viaje queda finiquitada; lo que queda son entradas, transportes con hora y cenas-evento.</p>
-    <h3>🏠 Kioto · Airbnb Kiyomizu/Higashiyama</h3>
+    <p style="margin-bottom:12px"><b>Estado:</b> columna vertebral cerrada: Tokio, Fuji, Kioto y Osaka. Ahora el viaje ya no depende de encontrar alojamiento para 10 en temporada alta; lo crítico pasa a ser entradas, transportes con hora y cenas-evento.</p>
+
+    <h3>🏙️ Tokio · <a href="https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html" target="_blank" rel="noopener noreferrer">Shinjuku Family Apartment</a></h3>
+    <ul>
+      <li><b>Fechas:</b> 4–10 noviembre · 6 noches · base Shinjuku</li>
+      <li><b>Encaje:</b> perfecto para llegada desde Narita, noches de Shinjuku/Shibuya y excursión Kamakura/Enoshima</li>
+      <li><b>Ojo:</b> confirmad número real de baños, ascensor y si permite dejar maletas antes del check-in. En Tokio “family apartment” puede significar cómodo, pero compacto</li>
+    </ul>
+
+    <h3>🗻 Fuji · <a href="https://maruei55.com/" target="_blank" rel="noopener noreferrer">Wakakusa no Yado Maruei</a></h3>
+    <ul>
+      <li><b>Fechas:</b> 10–11 noviembre · 1 noche · ryokan/onsen/kaiseki</li>
+      <li><b>Encaje:</b> alojamiento-evento del viaje. Onsen, cena kaiseki y amanecer de Chureito al día siguiente</li>
+      <li><b>Ojo:</b> llegar con margen. Para media pensión, tratad la cena como una reserva sagrada; nada de aparecer tarde</li>
+      <li><b>Logística:</b> pickup desde Kawaguchiko Station por la tarde; por la mañana pedid en recepción el shuttle de salida hacia la estación</li>
+    </ul>
+
+    <h3>🏠 Kioto · <a href="https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c" target="_blank" rel="noopener noreferrer">Airbnb Kiyomizu/Higashiyama</a></h3>
     <ul>
       <li><b>Fechas:</b> 11–14 noviembre · 10 viajeros · casa entera</li>
       <li><b>Capacidad:</b> hasta 13 viajeros · 4 dormitorios · 10 camas · 4,5 baños</li>
       <li><b>Ubicación:</b> zona Kiyomizu/Higashiyama, anunciada a 1 min de Kiyomizu-dera. Perfecta para el Día 10</li>
       <li><b>Ojo:</b> check-in desde las 15:00 y check-out antes de las 10:00. Confirmad por chat si permite dejar maletas antes</li>
     </ul>
-    <h3>🏨 Osaka · <a href="https://www.booking.com/Share-ERq2fM8" target="_blank">Hotel Abitare Namba West</a></h3>
+
+    <h3>🏨 Osaka · <a href="https://www.booking.com/Share-ERq2fM8" target="_blank" rel="noopener noreferrer">Hotel Abitare Namba West</a></h3>
     <ul>
       <li><b>Fechas:</b> 14–17 noviembre · base Sakuragawa/Namba</li>
       <li><b>Ubicación:</b> a ~2 min de Sakuragawa y ~10 min de Namba; Dotonbori/Amerikamura andando</li>
-      <li><b>Tipo:</b> apartahotel con habitaciones amplias, cocina/lavadora según habitación; muy cómodo para grupos</li>
+      <li><b>Tipo:</b> apartahotel con habitaciones amplias; muy cómodo para grupos</li>
       <li><b>Ojo:</b> check-in desde las 16:00 y check-out 10:00. Para el vuelo, mejor 2–3 taxis a Nankai Namba</li>
     </ul>
-    <div class="note good" style="margin:12px 0 0"><b>Veredicto:</b> Kioto gana mucha alma con Kiyomizu; Osaka queda muy práctica para Namba sin dormir en pleno ruido. Buen cierre.</div>
+    <div class="note good" style="margin:12px 0 0"><b>Veredicto:</b> muy buen set. Tokio da conectividad, Maruei da experiencia, Kioto gana alma con Kiyomizu y Osaka queda práctica para Namba sin dormir en pleno ruido.</div>
+  </div>
+
+  <!-- QUICK LINKS -->
+  <h2 class="sec" id="links">Links rápidos</h2>
+  <div class="block">
+    <p>Los links importantes están también repartidos dentro del día a día, pero aquí queda el panel de mando para no buscar en el grupo de WhatsApp.</p>
+    <div class="quick-links">
+      <div class="quick-card"><h4>🏨 Alojamiento</h4><div class="mini">
+        <a href="https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html" target="_blank" rel="noopener noreferrer">Tokio · Shinjuku Family Apartment</a>
+        <a href="https://maruei55.com/" target="_blank" rel="noopener noreferrer">Fuji · Maruei oficial</a>
+        <a href="https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c" target="_blank" rel="noopener noreferrer">Kioto · Airbnb</a>
+        <a href="https://www.booking.com/Share-ERq2fM8" target="_blank" rel="noopener noreferrer">Osaka · Abitare Booking</a>
+        <a href="https://www.bon-lodging.com/en/hotel-abitare-namba-west/" target="_blank" rel="noopener noreferrer">Osaka · Abitare oficial</a>
+      </div></div>
+      <div class="quick-card"><h4>🚆 Transporte que reservar/mirar</h4><div class="mini">
+        <a href="https://www.jreast.co.jp/multi/en/nex/" target="_blank" rel="noopener noreferrer">Narita Express</a>
+        <a href="https://highway-buses.jp/" target="_blank" rel="noopener noreferrer">Bus Shinjuku→Kawaguchiko</a>
+        <a href="https://sekitori.jp/en/" target="_blank" rel="noopener noreferrer">Buses Fuji / Sekitori</a>
+        <a href="https://smart-ex.jp/en/" target="_blank" rel="noopener noreferrer">SmartEX Shinkansen</a>
+        <a href="https://www.kintetsu.co.jp/foreign/english/" target="_blank" rel="noopener noreferrer">Kintetsu</a>
+        <a href="https://www.nankai.co.jp/en_railway/traffic/express/rapit.html" target="_blank" rel="noopener noreferrer">Nankai Rapi:t a KIX</a>
+      </div></div>
+      <div class="quick-card"><h4>🎟️ Entradas</h4><div class="mini">
+        <a href="https://teamlabplanets.dmm.com/en" target="_blank" rel="noopener noreferrer">teamLab Planets</a>
+        <a href="https://www.shibuya-scramble-square.com/sky/ticket/" target="_blank" rel="noopener noreferrer">Shibuya Sky</a>
+        <a href="https://www.usj.co.jp/web/en/us/tickets" target="_blank" rel="noopener noreferrer">Universal Studio Pass</a>
+        <a href="https://www.usj.co.jp/web/en/us/tickets/express-pass" target="_blank" rel="noopener noreferrer">Universal Express Pass</a>
+      </div></div>
+      <div class="quick-card"><h4>🍽️ Reservas de grupo</h4><div class="mini">
+        <a href="https://tabelog.com/en/" target="_blank" rel="noopener noreferrer">Tabelog</a>
+        <a href="https://www.tablecheck.com/en/japan" target="_blank" rel="noopener noreferrer">TableCheck</a>
+        <a href="https://www.womb.co.jp/en/" target="_blank" rel="noopener noreferrer">WOMB Tokyo</a>
+        <a href="https://clubasia.jp/en/events" target="_blank" rel="noopener noreferrer">clubasia Tokyo</a>
+        <a href="https://zerotokyo.jp/en/" target="_blank" rel="noopener noreferrer">ZEROTOKYO Shinjuku</a>
+        <a href="https://club-joule.com/" target="_blank" rel="noopener noreferrer">clubJOULE Osaka</a>
+      </div></div>
+    </div>
+    <div class="note warn" style="margin:12px 0 0"><b>Actualización nightlife:</b> Sound Museum Vision ya no lo uso como opción: cerró permanentemente. Para Tokio dejo WOMB / clubasia / ZEROTOKYO según cartel de esa noche.</div>
   </div>
 
   <!-- GROUP OF 10 -->
@@ -326,16 +388,17 @@
   <!-- RESERVATIONS -->
   <h2 class="sec" id="reservas">Reservas clave</h2>
   <div class="block">
-    <p style="margin-bottom:12px">Con Kioto y Osaka cerrados, esto es lo que sigue rompiendo el itinerario si se deja para tarde. Por orden de urgencia:</p>
+    <p style="margin-bottom:12px">Con los alojamientos cerrados, esto es lo que sigue pudiendo romper el itinerario si se deja para tarde. Por orden práctico:</p>
     <ul>
-      <li><b>✅ Kioto + Osaka</b> — cerrados: Airbnb Kiyomizu/Higashiyama + Hotel Abitare Namba West</li>
-      <li><b>Maruei (lado Fuji)</b> — MESES antes. Noviembre (koyo) es temporada alta absoluta. ~5 hab para 10, media pensión</li>
-      <li><b>Universal + Express Pass</b> — online antes de viajar. Imprescindible en koyo</li>
-      <li><b>teamLab Planets</b> (~3.600 ¥) — se agota semanas antes. Reconfirmad calendario de noviembre</li>
-      <li><b>Bus Shinjuku → Kawaguchiko</b> — semanas antes en koyo (keio-bus.co.jp)</li>
-      <li><b>Shibuya Sky</b> — días antes, slot atardecer</li>
-      <li><b>WOMB o Vision</b> (Tokio, Día 3) · <b>Joule o Circus</b> (Osaka, Día 11) — comprobad si admiten reserva de grupo/área para los 10</li>
-      <li><b>Cenas-evento de 10</b> — vía Tabelog/TableCheck o conserje del hotel</li>
+      <li><b>✅ Alojamiento completo</b> — cerrados Tokio, Maruei/Fuji, Airbnb Kiyomizu/Higashiyama y Hotel Abitare Namba West</li>
+      <li><b>Bus Shinjuku → Kawaguchiko</b> — reservar cuando abra ventana; sois 10 y noviembre/koyo aprieta</li>
+      <li><b>Bus Kawaguchiko → Mishima + Shinkansen Mishima → Kioto</b> — dejadlo atado para no improvisar con maletas</li>
+      <li><b>Universal + Express Pass</b> — online antes de viajar. Si queréis Nintendo, Express con entrada garantizada o app oficial al entrar</li>
+      <li><b>teamLab Planets</b> (~3.600 ¥) — entrada con franja horaria; comprad todos el mismo slot</li>
+      <li><b>Shibuya Sky</b> — sale con ventana corta; apuntad a 16:00–16:30 para atardecer de noviembre</li>
+      <li><b>Club Tokio</b> — WOMB / clubasia / ZEROTOKYO según cartel. Sound Museum Vision eliminado: cerrado</li>
+      <li><b>Club Osaka</b> — clubJOULE o Circus; mirad cartel 1–2 meses antes</li>
+      <li><b>Cenas-evento de 10</b> — Osaka despedida + una izakaya buena en Kioto vía Tabelog/TableCheck</li>
     </ul>
   </div>
 
@@ -371,12 +434,145 @@
   <a href="#dias"><span class="ico">🗓️</span>Días</a>
   <a href="#traslados"><span class="ico">🚆</span>Trenes</a>
   <a href="#alojamientos"><span class="ico">🏨</span>Hoteles</a>
+  <a href="#links"><span class="ico">🔗</span>Links</a>
   <a href="#grupo"><span class="ico">👥</span>Grupo</a>
   <a href="#reservas"><span class="ico">📌</span>Reservas</a>
 </nav>
 
 <script>
 // ---------- DATA ----------
+const SITE_LINKS = {
+  "Airbnb Kiyomizu/Higashiyama": "https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c",
+  "Shinjuku Family Apartment": "https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html",
+  "Hotel Abitare Namba West": "https://www.booking.com/Share-ERq2fM8",
+  "Universal Studios Japan": "https://www.usj.co.jp/web/en/us",
+  "Wakakusa no Yado Maruei": "https://maruei55.com/",
+  "Iwatayama Monkey Park": "https://www.google.com/maps/search/?api=1&query=Arashiyama+Monkey+Park+Iwatayama",
+  "Super Nintendo World": "https://www.usj.co.jp/web/en/us/areas/super-nintendo-world",
+  "Kawaguchiko Station": "https://www.google.com/maps/search/?api=1&query=Kawaguchiko+Station",
+  "Philosopher's Path": "https://www.google.com/maps/search/?api=1&query=Philosopher%27s+Path+Kyoto",
+  "Umeda Sky Building": "https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building+Osaka",
+  "Castillo de Osaka": "https://www.google.com/maps/search/?api=1&query=Osaka+Castle",
+  "Gyukatsu Motomura": "https://www.google.com/maps/search/?api=1&query=Gyukatsu+Motomura+Shibuya",
+  "Shibuya Crossing": "https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing",
+  "Airbnb Kiyomizu": "https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14",
+  "Chao Chao Gyoza": "https://www.google.com/maps/search/?api=1&query=Chao+Chao+Gyoza+Kyoto",
+  "Chureito Pagoda": "https://www.google.com/maps/search/?api=1&query=Chureito+Pagoda",
+  "Hozenji Yokocho": "https://www.google.com/maps/search/?api=1&query=Hozenji+Yokocho+Osaka",
+  "teamLab Planets": "https://teamlabplanets.dmm.com/en",
+  "Busta Shinjuku": "https://www.google.com/maps/search/?api=1&query=Busta+Shinjuku+Tokyo",
+  "Kuromon Ichiba": "https://www.google.com/maps/search/?api=1&query=Kuromon+Ichiba+Market+Osaka",
+  "Narita Express": "https://www.jreast.co.jp/multi/en/nex/",
+  "Nonbei Yokocho": "https://www.google.com/maps/search/?api=1&query=Shibuya+Nonbei+Yokocho",
+  "Omoide Yokocho": "https://www.google.com/maps/search/?api=1&query=Omoide+Yokocho+Shinjuku",
+  "Universal City": "https://www.google.com/maps/search/?api=1&query=Universal+City+Station+Osaka",
+  "Fushimi Inari": "https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto",
+  "Highway-Buses": "https://highway-buses.jp/",
+  "Kasuga Taisha": "https://www.google.com/maps/search/?api=1&query=Kasuga+Taisha+Nara",
+  "Kintetsu-Nara": "https://www.google.com/maps/search/?api=1&query=Kintetsu+Nara+Station",
+  "Kiyomizu-dera": "https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto",
+  "Nankai Rapi:t": "https://www.nankai.co.jp/en_railway/traffic/express/rapit.html",
+  "Shimokitazawa": "https://www.google.com/maps/search/?api=1&query=Shimokitazawa+Tokyo",
+  "Express Pass": "https://www.usj.co.jp/web/en/us/tickets/express-pass",
+  "Harry Potter": "https://www.google.com/maps/search/?api=1&query=Wizarding+World+of+Harry+Potter+Universal+Studios+Japan+Osaka",
+  "Kiyomizudera": "https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto",
+  "Komachi-dori": "https://www.google.com/maps/search/?api=1&query=Komachi-dori+Kamakura",
+  "Nankai Namba": "https://www.google.com/maps/search/?api=1&query=Nankai+Namba+Station+Osaka",
+  "Osaka Castle": "https://www.google.com/maps/search/?api=1&query=Osaka+Castle",
+  "Takeshita St": "https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku",
+  "Yanaka Ginza": "https://www.google.com/maps/search/?api=1&query=Yanaka+Ginza+Tokyo",
+  "Amerikamura": "https://www.google.com/maps/search/?api=1&query=Amerikamura+Osaka",
+  "Heian Jingu": "https://www.google.com/maps/search/?api=1&query=Heian+Jingu+Shrine+Kyoto",
+  "Kawaguchiko": "https://www.google.com/maps/search/?api=1&query=Kawaguchiko+Station",
+  "Meiji Jingu": "https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Tokyo",
+  "Shibuya Sky": "https://www.shibuya-scramble-square.com/sky/ticket/",
+  "Arashiyama": "https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Forest+Kyoto",
+  "Center-gai": "https://www.google.com/maps/search/?api=1&query=Shibuya+Center+Gai",
+  "Fuji no Yu": "https://www.google.com/maps/search/?api=1&query=Wakakusa+no+Yado+Maruei+Fuji+no+Yu",
+  "Ginkaku-ji": "https://www.google.com/maps/search/?api=1&query=Ginkaku-ji+Kyoto",
+  "Golden Gai": "https://www.google.com/maps/search/?api=1&query=Shinjuku+Golden+Gai",
+  "Hanamikoji": "https://www.google.com/maps/search/?api=1&query=Hanamikoji+Street+Kyoto",
+  "Hoto Fudou": "https://www.google.com/maps/search/?api=1&query=Hoto+Fudou+Kawaguchiko",
+  "Kinkaku-ji": "https://www.google.com/maps/search/?api=1&query=Kinkaku-ji+Kyoto",
+  "Omotesando": "https://www.google.com/maps/search/?api=1&query=Omotesando+Tokyo",
+  "Sannenzaka": "https://www.google.com/maps/search/?api=1&query=Sannenzaka+Kyoto",
+  "Shinkansen": "https://smart-ex.jp/en/",
+  "TableCheck": "https://www.tablecheck.com/en/japan",
+  "Tsutenkaku": "https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Osaka",
+  "Akihabara": "https://www.google.com/maps/search/?api=1&query=Akihabara+Tokyo",
+  "DiverCity": "https://www.google.com/maps/search/?api=1&query=DiverCity+Tokyo+Plaza",
+  "Dotonbori": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka",
+  "Hamarikyu": "https://www.google.com/maps/search/?api=1&query=Hamarikyu+Gardens+Tokyo",
+  "Hase-dera": "https://www.google.com/maps/search/?api=1&query=Hasedera+Kamakura",
+  "Kabukicho": "https://www.google.com/maps/search/?api=1&query=Kabukicho+Shinjuku+Tokyo",
+  "Kotoku-in": "https://www.google.com/maps/search/?api=1&query=Kotoku-in+Kamakura",
+  "Nara Park": "https://www.google.com/maps/search/?api=1&query=Nara+Park",
+  "Narita T2": "https://www.google.com/maps/search/?api=1&query=Narita+Airport+Terminal+2",
+  "Ninenzaka": "https://www.google.com/maps/search/?api=1&query=Ninenzaka+Kyoto",
+  "Shinsekai": "https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka",
+  "Soemoncho": "https://www.google.com/maps/search/?api=1&query=Soemoncho+Osaka",
+  "Tenryu-ji": "https://www.google.com/maps/search/?api=1&query=Tenryu-ji+Kyoto",
+  "Ueno Park": "https://www.google.com/maps/search/?api=1&query=Ueno+Park+Tokyo",
+  "Universal": "https://www.usj.co.jp/web/en/us/tickets",
+  "ZEROTOKYO": "https://zerotokyo.jp/en/",
+  "clubJOULE": "https://club-joule.com/",
+  "Big Echo": "https://www.google.com/maps/search/?api=1&query=Big+Echo+Shibuya",
+  "Bus Keio": "https://highway-buses.jp/",
+  "Enoshima": "https://www.google.com/maps/search/?api=1&query=Enoshima+Kanagawa",
+  "Kamakura": "https://www.google.com/maps/search/?api=1&query=Kamakura+Station",
+  "Kintetsu": "https://www.kintetsu.co.jp/foreign/english/",
+  "Nakamise": "https://www.google.com/maps/search/?api=1&query=Nakamise-dori+Street+Asakusa",
+  "Pontocho": "https://www.google.com/maps/search/?api=1&query=Pontocho+Alley+Kyoto",
+  "Ryoan-ji": "https://www.google.com/maps/search/?api=1&query=Ryoan-ji+Kyoto",
+  "Senso-ji": "https://www.google.com/maps/search/?api=1&query=Senso-ji+Tokyo",
+  "Todai-ji": "https://www.google.com/maps/search/?api=1&query=Todai-ji+Nara",
+  "clubasia": "https://clubasia.jp/en/events",
+  "Asakusa": "https://www.google.com/maps/search/?api=1&query=Asakusa+Tokyo",
+  "Ichiran": "https://www.google.com/maps/search/?api=1&query=Ichiran+Shinjuku+Tokyo",
+  "Koko-en": "https://www.google.com/maps/search/?api=1&query=Koko-en+Garden+Himeji",
+  "Mishima": "https://www.google.com/maps/search/?api=1&query=Mishima+Station+Shizuoka",
+  "Nishiki": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto",
+  "SmartEX": "https://smart-ex.jp/en/",
+  "Tabelog": "https://tabelog.com/en/",
+  "Tsukiji": "https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo",
+  "Circus": "https://www.google.com/maps/search/?api=1&query=Circus+Osaka+nightclub",
+  "Daruma": "https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Shinsekai",
+  "Enoden": "https://www.google.com/maps/search/?api=1&query=Enoden+Kamakura",
+  "Fuunji": "https://www.google.com/maps/search/?api=1&query=Fuunji+Shinjuku+Tokyo",
+  "Gundam": "https://www.google.com/maps/search/?api=1&query=Unicorn+Gundam+Statue+Odaiba",
+  "Himeji": "https://www.google.com/maps/search/?api=1&query=Himeji+Castle",
+  "Maruei": "https://maruei55.com/",
+  "Nankai": "https://www.nankai.co.jp/en_railway/traffic/express/rapit.html",
+  "Odaiba": "https://www.google.com/maps/search/?api=1&query=Odaiba+Tokyo",
+  "Toyosu": "https://www.google.com/maps/search/?api=1&query=Toyosu+Tokyo",
+  "Ginza": "https://www.google.com/maps/search/?api=1&query=Ginza+Tokyo",
+  "Glico": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign",
+  "Itoya": "https://www.google.com/maps/search/?api=1&query=Ginza+Itoya+Tokyo",
+  "Iwaya": "https://www.google.com/maps/search/?api=1&query=Enoshima+Iwaya+Caves",
+  "Joule": "https://club-joule.com/",
+  "Suica": "https://www.jreast.co.jp/multi/en/suica/",
+  "Gion": "https://www.google.com/maps/search/?api=1&query=Gion+Kyoto",
+  "Nijo": "https://www.google.com/maps/search/?api=1&query=Nijo+Castle+Kyoto",
+  "Omen": "https://www.google.com/maps/search/?api=1&query=Omen+Kyoto",
+  "WOMB": "https://www.womb.co.jp/en/",
+  "KIX": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport",
+};
+
+function escapeRegExp(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+function linkify(html){
+  if(!html) return html;
+  let out = String(html);
+  const entries = Object.entries(SITE_LINKS).sort((a,b)=>b[0].length-a[0].length);
+  for(const [label,url] of entries){
+    const saved=[];
+    out = out.replace(/<a\b[^>]*>.*?<\/a>/gi, m => `@@LINK${saved.push(m)-1}@@`);
+    const re = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegExp(label)})(?=$|[^\\p{L}\\p{N}])`, 'gu');
+    out = out.replace(re, `$1<a href="${url}" target="_blank" rel="noopener noreferrer">$2</a>`);
+    out = out.replace(/@@LINK(\d+)@@/g, (_,i) => saved[Number(i)] || '');
+  }
+  return out;
+}
+
 const overview = [
   ["01","Mié 4","Llegada · Shinjuku nocturno"],
   ["02","Jue 5","Kamakura + Enoshima"],
@@ -384,7 +580,7 @@ const overview = [
   ["04","Sáb 7","Harajuku→Shibuya→Shimokitazawa"],
   ["05","Dom 8","Hamarikyu→Tsukiji→Ginza→Shibuya Sky"],
   ["06","Lun 9","teamLab Planets→Odaiba"],
-  ["07","Mar 10","Tokio→Kawaguchiko · Ryokan + Onsen"],
+  ["07","Mar 10","Tokio→Kawaguchiko · Maruei + Onsen"],
   ["08","Mié 11","Amanecer Chureito→Kioto · Fushimi + base Kiyomizu"],
   ["09","Jue 12","Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo"],
   ["10","Vie 13","Kiyomizudera→Higashiyama→Ginkaku-ji"],
@@ -397,7 +593,7 @@ const overview = [
 const days = [
   {n:"01",date:"MIÉ 4 NOV",name:"🛬 Llegada · Shinjuku nocturno",base:"Tokio — Shinjuku Family Apartment (6 noches)",
    sched:[["14:10","✈️ Aterrizaje Narita T2"],["14:45","🎫 Comprar/activar Suica. NO compréis JR Pass"],["15:10","🚆 Narita Express → Shinjuku (59 min, ~3.070 ¥)"],["16:15","🏨 Check-in. Dejar maletas"],["17:30","🌆 Paseo Shinjuku: Kabukicho, neones"],["19:00","🍜 Cena: ramen en Fuunji o Ichiran"],["21:00","🥃 Opcional: Golden Gai"]],
-   notes:[["tip","<b>Día suave:</b> jet lag garantizado. No programar nada exigente."],["info","<b>🏨 Base Tokio:</b> <a href='https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html' target='_blank'>Shinjuku Family Apartment</a> (6 noches). Son apartamentos: para 10 reservad <b>varias unidades</b> y confirmad capacidad total + que admiten check-in del grupo. Cocina = desayunos de konbini en casa, perfecto para 10."]]},
+   notes:[["tip","<b>Día suave:</b> jet lag garantizado. No programar nada exigente."],["info","<b>🏨 Base Tokio confirmada:</b> <a href='https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html' target='_blank'>Shinjuku Family Apartment</a> (6 noches). Muy buen encaje por conectividad y vida nocturna. Confirmad baños/ascensor/consigna, porque en Tokio los apartamentos familiares pueden ser compactos."]]},
 
   {n:"02",date:"JUE 5 NOV",name:"🌊 Excursión Kamakura + Enoshima",base:"Tokio — Shinjuku Family Apartment",
    notes:[["good","<b>✅ Movido a entre semana:</b> Kamakura+Enoshima en sábado de koyo es una romería; el jueves está mucho más tranquilo."]],
@@ -406,8 +602,8 @@ const days = [
 
   {n:"03",date:"VIE 6 NOV",name:"🏮 Akihabara→Asakusa→Ueno→Yanaka",base:"Tokio — Shinjuku Family Apartment",fiesta:true,
    geo:"Ruta lineal NE: Akihabara → Asakusa → Ueno → Yanaka.",
-   sched:[["10:00","🎮 Akihabara — anime/manga/gaming, arcades"],["12:30","🍜 Almuerzo Akiba"],["13:30","🚆 Tren a Asakusa (Ginza Line, 3 min)"],["14:00","🏯 Senso-ji — Kaminarimon, Nakamise"],["15:30","🦒 Ueno Park"],["16:30","🏘️ Yanaka Ginza — barrio old-school, gatos"],["18:30","🍢 Cena temprana en Ueno o cambiarse en hotel"],["20:30","🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"],["21:00","🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"],["23:00","🍜 Picoteo o ramen antes del club"],["00:00","🕺 CLUB: WOMB (4 plantas, icónico) o Vision. Entrada ~2.000–3.500 ¥, incluye 1–2 copas. Hasta ~5h"]],
-   notes:[["warn","<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> WOMB en Dogenzaka es el club de referencia — techno/house, uno de los mejores sonidos de Asia. Para 10: id antes de medianoche para evitar la cola del viernes y entrad juntos. Reservad área solo si queréis garantizar sitio para los 10."]]},
+   sched:[["10:00","🎮 Akihabara — anime/manga/gaming, arcades"],["12:30","🍜 Almuerzo Akiba"],["13:30","🚆 Tren a Asakusa (Ginza Line, 3 min)"],["14:00","🏯 Senso-ji — Kaminarimon, Nakamise"],["15:30","🦒 Ueno Park"],["16:30","🏘️ Yanaka Ginza — barrio old-school, gatos"],["18:30","🍢 Cena temprana en Ueno o cambiarse en hotel"],["20:30","🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"],["21:00","🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"],["23:00","🍜 Picoteo o ramen antes del club"],["00:00","🕺 CLUB: WOMB o clubasia si queréis Shibuya; ZEROTOKYO si preferís volver hacia Shinjuku. Entrada ~2.000–4.000 ¥ según evento. Hasta ~5h"]],
+   notes:[["warn","<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> WOMB sigue siendo el club referencia en Shibuya; clubasia también encaja si el cartel mola. ZEROTOKYO es alternativa potente en Kabukicho, cerca de vuestra base. Para 10: id antes de medianoche para evitar la cola y entrad juntos. Sound Museum Vision queda eliminado porque cerró permanentemente."]]},
 
   {n:"04",date:"SÁB 7 NOV",name:"🏙️ Harajuku→Omotesando→Shibuya→Shimokitazawa",base:"Tokio — Shinjuku Family Apartment",
    geo:"Ruta lineal sur. Sábado = ambiente joven, perfecto para esta zona.",
@@ -425,14 +621,14 @@ const days = [
    notes2:[["info","<b>Horario teamLab:</b> 8:30–22:00, última entrada 1h antes. Puede haber 30–60 min de espera aunque tengáis hora. Comprad todos a la vez para coincidir en slot."]]},
 
   {n:"07",date:"MAR 10 NOV",name:"🗻 Tokio→Kawaguchiko · Maruei + Onsen ⭐",base:"Kawaguchiko — Wakakusa no Yado Maruei (ÚNICA noche)",
-   notes:[["good","<b>✅ Fuji a 1 noche.</b> Conservas lo esencial: ryokan/onsen/kaiseki + amanecer en Chureito. La noche ganada va a Osaka. <b>El Fuji se esconde a menudo tras nubes</b> y con una sola noche no hay segundo intento: onsen + kaiseki + azotea ya justifican la parada pase lo que pase."],["info","<b>🏨 <a href='https://www.maruei55.com/' target='_blank'>Maruei</a> · reservad lado FUJI.</b> Las habitaciones son lado-Fuji O lado-lago (no se ven ambos). El rotenburo con Fuji lo tenéis igualmente en el baño público <b>«Fuji no Yu»</b> y en la azotea 360°, así que el lado de la habitación solo decide la vista de vuestra ventana."],["warn","<b>🧳 OJO logística (el Maruei no está a pie de estación):</b> está a ~8-15 min y su shuttle solo opera <b>14:00–17:00</b>. A las 11h NO hay shuttle → dejad las maletas en la <b>consigna de la estación de Kawaguchiko</b>, haced e-bikes/almuerzo cerca, y subid al hotel en el shuttle a partir de las 14:00 (llamadles al llegar)."]],
+   notes:[["good","<b>✅ Fuji a 1 noche.</b> Conservas lo esencial: ryokan/onsen/kaiseki + amanecer en Chureito. La noche ganada va a Osaka. <b>El Fuji se esconde a menudo tras nubes</b> y con una sola noche no hay segundo intento: onsen + kaiseki + azotea ya justifican la parada pase lo que pase."],["info","<b>🏨 <a href='https://maruei55.com/' target='_blank'>Maruei</a> · reserva confirmada.</b> Si tenéis opción, confirmad lado FUJI. Las habitaciones son lado-Fuji O lado-lago (no se ven ambos). El rotenburo con Fuji lo tenéis igualmente en el baño público <b>«Fuji no Yu»</b> y en la azotea 360°, así que el lado de la habitación solo decide la vista de vuestra ventana."],["warn","<b>🧳 OJO logística (el Maruei no está a pie de estación):</b> está a ~8-15 min y su shuttle solo opera <b>14:00–17:00</b>. A las 11h NO hay shuttle → dejad las maletas en la <b>consigna de la estación de Kawaguchiko</b>, haced e-bikes/almuerzo cerca, y subid al hotel en el shuttle a partir de las 14:00 (llamadles al llegar)."]],
    sched:[["08:30","🧳 Check-out Shinjuku. Ir a Busta Shinjuku (planta 4)"],["09:00","🚌 Bus Keio → Kawaguchiko (2h, ~1.800 ¥)"],["11:00","🏔️ Llegada Kawaguchiko Station. Primera vista al Fuji"],["11:15","🔐 Maletas a consigna en la estación (no hay shuttle hasta las 14h)"],["11:45","🚲 e-bikes para rodear el lago (solo mochila)"],["13:00","🍜 Almuerzo: Hoto Fudou (local)"],["14:00","📞 Recoger maletas. Llamar al Maruei → shuttle desde la estación"],["14:30","🏨 Check-in Maruei (lado Fuji). Té verde. <b>Check-in ANTES de las 17:00</b>"],["15:30","♨️ Onsen «Fuji no Yu» — rotenburo con Fuji + azotea 360°"],["18:30","🍱 Cena kaiseki — <b>empieza SÍ o SÍ antes de las 19:00</b>"],["21:00","🌙 Onsen nocturno"]],
-   notes2:[["warn","<b>⚠️ RESERVA:</b> Maruei con MESES de antelación (lado Fuji, ~5 hab para 10, media pensión), y <b>asiento en el bus Keio</b> (en koyo se llena; bodega de maletas limitada). <b>Reglas estrictas:</b> check-in ≤17:00 y la cena arranca ≤19:00 o retiran el servicio sin reembolso. <b>El Maruei NO adapta menús a alergias ni restricciones</b> — si alguien del grupo tiene algo, confirmadlo por escrito antes de cerrar."]]},
+   notes2:[["warn","<b>✅ MARUEI CERRADO:</b> ahora lo importante es <b>asiento en el bus Keio</b> (en koyo se llena; bodega de maletas limitada). <b>Reglas estrictas:</b> check-in ≤17:00 y la cena arranca ≤19:00 o retiran el servicio sin reembolso. <b>El Maruei NO adapta menús a alergias ni restricciones</b> — si alguien del grupo tiene algo, confirmadlo por escrito antes de cerrar."]]},
 
   {n:"08",date:"MIÉ 11 NOV",name:"🌄 Amanecer Chureito→Kioto·Fushimi",base:"Kioto — Airbnb Kiyomizu/Higashiyama (1ª de 3)",
    notes:[["tip","<b>Día doble:</b> exprimís el amanecer de Fuji y vais DIRECTOS a Kioto. La nueva base en <b>Kiyomizu/Higashiyama</b> es mucho más bonita que Nijo para vivir Kioto a pie."],["good","<b>🏨 Airbnb Kiyomizu:</b> casa entera para hasta 13 viajeros, 4 dormitorios, 10 camas y 4,5 baños. Está anunciada a 1 min de Kiyomizu-dera, con check-in autónomo desde las 15:00 y salida antes de las 10:00."],["warn","<b>🧳 Punto crítico:</b> al ser Airbnb, NO asumáis consigna antes del check-in. Pedid al anfitrión dejar maletas; si dice que no, dejadlas en Kyoto Station antes de ir a Fushimi Inari."]],
-   sched:[["05:30","⏰ Despertar muy temprano. Taxi a Fujiyoshida (solo mochila)"],["06:15","📸 Chureito Pagoda — 398 escalones. Foto icónica al amanecer. Hay rampa suave. Gratis. Abrigaos: a esa hora baja de 5 °C"],["08:00","🍳 Vuelta al Maruei: desayuno japonés"],["09:15","🧳 Check-out. Taxi Maruei → estación de Kawaguchiko"],["09:45","🚌 Bus Kawaguchiko → Mishima (~60 min, ~1.500 ¥)"],["11:15","🚄 Shinkansen Mishima → Kioto (Hikari, ~1h40, ~6.500 ¥). Asiento derecha (D/E) para el Fuji"],["13:00","🚄 Llegada Kioto. Plan A: taxi al Airbnb si el anfitrión acepta dejar maletas. Plan B: consigna/equipaje en Kyoto Station"],["14:15","🦊 Fushimi Inari — torii naranjas. A Yotsutsuji (~45 min) o parte baja (~1h). Gratis, 24h. <b>Solo mochila</b>"],["16:45","🏠 Check-in Airbnb Kiyomizu/Higashiyama. Duchazo y descanso"],["18:30","🌆 Ninenzaka/Sannenzaka + paseo a Gion/Hanamikoji al atardecer"],["20:00","🍶 Cena en Gion/Pontocho. Vuelta andando o taxi corto"]],
-   notes2:[["warn","<b>🚕 Traslados de la mañana en TAXI:</b> el shuttle del Maruei solo opera 14:00–17:00, así que tanto a Chureito como a la estación de Kawaguchiko vais en taxi. <b>Pedidlos la víspera en recepción</b> (a las 5:30 no se cogen al vuelo) y confirmad que el bus a Mishima de las 9:45 admite vuestras maletas."],["info","<b>🚄 Maletas en el Shinkansen:</b> el equipaje normal (suma de medidas <160 cm) va detrás de la última fila o en las baldas. Reservad para los 10 los asientos de la <b>ÚLTIMA FILA</b> del vagón (usáis el hueco trasero) o la zona de equipaje grande. <b>Oshino Hakkai sale del plan</b> por las maletas; si lo queréis, dejadlas en la consigna de la estación de Kawaguchiko y hacedlo en bus ida/vuelta antes de coger el de Mishima."],["tip","<b>Fushimi Inari: 2–2,5h bastan</b> si no subís a la cima. Tarde-noche tiene mucha menos gente (y es gratis)."]]},
+   sched:[["05:30","⏰ Despertar muy temprano. Taxi a Fujiyoshida (solo mochila)"],["06:15","📸 Chureito Pagoda — 398 escalones. Foto icónica al amanecer. Hay rampa suave. Gratis. Abrigaos: a esa hora baja de 5 °C"],["08:00","🍳 Vuelta al Maruei: desayuno japonés"],["09:15","🧳 Check-out. Shuttle Maruei → Kawaguchiko Station (pedidlo la víspera/en desayuno)"],["09:45","🚌 Bus Kawaguchiko → Mishima (~60 min, ~1.500 ¥)"],["11:15","🚄 Shinkansen Mishima → Kioto (Hikari, ~1h40, ~6.500 ¥). Asiento derecha (D/E) para el Fuji"],["13:00","🚄 Llegada Kioto. Plan A: taxi al Airbnb si el anfitrión acepta dejar maletas. Plan B: consigna/equipaje en Kyoto Station"],["14:15","🦊 Fushimi Inari — torii naranjas. A Yotsutsuji (~45 min) o parte baja (~1h). Gratis, 24h. <b>Solo mochila</b>"],["16:45","🏠 Check-in Airbnb Kiyomizu/Higashiyama. Duchazo y descanso"],["18:30","🌆 Ninenzaka/Sannenzaka + paseo a Gion/Hanamikoji al atardecer"],["20:00","🍶 Cena en Gion/Pontocho. Vuelta andando o taxi corto"]],
+   notes2:[["warn","<b>🚕 Mañana Fuji:</b> a Chureito vais en taxi sí o sí (pedidlo la víspera en recepción; a las 5:30 no se coge al vuelo). Para salir hacia Kawaguchiko Station usad el shuttle matinal del Maruei y confirmad que el bus a Mishima de las 9:45 admite vuestras maletas."],["info","<b>🚄 Maletas en el Shinkansen:</b> el equipaje normal (suma de medidas <160 cm) va detrás de la última fila o en las baldas. Reservad para los 10 los asientos de la <b>ÚLTIMA FILA</b> del vagón (usáis el hueco trasero) o la zona de equipaje grande. <b>Oshino Hakkai sale del plan</b> por las maletas; si lo queréis, dejadlas en la consigna de la estación de Kawaguchiko y hacedlo en bus ida/vuelta antes de coger el de Mishima."],["tip","<b>Fushimi Inari: 2–2,5h bastan</b> si no subís a la cima. Tarde-noche tiene mucha menos gente (y es gratis)."]]},
 
   {n:"09",date:"JUE 12 NOV",name:"🎋 Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo",base:"Kioto — Airbnb Kiyomizu/Higashiyama",
    geo:"Todo el noroeste: Arashiyama → Kinkaku-ji (40 min bus) → Ryoan-ji (10 min a pie) → Nijo.",
@@ -488,11 +684,11 @@ document.getElementById("ovTable").innerHTML = ovHtml;
 
 const arrow = `<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
 
-function noteHtml(arr){return (arr||[]).map(([t,h])=>`<div class="note ${t}">${h}</div>`).join("")}
+function noteHtml(arr){return (arr||[]).map(([t,h])=>`<div class="note ${t}">${linkify(h)}</div>`).join("")}
 function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
   t==="—"
-   ? `<div class="slot" style="border-bottom:none;padding-bottom:2px"><div class="slot-txt" style="font-family:'Shippori Mincho',serif;font-weight:700;color:var(--vermilion-deep);font-size:13px">${x}</div></div>`
-   : `<div class="slot"><div class="slot-time">${t}</div><div class="slot-txt">${x}</div></div>`
+   ? `<div class="slot" style="border-bottom:none;padding-bottom:2px"><div class="slot-txt" style="font-family:'Shippori Mincho',serif;font-weight:700;color:var(--vermilion-deep);font-size:13px">${linkify(x)}</div></div>`
+   : `<div class="slot"><div class="slot-time">${t}</div><div class="slot-txt">${linkify(x)}</div></div>`
 ).join("")+`</div>`}
 
 const daysHtml = days.map(d=>`
@@ -516,7 +712,7 @@ const daysHtml = days.map(d=>`
 document.getElementById("days").innerHTML = daysHtml;
 
 document.getElementById("transfers").innerHTML =
-  transfers.map(([a,b,c])=>`<tr><td><b>${a}</b></td><td>${b}</td><td>${c}</td></tr>`).join("");
+  transfers.map(([a,b,c])=>`<tr><td><b>${linkify(a)}</b></td><td>${linkify(b)}</td><td>${c}</td></tr>`).join("");
 
 // ---------- INTERACTION ----------
 function toggleDay(head){head.parentElement.classList.toggle("open")}
