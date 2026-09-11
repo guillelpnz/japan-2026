@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Japón · Noviembre 2026</title>
+<meta name="description" content="Itinerario de 14 días por Japón: Tokio, Kawaguchiko, Kioto, Nara y Osaka. Traslados, reservas y consejos para un grupo de 10.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -101,7 +102,7 @@
     box-shadow:0 4px 20px var(--shadow);border:1px solid var(--line);
   }
   .ov-row{
-    display:grid;grid-template-columns:46px 78px 1fr;gap:8px;align-items:center;
+    display:grid;grid-template-columns:46px 78px minmax(0,1fr);gap:8px;align-items:center;
     padding:11px 14px;border-bottom:1px solid var(--line);
     text-decoration:none;color:inherit;transition:background .15s;
   }
@@ -113,7 +114,7 @@
     color:var(--vermilion);text-align:center;
   }
   .ov-date{font-size:12.5px;font-weight:700;color:var(--indigo)}
-  .ov-desc{font-size:13.5px;color:var(--sumi-soft);line-height:1.4}
+  .ov-desc{min-width:0;overflow-wrap:anywhere;font-size:13.5px;color:var(--sumi-soft);line-height:1.4}
   .ov-fiesta{color:var(--vermilion-deep);font-weight:700}
 
   /* ---------- DAY CARDS ---------- */
@@ -122,7 +123,9 @@
     box-shadow:0 4px 18px var(--shadow);border:1px solid var(--line);
     overflow:hidden;scroll-margin-top:14px;
   }
+  .day-heading{font:inherit}
   .day-head{
+    width:100%;border:0;font:inherit;color:inherit;text-align:left;
     padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;
     background:linear-gradient(135deg, var(--paper), var(--washi-2));
     border-bottom:1px solid transparent;transition:border-color .2s;
@@ -136,7 +139,8 @@
     box-shadow:0 3px 8px rgba(43,58,85,.35);
   }
   .day.fiesta .day-num{background:var(--vermilion);box-shadow:0 3px 8px rgba(155,45,32,.35)}
-  .day-titles{flex:1;min-width:0}
+  .day-titles{display:block;flex:1;min-width:0}
+  .day-date,.day-name,.day-base{display:block}
   .day-date{font-size:12px;font-weight:700;color:var(--vermilion-deep);letter-spacing:.5px}
   .day-name{font-family:'Shippori Mincho',serif;font-weight:600;font-size:16.5px;color:var(--sumi);line-height:1.3;margin-top:2px}
   .day-base{font-size:12px;color:var(--sumi-soft);margin-top:3px}
@@ -158,9 +162,9 @@
   .slot:last-child{border-bottom:none}
   .slot-time{
     font-family:'Shippori Mincho',serif;font-weight:700;font-size:13px;
-    color:var(--indigo);flex:none;width:52px;padding-top:1px;
+    color:var(--indigo);flex:none;width:52px;padding-top:1px;overflow-wrap:anywhere;
   }
-  .slot-txt{font-size:13.5px;color:var(--sumi);line-height:1.45}
+  .slot-txt{min-width:0;overflow-wrap:anywhere;font-size:13.5px;color:var(--sumi);line-height:1.45}
 
   /* ---------- CALLOUTS ---------- */
   .note{margin:10px 14px;padding:11px 14px;border-radius:11px;font-size:13px;line-height:1.5}
@@ -237,6 +241,39 @@
   footer{text-align:center;padding:30px 18px 10px;color:var(--sumi-soft);font-size:13px}
   footer .jp{font-family:'Shippori Mincho',serif;font-size:18px;color:var(--vermilion-deep);font-weight:700}
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:24px 0}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--indigo);outline-offset:3px}
+  .day-head:focus-visible{outline-offset:-4px}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+  }
+
+  @page{size:A4;margin:14mm}
+  @media print{
+    html{scroll-behavior:auto}
+    body{background:#fff;padding-bottom:0;color:#000;font-size:10pt}
+    .wrap{max-width:none;padding:0}
+    header.hero{padding:0 0 14px}
+    .hero h1{font-size:30pt}
+    .hero .chips{margin-top:10px}
+    .hero .sun,.hero::before,.toolbar,nav.bottom,.arrow{display:none!important}
+    *,*::before,*::after{animation:none!important;transition:none!important;box-shadow:none!important;text-shadow:none!important}
+    .day,.block,.overview,.quick-card{background:#fff;border-radius:0}
+    .day{overflow:visible;break-inside:auto;margin-bottom:14px}
+    .day-head{background:#fff;break-after:avoid;border-bottom-color:var(--line);padding:10px 12px}
+    .day-body,.day.open .day-body{display:block!important;animation:none!important}
+    .day-num{background:none!important;color:#000;border:1px solid var(--line)}
+    .day-heading,h2.sec,h3,h4{break-after:avoid}
+    .slot,.note,.ov-row,.quick-card,tr{break-inside:avoid}
+    .slot-txt,.note,.block p,.block li,.tbl{font-size:10pt}
+    h2.sec{font-size:18pt;margin:22px 0 10px}
+    .block{padding:12px}
+    .tbl th{background:#eee;color:#000}
+    thead{display:table-header-group}
+    a{color:inherit!important;text-decoration:none!important}
+    footer{padding:12px 0 0}
+  }
 </style>
 </head>
 <body>
@@ -254,11 +291,24 @@
   </div>
 </header>
 
-<div class="wrap">
+<main class="wrap">
 
   <!-- OVERVIEW -->
   <h2 class="sec" id="resumen">Resumen</h2>
   <div class="overview" id="ovTable"></div>
+  <div class="block" style="margin-top:16px">
+    <h3>Revisión · 11 septiembre 2026</h3>
+    <p>Las fechas y las 13 noches encajan. Se mantienen las cuatro bases; los ajustes se concentran en conexiones, descanso y reservas. Las horas del día a día son objetivos de planificación, salvo billetes ya emitidos.</p>
+    <ul>
+      <li><b>Fuji → Kioto:</b> bus de 80–90 min, al menos 60 min de margen en Mishima y llegada a Kioto a media tarde. Fushimi queda opcional.</li>
+      <li><b>Maruei:</b> en noviembre el check-in empieza a las 15:00; el shuttle de llegada opera de 15:00 a 17:00.</li>
+      <li><b>Tokio:</b> Tsukiji pasa al lunes. Shibuya Sky se adelanta a las 15:40–16:00; el 8 de noviembre el sol se pone a las 16:40.</li>
+      <li><b>Ritmo:</b> mañanas más suaves tras las fiestas, Nijo fuera de la ruta principal y cena de despedida más temprana antes del vuelo.</li>
+      <li><b>Precios:</b> actualizados los transportes principales y varias entradas. Importes por adulto y trayecto; los estimados no son una cotización.</li>
+      <li><b>Por cerrar:</b> transporte de 10 con equipaje, taxis al amanecer, entradas con hora y traslado temprano a KIX. <a href="#reservas">Ver pendientes</a> · <a href="#fuentes">Fuentes oficiales</a>.</li>
+    </ul>
+  </div>
+  <noscript><div class="block"><p>Activa JavaScript para ver el resumen, el itinerario diario y la tabla de traslados. Las reservas, alojamientos y fuentes siguen disponibles más abajo.</p></div></noscript>
 
   <!-- DAYS -->
   <h2 class="sec" id="dias">Día a día</h2>
@@ -275,8 +325,8 @@
       <thead><tr><th>Trayecto</th><th>Transporte</th><th>Precio</th></tr></thead>
       <tbody id="transfers"></tbody>
     </table>
-    <div class="note tip" style="margin:12px 0 0"><b>Suica para todo · NO compréis JR Pass.</b> Para este recorrido (base larga en cada ciudad + saltos puntuales) los billetes sueltos salen mucho más baratos que el Pass para los 10. El único billete a reservar con tiempo es el Shinkansen Mishima → Kioto.</div>
-    <div class="note info" style="margin:12px 0 0"><b>🧳 Vais cargando las maletas (sin envío Yamato). Regla única:</b> la maleta va al alojamiento o a una consigna; nunca a escaleras, estanques ni e-bikes. Puntos calientes ya resueltos: <b>Fuji</b> (maletas al ryokan nada más llegar; a Chureito solo con mochila) y <b>Nara</b> (consigna en Kintetsu-Nara mientras veis el parque). Para los 10, <b>maleta de cabina</b> (&lt;55 cm) os ahorra el recargo de equipaje grande del Shinkansen y entra en cualquier taquilla.</div>
+    <div class="note tip" style="margin:12px 0 0"><b>Suica para transporte local; reservas aparte para los trayectos largos.</b> Para esta ruta, billetes sueltos como opción base; calculad el coste antes de comprar un JR Pass. Reservad ambos buses de Fuji, Shinkansen y los servicios con asiento asignado. Suica sola no sustituye el billete del Shinkansen, Narita Express o Rapi:t.</div>
+    <div class="note info" style="margin:12px 0 0"><b>🧳 Equipaje de 10:</b> confirmad depósito y capacidad antes de llegar. En Fuji, consigna en la estación hasta el shuttle de las 15:00; en Nara, depósito atendido como alternativa a las taquillas. Una maleta de cabina facilita el viaje, pero no cabe en cualquier taquilla. En el Shinkansen, si alto + ancho + fondo superan 160 cm (hasta 250 cm), reservad asiento con espacio para equipaje grande: no lleva suplemento si se reserva correctamente. El hueco tras la última fila no es de libre uso.</div>
   </div>
 
   <!-- ACCOMMODATIONS -->
@@ -294,12 +344,12 @@
     <h3>🗻 Fuji · <a href="https://maruei55.com/" target="_blank" rel="noopener noreferrer">Wakakusa no Yado Maruei</a></h3>
     <ul>
       <li><b>Fechas:</b> 10–11 noviembre · 1 noche · ryokan/onsen/kaiseki</li>
-      <li><b>Encaje:</b> alojamiento-evento del viaje. Onsen, cena kaiseki y amanecer de Chureito al día siguiente</li>
+      <li><b>Encaje:</b> alojamiento-evento del viaje. Onsen, cena kaiseki y Chureito al día siguiente si hay visibilidad y taxis confirmados</li>
       <li><b>Ojo:</b> llegar con margen. Para media pensión, tratad la cena como una reserva sagrada; nada de aparecer tarde</li>
-      <li><b>Logística:</b> pickup desde Kawaguchiko Station por la tarde; por la mañana pedid en recepción el shuttle de salida hacia la estación</li>
+      <li><b>Logística:</b> pickup desde Kawaguchiko Station de 15:00 a 17:00, llamando a partir de las 15:00; check-in desde las 15:00 a partir del 1/10/2026. Salida a la estación de 8:00 a 11:00 cada 30 min; confirmad plazas para 10</li>
     </ul>
 
-    <h3>🏠 Kioto · <a href="https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c" target="_blank" rel="noopener noreferrer">Airbnb Kiyomizu/Higashiyama</a></h3>
+    <h3>🏠 Kioto · <a href="https://www.airbnb.es/rooms/25694193" target="_blank" rel="noopener noreferrer">Airbnb Kiyomizu/Higashiyama</a></h3>
     <ul>
       <li><b>Fechas:</b> 11–14 noviembre · 10 viajeros · casa entera</li>
       <li><b>Capacidad:</b> hasta 13 viajeros · 4 dormitorios · 10 camas · 4,5 baños</li>
@@ -312,7 +362,7 @@
       <li><b>Fechas:</b> 14–17 noviembre · base Sakuragawa/Namba</li>
       <li><b>Ubicación:</b> a ~2 min de Sakuragawa y ~10 min de Namba; Dotonbori/Amerikamura andando</li>
       <li><b>Tipo:</b> apartahotel con habitaciones amplias; muy cómodo para grupos</li>
-      <li><b>Ojo:</b> check-in desde las 16:00 y check-out 10:00. Para el vuelo, mejor 2–3 taxis a Nankai Namba</li>
+      <li><b>Ojo:</b> check-in desde las 16:00 y check-out 10:00. Para el vuelo, reservad vehículos con capacidad real para 10 y sus maletas; confirmad la salida anticipada</li>
     </ul>
     <div class="note good" style="margin:12px 0 0"><b>Veredicto:</b> muy buen set. Tokio da conectividad, Maruei da experiencia, Kioto gana alma con Kiyomizu y Osaka queda práctica para Namba sin dormir en pleno ruido.</div>
   </div>
@@ -325,7 +375,7 @@
       <div class="quick-card"><h4>🏨 Alojamiento</h4><div class="mini">
         <a href="https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html" target="_blank" rel="noopener noreferrer">Tokio · Shinjuku Family Apartment</a>
         <a href="https://maruei55.com/" target="_blank" rel="noopener noreferrer">Fuji · Maruei oficial</a>
-        <a href="https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c" target="_blank" rel="noopener noreferrer">Kioto · Airbnb</a>
+        <a href="https://www.airbnb.es/rooms/25694193" target="_blank" rel="noopener noreferrer">Kioto · Airbnb</a>
         <a href="https://www.booking.com/Share-ERq2fM8" target="_blank" rel="noopener noreferrer">Osaka · Abitare Booking</a>
         <a href="https://www.bon-lodging.com/en/hotel-abitare-namba-west/" target="_blank" rel="noopener noreferrer">Osaka · Abitare oficial</a>
       </div></div>
@@ -359,11 +409,11 @@
   <h2 class="sec" id="grupo">Grupo de 10</h2>
   <div class="block">
     <h3>🎯 Regla de oro: 2 grupos de 5 por defecto</h3>
-    <p>Una mesa de 5 entra en casi cualquier sitio sin reserva; una de 10, en casi ninguno. Reservad los 10 juntos SOLO para las 3 cenas-evento (kaiseki del ryokan, despedida Osaka, alguna izakaya señalada). El resto, modo guerrilla en grupos de 5 que se reúnen después.</p>
+    <p>Dividirse en 2 grupos de 5 reduce las esperas, aunque muchos locales pequeños tampoco admiten cinco juntos. Reservad las cenas de grupo y acordad un punto y una hora para reuniros después de comer por separado.</p>
     <h3>🍜 Qué NO necesita reserva</h3>
     <ul>
       <li>Ramen / tsukemen — rotación altísima, asientos individuales. Ichiran (boxes) ideal para grupo</li>
-      <li>Kaiten-zushi (sushi de cinta) — 10 personas repartidas en la barra sin problema</li>
+      <li>Kaiten-zushi (sushi de cinta) — aceptad mesas o turnos separados; puede haber cola</li>
       <li>Cadenas teishoku/gyudon (Matsuya, Yoshinoya) — vuestro almuerzo base, barato y rápido</li>
       <li>Mercados y depachika (Nishiki, Kuromon) — cada uno pilla lo suyo, cero fricción</li>
       <li>Konbini — desayunos de 10 resueltos, ~400–600 ¥/persona</li>
@@ -372,15 +422,15 @@
     <p>Kaiseki del ryokan (Día 7, ya incluido) · cena de despedida Osaka (Día 13) · cualquier izakaya concreto. Un grupo de 10–11 entra perfectamente CON reserva; los izakayas grandes suelen pre-servir el menú (pedid platos que aguanten, la tempura se enfría).</p>
     <h3>🛠️ Cómo reservar siendo extranjeros</h3>
     <ol>
-      <li>Conserje del hotel (mejor arma): el día del check-in, que reserve las cenas-evento para 10. Gratis y en japonés.</li>
-      <li>Apps: Tabelog (la líder, filtra por grupo; comisión ~440 ¥) y TableCheck (sin comisión). Instaladlas todos antes de viajar.</li>
+      <li>Consultad ya a los alojamientos si ayudan con las reservas. Los apartamentos pueden no tener conserjería; no esperéis al check-in para una cena de 10.</li>
+      <li>Tabelog y TableCheck: comprobad aforo, anticipo, gastos de gestión y política de cancelación en cada restaurante. Basta con que una persona coordine cada reserva.</li>
       <li>Servicios de concierge para grupos de 10+ si queréis una cena-evento garantizada.</li>
     </ol>
     <h3>💴 Presupuesto (×10 multiplica todo)</h3>
     <ul>
       <li>Almuerzos baratos (800–1.200 ¥), gasto concentrado en 3 cenas-evento</li>
-      <li>Nomihodai/tabehodai: menú cerrado para grupos ~1.500–2.500 ¥. Predecible y resuelve la reserva</li>
-      <li>Evitad el «impuesto de turista»: una calle más allá del sitio con menú en inglés, mitad de precio</li>
+      <li>Pedid presupuesto para un menú de grupo. El nomihodai suele ser la bebida libre: no asumáis que incluye comida ni que equivale a tabehodai</li>
+      <li>Comparad el precio total, el menú y la reserva; disponer de menú en inglés no indica por sí solo que sea caro</li>
       <li>Contad el otoshi (cubierto obligatorio izakaya, ~300–500 ¥/persona) + posible service charge: con 10 son 3.000–5.000 ¥ antes de pedir</li>
     </ul>
   </div>
@@ -391,43 +441,65 @@
     <p style="margin-bottom:12px">Con los alojamientos cerrados, esto es lo que sigue pudiendo romper el itinerario si se deja para tarde. Por orden práctico:</p>
     <ul>
       <li><b>✅ Alojamiento completo</b> — cerrados Tokio, Maruei/Fuji, Airbnb Kiyomizu/Higashiyama y Hotel Abitare Namba West</li>
-      <li><b>Bus Shinjuku → Kawaguchiko</b> — reservar cuando abra ventana; sois 10 y noviembre/koyo aprieta</li>
-      <li><b>Bus Kawaguchiko → Mishima + Shinkansen Mishima → Kioto</b> — dejadlo atado para no improvisar con maletas</li>
-      <li><b>Universal + Express Pass</b> — online antes de viajar. Si queréis Nintendo, Express con entrada garantizada o app oficial al entrar</li>
-      <li><b>teamLab Planets</b> (~3.600 ¥) — entrada con franja horaria; comprad todos el mismo slot</li>
-      <li><b>Shibuya Sky</b> — sale con ventana corta; apuntad a 16:00–16:30 para atardecer de noviembre</li>
+      <li><b>Bus Shinjuku → Kawaguchiko · martes 10</b> — venta desde un mes antes: comprobar el 10 de octubre. Referencia actual: 2.200 ¥ normal / 2.000 ¥ web; reservar asientos y confirmar capacidad de equipaje</li>
+      <li><b>Bus Kawaguchiko → Mishima + Shinkansen · miércoles 11</b> — elegid primero el bus y después un tren con al menos 60 min de margen. La reserva del bus cambia a Fujiyama Connect desde el 1/10/2026. En SmartEX, máximo 6 personas por reserva: coordinad 2 reservas de 5 en el mismo tren</li>
+      <li><b>Universal · lunes 16</b> — Studio Pass obligatorio; Express Pass opcional y adicional. Para Nintendo, comprobad que el producto incluya acceso al área; la asignación en la app está sujeta a disponibilidad. Horario de noviembre por reconfirmar</li>
+      <li><b>teamLab Planets · lunes 9</b> — tarifa variable; elegid una franja sobre las 10:30 tras Tsukiji y comprobad el calendario de noviembre antes de comprar</li>
+      <li><b>Shibuya Sky · domingo 8</b> — objetivo 15:40–16:00, 3.400 ¥ online desde las 15:00. Venta con 2 semanas de antelación: comprobad la apertura alrededor del 25 de octubre (hora de Japón)</li>
       <li><b>Club Tokio</b> — WOMB / clubasia / ZEROTOKYO según cartel. Sound Museum Vision eliminado: cerrado</li>
       <li><b>Club Osaka</b> — clubJOULE o Circus; mirad cartel 1–2 meses antes</li>
-      <li><b>Cenas-evento de 10</b> — Osaka despedida + una izakaya buena en Kioto vía Tabelog/TableCheck</li>
+      <li><b>Cenas de 10</b> — Osaka despedida a las 19:30 + una izakaya en Kioto; reservar con antelación. Confirmad también menú y restricciones con Maruei</li>
+      <li><b>Taxis y equipaje</b> — Maruei → Chureito ida/vuelta y salida a KIX: vehículo grande o varios taxis reservados. Comprobad consignas para 10 maletas en Fuji y Nara</li>
+      <li><b>Vuelos</b> — contrastad CX567, hora y terminal con el billete. Para una salida a las 09:25, objetivo en KIX 06:25; con equipaje facturado hay que pasar por entrega de maletas aunque el check-in sea online</li>
     </ul>
   </div>
 
   <!-- TIMING -->
   <h2 class="sec" id="ajustes">Ajustes de tiempo</h2>
   <div class="block">
-    <p>Comparado con itinerarios de referencia (first-timers 2025–26), este plan es más eficiente y mejor secuenciado que la media. Solo 3 cosas que vigilar:</p>
+    <p>El plan funciona mejor con dos o tres prioridades al día. Estos son los recortes previstos para no convertir cada retraso en una carrera.</p>
     <h3>Flexibilizar</h3>
     <ol>
-      <li>Día 9 (Kioto) es el único sin colchón. Trata Nijo como opcional: si vais arrastrándoos a las 15h, saltadlo</li>
-      <li>Fushimi Inari: 2–2,5h bastan si no subís a la cima. La mayoría lo ve en menos de 1h</li>
-      <li>Meiji Jingu (Día 4): recortable si vais lentos — repite «templo» con Senso-ji</li>
+      <li>Tras las fiestas de Tokio y Osaka, empezad más tarde. Quien quiera madrugar puede hacer la primera visita por su cuenta.</li>
+      <li>Chureito depende del tiempo y de los taxis. Si amenaza el desayuno o el bus, disfrutad del Fuji desde el ryokan.</li>
+      <li>Fushimi Inari el día de traslado es opcional. Alternativa: hacerlo el viernes por la tarde sustituyendo Heian/Philosopher's Path/Ginkaku-ji.</li>
+      <li>Arashiyama + Kinkaku-ji + Ryoan-ji ya completan el jueves. Monkey Park o Nijo requieren sustituir otra visita.</li>
+      <li>El este de Kioto supera los 4–5 km al sumar desvíos y visitas. Reservad margen y presupuesto para bus o taxi.</li>
     </ol>
-    <h3>Lo que ya está bien (no tocar)</h3>
+    <h3>Mantener</h3>
     <ul>
-      <li>Sin Tokyo Skytree → evita torre redundante con Shibuya Sky</li>
-      <li>Arashiyama a las 7:45h → esquiva la masificación</li>
-      <li>No mezcla Arashiyama con Fushimi → evita el cruce de ciudad</li>
-      <li>Nara de camino a Osaka → coste cero en transporte</li>
+      <li>Las cuatro bases y las 13 noches: reducen cambios de alojamiento.</li>
+      <li>Kamakura y Universal entre semana, aunque no garantizan menos colas.</li>
+      <li>Nara en el cambio a Osaka evita otra excursión de ida/vuelta, pero tiene coste y depende del depósito de maletas.</li>
     </ul>
     <div class="note info" style="margin:14px 0 0"><b>🍁 Realidad del koyo (importante):</b> en Kioto el pico de arces (rojo intenso) suele caer en la ÚLTIMA semana de noviembre / principios de diciembre. A mediados de mes (vuestros días 12–13) lo normal es koyo TEMPRANO: verde-amarilleando con rojos sueltos, no la postal incendiada. Sigue siendo precioso, pero ajustad expectativas con el grupo. Si buscáis rojo de verdad, las cotas altas (Kibune/Kurama o el norte de Arashiyama) cambian unos días antes que el centro.</div>
   </div>
 
+  <h2 class="sec" id="fuentes">Fuentes y comprobaciones</h2>
+  <div class="block">
+    <p>Revisión del 11/09/2026. Los precios son por adulto; tarifas variables, trenes concretos y horarios de noviembre se deben contrastar al reservar. Las reservas de alojamiento se mantienen según el plan original; esta revisión no comprueba localizadores ni emite billetes.</p>
+    <ul><li><a href="https://maruei55.com/question.html" target="_blank" rel="noopener noreferrer">Maruei · check-in desde octubre, shuttle y comidas</a></li>
+<li><a href="https://www.fujikyucitybus.com/highwaybus/kawaguchiko.html" target="_blank" rel="noopener noreferrer">Fujikyu · bus Kawaguchiko–Mishima y cambio de reservas</a></li>
+<li><a href="https://www.jreast.co.jp/en/multi/nex/tickets/" target="_blank" rel="noopener noreferrer">JR East · Narita Express, tarifas</a></li>
+<li><a href="https://smart-ex.jp/en/product/plan/service/pdf/service-reserve_price.pdf" target="_blank" rel="noopener noreferrer">SmartEX · tarifas de asientos reservados (PDF)</a></li>
+<li><a href="https://global.jr-central.co.jp/en/info/oversized-baggage/" target="_blank" rel="noopener noreferrer">JR Central · equipaje grande</a></li>
+<li><a href="https://www.shibuya-scramble-square.com/sky/ticket/" target="_blank" rel="noopener noreferrer">Shibuya Sky · entradas y ventana de venta</a></li>
+<li><a href="https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s1311.html" target="_blank" rel="noopener noreferrer">NAOJ · puesta de sol de Tokio en noviembre 2026</a></li>
+<li><a href="https://www.tsukiji.or.jp/english/" target="_blank" rel="noopener noreferrer">Tsukiji · calendario y recomendaciones</a></li>
+<li><a href="https://teamlabplanets.dmm.com/en" target="_blank" rel="noopener noreferrer">teamLab Planets · entradas, calendario y acceso</a></li>
+<li><a href="https://www.himejicastle.jp/en/" target="_blank" rel="noopener noreferrer">Himeji Castle · tarifas 2026</a></li>
+<li><a href="https://www.todaiji.or.jp/information/haikan/" target="_blank" rel="noopener noreferrer">Todai-ji · horarios y tarifas</a></li>
+<li><a href="https://www.osakacastle.net/guide/" target="_blank" rel="noopener noreferrer">Osaka Castle · guía de visita</a></li>
+<li><a href="https://bus.fujikyu.co.jp/en/highway/fujisan/shinjuku-kawaguchiko/" target="_blank" rel="noopener noreferrer">Fujikyu · bus Shinjuku–Kawaguchiko</a></li>
+<li><a href="https://www.cathaypacific.com/cx/en_US/destinations/airports/kansai-international-airport.html" target="_blank" rel="noopener noreferrer">Cathay Pacific · mostradores en KIX</a></li>
+<li><a href="https://www.nankai.co.jp/en_railway/traffic/express/rapit.html" target="_blank" rel="noopener noreferrer">Nankai · horario y acceso al aeropuerto</a></li></ul>
+  </div>
   <div class="divider"></div>
   <footer>
     <div class="jp">いってらっしゃい</div>
     <p style="margin-top:6px">¡Buen viaje! 🍁</p>
   </footer>
-</div>
+</main>
 
 <nav class="bottom">
   <a href="#resumen"><span class="ico">📋</span>Resumen</a>
@@ -442,7 +514,7 @@
 <script>
 // ---------- DATA ----------
 const SITE_LINKS = {
-  "Airbnb Kiyomizu/Higashiyama": "https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14&location=Gion%2C%20Prefectura%20de%20Kioto%2C%20Jap%C3%B3n&search_mode=regular_search&source_impression_id=p3_1782772601_P3EBdPzJUX8wRlv-&previous_page_section_name=1001&federated_search_id=ddf01988-004b-4b20-89c0-447e8260691c",
+  "Airbnb Kiyomizu/Higashiyama": "https://www.airbnb.es/rooms/25694193",
   "Shinjuku Family Apartment": "https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html",
   "Hotel Abitare Namba West": "https://www.booking.com/Share-ERq2fM8",
   "Universal Studios Japan": "https://www.usj.co.jp/web/en/us",
@@ -455,7 +527,7 @@ const SITE_LINKS = {
   "Castillo de Osaka": "https://www.google.com/maps/search/?api=1&query=Osaka+Castle",
   "Gyukatsu Motomura": "https://www.google.com/maps/search/?api=1&query=Gyukatsu+Motomura+Shibuya",
   "Shibuya Crossing": "https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing",
-  "Airbnb Kiyomizu": "https://www.airbnb.es/rooms/25694193?adults=10&check_in=2026-11-11&check_out=2026-11-14",
+  "Airbnb Kiyomizu": "https://www.airbnb.es/rooms/25694193",
   "Chao Chao Gyoza": "https://www.google.com/maps/search/?api=1&query=Chao+Chao+Gyoza+Kyoto",
   "Chureito Pagoda": "https://www.google.com/maps/search/?api=1&query=Chureito+Pagoda",
   "Hozenji Yokocho": "https://www.google.com/maps/search/?api=1&query=Hozenji+Yokocho+Osaka",
@@ -559,118 +631,973 @@ const SITE_LINKS = {
 };
 
 function escapeRegExp(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+const linkPattern = new RegExp(`(^|[^\\p{L}\\p{N}])(${Object.keys(SITE_LINKS).sort((a,b)=>b.length-a.length).map(escapeRegExp).join('|')})(?=$|[^\\p{L}\\p{N}])`, 'gu');
 function linkify(html){
   if(!html) return html;
-  let out = String(html);
-  const entries = Object.entries(SITE_LINKS).sort((a,b)=>b[0].length-a[0].length);
-  for(const [label,url] of entries){
-    const saved=[];
-    out = out.replace(/<a\b[^>]*>.*?<\/a>/gi, m => `@@LINK${saved.push(m)-1}@@`);
-    const re = new RegExp(`(^|[^\\p{L}\\p{N}])(${escapeRegExp(label)})(?=$|[^\\p{L}\\p{N}])`, 'gu');
-    out = out.replace(re, `$1<a href="${url}" target="_blank" rel="noopener noreferrer">$2</a>`);
-    out = out.replace(/@@LINK(\d+)@@/g, (_,i) => saved[Number(i)] || '');
+  const template = document.createElement('template');
+  template.innerHTML = String(html);
+  const walker = document.createTreeWalker(template.content, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while(walker.nextNode()){
+    const node = walker.currentNode;
+    if(!node.parentElement?.closest('a,script,style,textarea,code,pre')) nodes.push(node);
   }
-  return out;
+  for(const node of nodes){
+    const fragment = document.createDocumentFragment();
+    let end = 0;
+    linkPattern.lastIndex = 0;
+    for(const match of node.data.matchAll(linkPattern)){
+      const start = match.index + match[1].length;
+      fragment.append(document.createTextNode(node.data.slice(end, start)));
+      const link = document.createElement('a');
+      link.href = SITE_LINKS[match[2]];
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.textContent = match[2];
+      fragment.append(link);
+      end = start + match[2].length;
+    }
+    if(end){
+      fragment.append(document.createTextNode(node.data.slice(end)));
+      node.replaceWith(fragment);
+    }
+  }
+  return template.innerHTML;
 }
 
 const overview = [
-  ["01","Mié 4","Llegada · Shinjuku nocturno"],
-  ["02","Jue 5","Kamakura + Enoshima"],
-  ["03","Vie 6","Akiba→Asakusa→Yanaka · <span class='ov-fiesta'>🎉 FIESTA Shibuya</span>"],
-  ["04","Sáb 7","Harajuku→Shibuya→Shimokitazawa"],
-  ["05","Dom 8","Hamarikyu→Tsukiji→Ginza→Shibuya Sky"],
-  ["06","Lun 9","teamLab Planets→Odaiba"],
-  ["07","Mar 10","Tokio→Kawaguchiko · Maruei + Onsen"],
-  ["08","Mié 11","Amanecer Chureito→Kioto · Fushimi + base Kiyomizu"],
-  ["09","Jue 12","Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo"],
-  ["10","Vie 13","Kiyomizudera→Higashiyama→Ginkaku-ji"],
-  ["11","Sáb 14","Nara→Osaka Abitare Namba West · <span class='ov-fiesta'>🎉 FIESTA Namba</span>"],
-  ["12","Dom 15","Osaka clásica: Castillo→Shinsekai→Kuromon"],
-  ["13","Lun 16","GRUPO DIVIDIDO: Universal / Himeji"],
-  ["14","Mar 17","Osaka→KIX→Vuelo CX567 09:25"],
+  [
+    "01",
+    "Mié 4",
+    "Llegada · Shinjuku nocturno"
+  ],
+  [
+    "02",
+    "Jue 5",
+    "Kamakura + Enoshima"
+  ],
+  [
+    "03",
+    "Vie 6",
+    "Akiba→Asakusa→Yanaka · <span class='ov-fiesta'>🎉 FIESTA Shibuya</span>"
+  ],
+  [
+    "04",
+    "Sáb 7",
+    "Harajuku→Shibuya→Shimokitazawa"
+  ],
+  [
+    "05",
+    "Dom 8",
+    "Hamarikyu → Ginza → Shibuya Sky 15:40"
+  ],
+  [
+    "06",
+    "Lun 9",
+    "Tsukiji → teamLab Planets → Odaiba"
+  ],
+  [
+    "07",
+    "Mar 10",
+    "Tokio→Kawaguchiko · Maruei + Onsen"
+  ],
+  [
+    "08",
+    "Mié 11",
+    "Chureito opcional → Kioto · Fushimi si hay margen"
+  ],
+  [
+    "09",
+    "Jue 12",
+    "Arashiyama → Kinkaku-ji → Ryoan-ji"
+  ],
+  [
+    "10",
+    "Vie 13",
+    "Kiyomizudera→Higashiyama→Ginkaku-ji"
+  ],
+  [
+    "11",
+    "Sáb 14",
+    "Nara→Osaka Abitare Namba West · <span class='ov-fiesta'>🎉 FIESTA Namba</span>"
+  ],
+  [
+    "12",
+    "Dom 15",
+    "Osaka flexible: Kuromon → Castillo"
+  ],
+  [
+    "13",
+    "Lun 16",
+    "GRUPO DIVIDIDO: Universal / Himeji"
+  ],
+  [
+    "14",
+    "Mar 17",
+    "Osaka→KIX→Vuelo CX567 09:25"
+  ]
 ];
 
 const days = [
-  {n:"01",date:"MIÉ 4 NOV",name:"🛬 Llegada · Shinjuku nocturno",base:"Tokio — Shinjuku Family Apartment (6 noches)",
-   sched:[["14:10","✈️ Aterrizaje Narita T2"],["14:45","🎫 Comprar/activar Suica. NO compréis JR Pass"],["15:10","🚆 Narita Express → Shinjuku (59 min, ~3.070 ¥)"],["16:15","🏨 Check-in. Dejar maletas"],["17:30","🌆 Paseo Shinjuku: Kabukicho, neones"],["19:00","🍜 Cena: ramen en Fuunji o Ichiran"],["21:00","🥃 Opcional: Golden Gai"]],
-   notes:[["tip","<b>Día suave:</b> jet lag garantizado. No programar nada exigente."],["info","<b>🏨 Base Tokio confirmada:</b> <a href='https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html' target='_blank'>Shinjuku Family Apartment</a> (6 noches). Muy buen encaje por conectividad y vida nocturna. Confirmad baños/ascensor/consigna, porque en Tokio los apartamentos familiares pueden ser compactos."]]},
-
-  {n:"02",date:"JUE 5 NOV",name:"🌊 Excursión Kamakura + Enoshima",base:"Tokio — Shinjuku Family Apartment",
-   notes:[["good","<b>✅ Movido a entre semana:</b> Kamakura+Enoshima en sábado de koyo es una romería; el jueves está mucho más tranquilo."]],
-   sched:[["07:30","🚆 Shinjuku → Kamakura (JR, 59 min, ~940 ¥)"],["08:30","🏯 Gran Buda (Kotoku-in), 300 ¥"],["09:30","🌸 Hase-dera — jardín y vistas al mar, 400 ¥"],["11:00","🚶 Komachi-dori — tiendas y dulces"],["12:00","🐟 Almuerzo: shirasu-don (local)"],["13:00","🚋 Enoden a Enoshima (tren costa vintage, 30 min)"],["13:30","🏝️ Enoshima — puente, pagoda, cuevas Iwaya"],["16:00","🌅 Atardecer marítimo — Fuji en días claros"],["17:00","🚆 Odakyu → Shinjuku (~70 min)"]],
-   notes2:[["warn","<b>Día de ~30.000 pasos.</b> Zapatillas cómodas. Plan B si flaqueáis: saltad las cuevas y quedaos con el faro y el atardecer."]]},
-
-  {n:"03",date:"VIE 6 NOV",name:"🏮 Akihabara→Asakusa→Ueno→Yanaka",base:"Tokio — Shinjuku Family Apartment",fiesta:true,
-   geo:"Ruta lineal NE: Akihabara → Asakusa → Ueno → Yanaka.",
-   sched:[["10:00","🎮 Akihabara — anime/manga/gaming, arcades"],["12:30","🍜 Almuerzo Akiba"],["13:30","🚆 Tren a Asakusa (Ginza Line, 3 min)"],["14:00","🏯 Senso-ji — Kaminarimon, Nakamise"],["15:30","🦒 Ueno Park"],["16:30","🏘️ Yanaka Ginza — barrio old-school, gatos"],["18:30","🍢 Cena temprana en Ueno o cambiarse en hotel"],["20:30","🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"],["21:00","🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"],["23:00","🍜 Picoteo o ramen antes del club"],["00:00","🕺 CLUB: WOMB o clubasia si queréis Shibuya; ZEROTOKYO si preferís volver hacia Shinjuku. Entrada ~2.000–4.000 ¥ según evento. Hasta ~5h"]],
-   notes:[["warn","<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> WOMB sigue siendo el club referencia en Shibuya; clubasia también encaja si el cartel mola. ZEROTOKYO es alternativa potente en Kabukicho, cerca de vuestra base. Para 10: id antes de medianoche para evitar la cola y entrad juntos. Sound Museum Vision queda eliminado porque cerró permanentemente."]]},
-
-  {n:"04",date:"SÁB 7 NOV",name:"🏙️ Harajuku→Omotesando→Shibuya→Shimokitazawa",base:"Tokio — Shinjuku Family Apartment",
-   geo:"Ruta lineal sur. Sábado = ambiente joven, perfecto para esta zona.",
-   sched:[["09:00","⛩️ Meiji Jingu <span class='badge b-opt'>recortable</span> — bosque de 70.000 árboles"],["10:30","🛍️ Takeshita St (Harajuku) — kawaii, crepes"],["11:30","🌿 Omotesando — diseño y arquitectura"],["13:00","🍱 Almuerzo: Gyukatsu Motomura"],["14:30","🚦 Shibuya Crossing — foto desde Starbucks"],["15:30","🛒 Scramble Square / Shibuya 109"],["17:00","🎸 Shimokitazawa — vintage, vinilos"],["19:30","🍢 Cena en Shimokitazawa: izakaya local"]],
-   notes:[["info","<b>Meiji recortable:</b> es más paseo de bosque que templo y repite con Senso-ji (Día 3). Si vais lentos esa mañana, saltadlo."]]},
-
-  {n:"05",date:"DOM 8 NOV",name:"🎨 Hamarikyu→Tsukiji→Ginza→Shibuya Sky",base:"Tokio — Shinjuku Family Apartment",
-   geo:"Hamarikyu y Tsukiji a 10 min a pie. Ginza a 15 min. Luego Shibuya en metro.",
-   sched:[["09:00","🌿 Jardines Hamarikyu — shogunal, ~300 ¥"],["10:30","🦞 Mercado Tsukiji — el mejor picoteo de Tokio"],["12:30","💎 Ginza — Itoya (papelería 12 plantas, gratis)"],["14:30","🚇 Vuelta a Shibuya. Descanso / Tokyu Hands"],["17:00","🌅 Shibuya Sky — mirador 360°, ~2.000 ¥. Atardecer brutal"],["19:30","🎤 Karaoke en grupo (Big Echo)"],["22:00","🥃 Cócteles en Shinjuku"]],
-   notes:[["warn","<b>⚠️ RESERVA:</b> Shibuya Sky antes de viajar. El slot de atardecer (17:00–18:00) se agota."]]},
-
-  {n:"06",date:"LUN 9 NOV",name:"🎭 teamLab Planets→Odaiba→Despedida Tokio",base:"Tokio — Shinjuku Family Apartment (última noche)",
-   notes:[["good","<b>✅ Lunes esquiva el finde.</b> teamLab no cierra hasta finales de 2027 y se amplió 1,5× en 2025 — calcula 2h. Sus cierres publicados (jun/jul) NO afectan a noviembre, pero reconfirma el calendario."]],
-   sched:[["10:00","🎨 teamLab Planets (Toyosu) — ~3.600 ¥. Primer slot = menos cola. ~2h"],["12:00","🌉 Odaiba — Estatua Libertad, Rainbow Bridge"],["13:00","🍱 Almuerzo en DiverCity / Aqua City"],["14:30","🤖 Opcional: Gundam tamaño real (gratis)"],["16:30","🚆 Vuelta al centro. Duchazo, maletas"],["20:00","🥂 Última noche: Omoide Yokocho o Golden Gai"]],
-   notes2:[["info","<b>Horario teamLab:</b> 8:30–22:00, última entrada 1h antes. Puede haber 30–60 min de espera aunque tengáis hora. Comprad todos a la vez para coincidir en slot."]]},
-
-  {n:"07",date:"MAR 10 NOV",name:"🗻 Tokio→Kawaguchiko · Maruei + Onsen ⭐",base:"Kawaguchiko — Wakakusa no Yado Maruei (ÚNICA noche)",
-   notes:[["good","<b>✅ Fuji a 1 noche.</b> Conservas lo esencial: ryokan/onsen/kaiseki + amanecer en Chureito. La noche ganada va a Osaka. <b>El Fuji se esconde a menudo tras nubes</b> y con una sola noche no hay segundo intento: onsen + kaiseki + azotea ya justifican la parada pase lo que pase."],["info","<b>🏨 <a href='https://maruei55.com/' target='_blank'>Maruei</a> · reserva confirmada.</b> Si tenéis opción, confirmad lado FUJI. Las habitaciones son lado-Fuji O lado-lago (no se ven ambos). El rotenburo con Fuji lo tenéis igualmente en el baño público <b>«Fuji no Yu»</b> y en la azotea 360°, así que el lado de la habitación solo decide la vista de vuestra ventana."],["warn","<b>🧳 OJO logística (el Maruei no está a pie de estación):</b> está a ~8-15 min y su shuttle solo opera <b>14:00–17:00</b>. A las 11h NO hay shuttle → dejad las maletas en la <b>consigna de la estación de Kawaguchiko</b>, haced e-bikes/almuerzo cerca, y subid al hotel en el shuttle a partir de las 14:00 (llamadles al llegar)."]],
-   sched:[["08:30","🧳 Check-out Shinjuku. Ir a Busta Shinjuku (planta 4)"],["09:00","🚌 Bus Keio → Kawaguchiko (2h, ~1.800 ¥)"],["11:00","🏔️ Llegada Kawaguchiko Station. Primera vista al Fuji"],["11:15","🔐 Maletas a consigna en la estación (no hay shuttle hasta las 14h)"],["11:45","🚲 e-bikes para rodear el lago (solo mochila)"],["13:00","🍜 Almuerzo: Hoto Fudou (local)"],["14:00","📞 Recoger maletas. Llamar al Maruei → shuttle desde la estación"],["14:30","🏨 Check-in Maruei (lado Fuji). Té verde. <b>Check-in ANTES de las 17:00</b>"],["15:30","♨️ Onsen «Fuji no Yu» — rotenburo con Fuji + azotea 360°"],["18:30","🍱 Cena kaiseki — <b>empieza SÍ o SÍ antes de las 19:00</b>"],["21:00","🌙 Onsen nocturno"]],
-   notes2:[["warn","<b>✅ MARUEI CERRADO:</b> ahora lo importante es <b>asiento en el bus Keio</b> (en koyo se llena; bodega de maletas limitada). <b>Reglas estrictas:</b> check-in ≤17:00 y la cena arranca ≤19:00 o retiran el servicio sin reembolso. <b>El Maruei NO adapta menús a alergias ni restricciones</b> — si alguien del grupo tiene algo, confirmadlo por escrito antes de cerrar."]]},
-
-  {n:"08",date:"MIÉ 11 NOV",name:"🌄 Amanecer Chureito→Kioto·Fushimi",base:"Kioto — Airbnb Kiyomizu/Higashiyama (1ª de 3)",
-   notes:[["tip","<b>Día doble:</b> exprimís el amanecer de Fuji y vais DIRECTOS a Kioto. La nueva base en <b>Kiyomizu/Higashiyama</b> es mucho más bonita que Nijo para vivir Kioto a pie."],["good","<b>🏨 Airbnb Kiyomizu:</b> casa entera para hasta 13 viajeros, 4 dormitorios, 10 camas y 4,5 baños. Está anunciada a 1 min de Kiyomizu-dera, con check-in autónomo desde las 15:00 y salida antes de las 10:00."],["warn","<b>🧳 Punto crítico:</b> al ser Airbnb, NO asumáis consigna antes del check-in. Pedid al anfitrión dejar maletas; si dice que no, dejadlas en Kyoto Station antes de ir a Fushimi Inari."]],
-   sched:[["05:30","⏰ Despertar muy temprano. Taxi a Fujiyoshida (solo mochila)"],["06:15","📸 Chureito Pagoda — 398 escalones. Foto icónica al amanecer. Hay rampa suave. Gratis. Abrigaos: a esa hora baja de 5 °C"],["08:00","🍳 Vuelta al Maruei: desayuno japonés"],["09:15","🧳 Check-out. Shuttle Maruei → Kawaguchiko Station (pedidlo la víspera/en desayuno)"],["09:45","🚌 Bus Kawaguchiko → Mishima (~60 min, ~1.500 ¥)"],["11:15","🚄 Shinkansen Mishima → Kioto (Hikari, ~1h40, ~6.500 ¥). Asiento derecha (D/E) para el Fuji"],["13:00","🚄 Llegada Kioto. Plan A: taxi al Airbnb si el anfitrión acepta dejar maletas. Plan B: consigna/equipaje en Kyoto Station"],["14:15","🦊 Fushimi Inari — torii naranjas. A Yotsutsuji (~45 min) o parte baja (~1h). Gratis, 24h. <b>Solo mochila</b>"],["16:45","🏠 Check-in Airbnb Kiyomizu/Higashiyama. Duchazo y descanso"],["18:30","🌆 Ninenzaka/Sannenzaka + paseo a Gion/Hanamikoji al atardecer"],["20:00","🍶 Cena en Gion/Pontocho. Vuelta andando o taxi corto"]],
-   notes2:[["warn","<b>🚕 Mañana Fuji:</b> a Chureito vais en taxi sí o sí (pedidlo la víspera en recepción; a las 5:30 no se coge al vuelo). Para salir hacia Kawaguchiko Station usad el shuttle matinal del Maruei y confirmad que el bus a Mishima de las 9:45 admite vuestras maletas."],["info","<b>🚄 Maletas en el Shinkansen:</b> el equipaje normal (suma de medidas <160 cm) va detrás de la última fila o en las baldas. Reservad para los 10 los asientos de la <b>ÚLTIMA FILA</b> del vagón (usáis el hueco trasero) o la zona de equipaje grande. <b>Oshino Hakkai sale del plan</b> por las maletas; si lo queréis, dejadlas en la consigna de la estación de Kawaguchiko y hacedlo en bus ida/vuelta antes de coger el de Mishima."],["tip","<b>Fushimi Inari: 2–2,5h bastan</b> si no subís a la cima. Tarde-noche tiene mucha menos gente (y es gratis)."]]},
-
-  {n:"09",date:"JUE 12 NOV",name:"🎋 Arashiyama→Kinkaku-ji→Ryoan-ji→Nijo",base:"Kioto — Airbnb Kiyomizu/Higashiyama",
-   geo:"Todo el noroeste: Arashiyama → Kinkaku-ji (40 min bus) → Ryoan-ji (10 min a pie) → Nijo.",
-   sched:[["06:45","⏰ Madrugar es ESENCIAL. Desde Kiyomizu salid antes: taxi/bus a Kyoto Station + Sagano Line, o taxi directo si el grupo va lento"],["07:45","🎋 Bosque de bambú — antes de las 8h. A las 10h es romería"],["08:30","⛩️ Tenryu-ji — jardín zen UNESCO, ~500 ¥"],["09:30","🐒 Opcional: Iwatayama Monkey Park"],["10:30","🚌 Bus a Kinkaku-ji (~40 min)"],["11:00","✨ Kinkaku-ji — templo dorado. A mediados de nov, koyo temprano: primeros rojos/amarillos"],["12:00","🪨 Ryoan-ji — jardín zen de piedras"],["13:00","🍱 Almuerzo: tofu kaiseki"],["15:00","🏰 Nijo <span class='badge b-opt'>opcional</span> — suelos «nightingale»"],["17:30","🛍️ Vuelta a Gion. Compras"],["19:30","🍣 Cena: Musashi Sushi (cinta) o izakaya"]],
-   notes:[["warn","<b>⚠️ El día más denso:</b> único día de Kioto sin colchón. La base en Kiyomizu es preciosa, pero os penaliza un poco para Arashiyama: salid 15–20 min antes. Si a las 15h vais arrastrándoos, saltad Nijo: Arashiyama + Kinkaku-ji + Ryoan-ji ya es un día redondo."]]},
-
-  {n:"10",date:"VIE 13 NOV",name:"🌸 Kiyomizudera→Higashiyama→Path→Ginkaku-ji",base:"Kioto — Airbnb Kiyomizu/Higashiyama (última noche)",
-   geo:"Ruta a pie por el este: 4–5 km lineales sur→norte, cero transporte.",
-   sched:[["07:30","⛩️ Kiyomizudera — lo tenéis literalmente al lado. Entrad antes de la masa de buses. A mediados de nov, koyo temprano (rojos parciales)"],["09:30","🚶 Ninenzaka + Sannenzaka — callejuelas, casas de té"],["11:00","🌿 Heian Jingu y jardines, ~600 ¥"],["12:30","🍱 Almuerzo: Omen (udon)"],["13:30","🚶 Philosopher's Path — 2 km junto al canal, primeras hojas de otoño"],["14:30","🌿 Ginkaku-ji (Pabellón de Plata)"],["16:30","🛍️ Compras: té, cerámica, incienso"],["19:00","🎎 Cena despedida Kioto: Chao Chao Gyoza o Nishiki"]],
-   notes:[["good","<b>✅ Este alojamiento clava el Día 10:</b> salir andando a Kiyomizudera temprano es exactamente lo que queréis en noviembre. Nara se hace mañana de camino a Osaka (coste cero en transporte)."],["warn","<b>Regla de convivencia:</b> zona residencial/turística estrecha. Nada de ruido fuerte al volver de cenar; el anuncio lo marca expresamente."]]},
-
-  {n:"11",date:"SÁB 14 NOV",name:"🦌 Nara→Osaka→Dotonbori",base:"Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, 1ª de 3)",fiesta:true,
-   geo:"Nara está entre Kioto y Osaka. Nara por la mañana, llegada a Osaka por la tarde.",
-   sched:[["08:00","🧳 Check-out Airbnb (salida antes de las 10:00). Taxis a Kyoto Station/Kintetsu Kyoto con las 10 maletas"],["08:45","🚆 Kioto → Nara (Kintetsu, ~45 min, ~760 ¥). Bajáis en Kintetsu-Nara, pegado al parque"],["09:15","🔐 Consigna en Kintetsu-Nara: dejar TODAS las maletas (es vuestra estación de salida a Osaka)"],["09:30","🦌 Nara Park — 1.200 ciervos. Sembei ~200 ¥ (solo mochila)"],["10:00","🏯 Todai-ji — mayor Buda de bronce (15 m), 600 ¥"],["11:30","⛩️ Kasuga Taisha — 3.000 linternas"],["13:00","🍱 Almuerzo: kakinoha-zushi"],["14:30","🚆 Recoger maletas. Nara → Osaka-Namba (Kintetsu, 35 min)"],["15:30","🏨 Llegada Hotel Abitare Namba West. Check-in oficial desde las 16:00; si llegáis antes, pedir consigna"],["16:15","😴 SIESTA estratégica antes de la noche"],["18:00","🦑 Dotonbori — Glico, takoyaki. Empieza la noche"],["19:30","🍢 Cena: yakiniku/okonomiyaki. Nomihodai (~1.500–2.500 ¥/90 min)"],["21:30","🍻 Bar-hopping por Soemoncho y el canal"],["23:30","🕺 CLUB: Joule (Amerikamura) o Circus. Entrada ~2.000–3.000 ¥. Hasta ~5h"]],
-   notes:[["warn","<b>🎉 FIESTA OSAKA (sábado · noche fuerte):</b> el sábado es la mejor noche y Namba es el epicentro: Dotonbori + Soemoncho + Amerikamura, todo andando desde Abitare/Sakuragawa. Joule es el club serio de electrónica. Como la fiesta gorda va hoy (no la última noche), podéis darlo todo sin pagar el madrugón del vuelo. La siesta tras el check-in es clave: venís de Nara + traslado."],["info","<b>🔐 Consigna en Nara:</b> taquillas en Kintetsu-Nara (y oficina de equipaje detrás de las taquillas si se llenan en koyo). Con 10 maletas, al bajar del tren id un par directos a por las taquillas grandes. El parque está a 5 min andando: cero maletas entre los ciervos."],["good","<b>🏨 Hotel Abitare Namba West:</b> apartahotel en Saiwaicho/Sakuragawa, a ~2 min de Sakuragawa y ~10 min de Namba. Muy buen encaje para Dotonbori, Amerikamura y salir de noche."]]},
-
-  {n:"12",date:"DOM 15 NOV",name:"🏯 Osaka clásica",base:"Osaka — Hotel Abitare Namba West (Sakuragawa/Namba)",
-   geo:"Castillo (norte) → Shinsekai (sur) → Kuromon y Amerikamura (Namba). Domingo: evitamos Universal (finde = colas máximas).",
-   sched:[["09:00","🏯 Castillo de Osaka — koyo + museo Sengoku, ~600 ¥"],["11:00","🌆 Mirador, fosos y murallas"],["12:00","🚇 Metro a Shinsekai (~20 min)"],["12:30","🍢 Almuerzo: kushikatsu (NO mojar dos veces). Daruma"],["14:00","🗼 Tsutenkaku Tower — icono retro"],["15:30","🐙 Kuromon Ichiba — fugu, wagyu, ostras. Para picar"],["17:00","👟 Amerikamura — moda alternativa, vinilos"],["19:00","🌆 Umeda Sky Building — mirador flotante 360°"],["21:00","🍺 Hozenji Yokocho + bares de Namba"]]},
-
-  {n:"13",date:"LUN 16 NOV",name:"🎢 GRUPO DIVIDIDO: Universal / Himeji",base:"Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, última noche)",
-   notes:[["good","<b>⭐ Por qué hoy:</b> el lunes es el mejor día de la ventana para Universal (sábado y domingo son los más concurridos). Un subgrupo a Universal, otro a Himeji, y todos a la cena de despedida."]],
-   sched:[["—","🎢 SUBGRUPO A — UNIVERSAL STUDIOS"],["07:30","🚆 Sakuragawa/Namba → Universal City (~25–35 min, cambio en Nishikujo)"],["08:00","🎫 Llegar antes de apertura. Entrada + Express Pass YA comprados online"],["08:30","🎮 A Super Nintendo World o Harry Potter primero"],["—","🏯 SUBGRUPO B — HIMEJI"],["08:30","🚆 Namba → Himeji (~1h15, ~1.520 ¥)"],["10:00","🏯 Castillo «Garza Blanca», ~1.000 ¥"],["12:00","🌿 Jardín Koko-en — koyo temprano (rojos parciales a mediados de nov)"],["13:00","🍱 Almuerzo: anago (anguila local)"],["17:30","🚆 Vuelta a Namba para la cena común"],["—","🍻 REUNIÓN — CENA DE DESPEDIDA"],["19:30","📱 Check-in online vuelo CX567 (sobrios) + maletas casi listas"],["20:30","🥂 Cena despedida: yakiniku/okonomiyaki. Nomihodai"],["22:30","🍶 Última ronda tranquila: Hozenji Yokocho"],["00:00","🛏️ A la cama — el vuelo sale a las 9:25"]],
-   notes2:[["info","<b>Despedida suave a propósito:</b> la fiesta fuerte ya fue el sábado, así que hoy es cena + bares tranquilos sin destrozar el madrugón. ⚠️ Comprad Universal + Express Pass online antes de viajar: en koyo es casi obligatorio."]]},
-
-  {n:"14",date:"MAR 17 NOV",name:"✈️ Osaka → KIX → Vuelo CX567 09:25",base:"Osaka → ✈️ Vuelo a casa",
-   geo:"Check-in online la víspera + taxis a Nankai Namba + tren de las 6:35h aprox. = llegada KIX con margen suficiente.",
-   sched:[["06:00","⏰ Despertar. Maletas listas. Check-out express"],["06:15","🚕 2–3 taxis cortos a Nankai Namba. Con 10 maletas NO apuréis andando desde Sakuragawa"],["06:35","🚆 Nankai Namba → KIX (Rapi:t/express, ~37–45 min según tren)"],["07:15","🛫 KIX. Check-in hecho → directos a seguridad"],["09:25","✈️ CX567 despega. Sayonara, Japón"]]},
+  {
+    "n": "01",
+    "date": "MIÉ 4 NOV",
+    "name": "🛬 Llegada · Shinjuku nocturno",
+    "base": "Tokio — Shinjuku Family Apartment (6 noches)",
+    "sched": [
+      [
+        "14:10",
+        "✈️ Aterrizaje Narita T2 — hora del plan original; contrastar con el billete"
+      ],
+      [
+        "15:30",
+        "🛂 Objetivo orientativo: inmigración, recogida de equipaje y Suica. Para 10, reservad 90–120 min desde el aterrizaje"
+      ],
+      [
+        "16:00",
+        "🚆 Narita Express → Shinjuku. Aproximadamente 1h30–1h45 y 3.330 ¥; elegid tren después de recoger las maletas"
+      ],
+      [
+        "18:00",
+        "🏨 Llegada orientativa al apartamento y check-in; confirmar ruta a pie desde la estación"
+      ],
+      [
+        "19:00",
+        "🍜 Cena cerca del alojamiento: ramen o teishoku"
+      ],
+      [
+        "21:00",
+        "🥃 Golden Gai opcional, según jet lag"
+      ]
+    ],
+    "notes": [
+      [
+        "tip",
+        "<b>Día suave:</b> jet lag garantizado. No programar nada exigente."
+      ],
+      [
+        "info",
+        "<b>🏨 Base Tokio confirmada:</b> <a href='https://www.booking.com/hotel/jp/shinjuku-family-apartment.es.html' target='_blank'>Shinjuku Family Apartment</a> (6 noches). Muy buen encaje por conectividad y vida nocturna. Confirmad baños/ascensor/consigna, porque en Tokio los apartamentos familiares pueden ser compactos."
+      ]
+    ]
+  },
+  {
+    "n": "02",
+    "date": "JUE 5 NOV",
+    "name": "🌊 Excursión Kamakura + Enoshima",
+    "base": "Tokio — Shinjuku Family Apartment",
+    "notes": [
+      [
+        "good",
+        "<b>✅ Movido a entre semana:</b> Kamakura+Enoshima en sábado de koyo es una romería; el jueves está mucho más tranquilo."
+      ]
+    ],
+    "sched": [
+      [
+        "07:30",
+        "🚆 Shinjuku → Kamakura, aproximadamente 1h; tarifa y servicio por consultar"
+      ],
+      [
+        "09:00",
+        "🏯 Gran Buda (Kotoku-in), 300 ¥. Incluid Enoden hasta Hase y paseo desde la estación"
+      ],
+      [
+        "10:00",
+        "🌸 Hase-dera — jardín y vistas al mar; consultar tarifa vigente"
+      ],
+      [
+        "11:30",
+        "🚶 Komachi-dori — tiendas y dulces"
+      ],
+      [
+        "12:00",
+        "🐟 Almuerzo: shirasu-don"
+      ],
+      [
+        "13:00",
+        "🚋 Enoden a Enoshima: unos 30 min de tren más el paseo a la isla"
+      ],
+      [
+        "14:00",
+        "🏝️ Enoshima — santuario y vistas; cuevas Iwaya opcionales según horario y energía"
+      ],
+      [
+        "16:00",
+        "🌅 Paseo junto al mar hasta la puesta de sol; mirad la hora del último acceso si entráis en las cuevas"
+      ],
+      [
+        "17:00",
+        "🚆 Regreso desde Katase-Enoshima hacia Shinjuku; tiempo según servicio y transbordo"
+      ]
+    ],
+    "notes2": [
+      [
+        "warn",
+        "<b>Día de ~30.000 pasos.</b> Zapatillas cómodas. Plan B si flaqueáis: saltad las cuevas y quedaos con el faro y el atardecer."
+      ]
+    ]
+  },
+  {
+    "n": "03",
+    "date": "VIE 6 NOV",
+    "name": "🏮 Akihabara→Asakusa→Ueno→Yanaka",
+    "base": "Tokio — Shinjuku Family Apartment",
+    "fiesta": true,
+    "geo": "Akihabara y Asakusa requieren metro; Ueno → Yanaka encadena mejor a pie. Reservad margen para los desplazamientos.",
+    "sched": [
+      [
+        "10:00",
+        "🎮 Akihabara — anime/manga/gaming, arcades"
+      ],
+      [
+        "12:30",
+        "🍜 Almuerzo Akiba"
+      ],
+      [
+        "13:15",
+        "🚇 A pie a Suehirocho y Ginza Line a Asakusa; unos 25–35 min puerta a puerta"
+      ],
+      [
+        "14:00",
+        "🏯 Senso-ji — Kaminarimon, Nakamise"
+      ],
+      [
+        "15:30",
+        "🚇 Metro a Ueno Park; paseo breve"
+      ],
+      [
+        "16:30",
+        "🏘️ Yanaka Ginza — barrio old-school, gatos"
+      ],
+      [
+        "18:30",
+        "🍢 Cena temprana en Ueno o cambiarse en hotel"
+      ],
+      [
+        "20:30",
+        "🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"
+      ],
+      [
+        "21:00",
+        "🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"
+      ],
+      [
+        "23:00",
+        "🍜 Picoteo o ramen antes del club"
+      ],
+      [
+        "00:00",
+        "🕺 CLUB: WOMB o clubasia si queréis Shibuya; ZEROTOKYO si preferís volver hacia Shinjuku. Entrada ~2.000–4.000 ¥ según evento. Hasta ~5h"
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> WOMB sigue siendo el club referencia en Shibuya; clubasia también encaja si el cartel mola. ZEROTOKYO es alternativa potente en Kabukicho, cerca de vuestra base. Para 10: id antes de medianoche para evitar la cola y entrad juntos. Sound Museum Vision queda eliminado porque cerró permanentemente."
+      ]
+    ]
+  },
+  {
+    "n": "04",
+    "date": "SÁB 7 NOV",
+    "name": "🏙️ Harajuku→Omotesando→Shibuya→Shimokitazawa",
+    "base": "Tokio — Shinjuku Family Apartment",
+    "geo": "Ruta lineal sur. Sábado = ambiente joven, perfecto para esta zona.",
+    "sched": [
+      [
+        "10:30",
+        "⛩️ Meiji Jingu opcional para quienes hayan descansado; el resto puede incorporarse en Harajuku"
+      ],
+      [
+        "11:30",
+        "🛍️ Takeshita St (Harajuku) — kawaii, crepes"
+      ],
+      [
+        "12:15",
+        "🌿 Omotesando — diseño y arquitectura"
+      ],
+      [
+        "13:00",
+        "🍱 Almuerzo: Gyukatsu Motomura"
+      ],
+      [
+        "14:30",
+        "🚦 Shibuya Crossing — foto desde Starbucks"
+      ],
+      [
+        "15:30",
+        "🛒 Scramble Square / Shibuya 109"
+      ],
+      [
+        "17:00",
+        "🎸 Shimokitazawa — vintage, vinilos"
+      ],
+      [
+        "19:30",
+        "🍢 Cena en Shimokitazawa: izakaya local"
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "<b>Mañana flexible tras el club:</b> quedad a las 11:30 en Harajuku. Meiji Jingu es un santuario sintoísta en un bosque y Senso-ji es un templo budista: son visitas distintas. Recortad por cansancio, no por duplicidad."
+      ]
+    ]
+  },
+  {
+    "n": "05",
+    "date": "DOM 8 NOV",
+    "name": "🎨 Hamarikyu → Ginza → Shibuya Sky",
+    "base": "Tokio — Shinjuku Family Apartment",
+    "geo": "Mañana relajada junto a la bahía y Ginza. Salid hacia Shibuya con tiempo para el acceso reservado.",
+    "sched": [
+      [
+        "09:30",
+        "🌿 Jardines Hamarikyu — 300 ¥"
+      ],
+      [
+        "11:30",
+        "💎 Ginza — Itoya y paseo"
+      ],
+      [
+        "13:00",
+        "🍱 Almuerzo en Ginza"
+      ],
+      [
+        "14:15",
+        "🚇 Traslado a Shibuya; margen para llegar a Scramble Square"
+      ],
+      [
+        "15:40",
+        "🌅 Objetivo de entrada Shibuya Sky: 15:40–16:00 según disponibilidad. Tarifa online desde las 15:00: 3.400 ¥"
+      ],
+      [
+        "16:40",
+        "🌇 Puesta de sol en Tokio el 8 de noviembre; llegar antes para acceder al mirador"
+      ],
+      [
+        "19:00",
+        "🎤 Karaoke en grupo (Big Echo) y cena"
+      ],
+      [
+        "21:30",
+        "🥃 Cócteles opcionales en Shinjuku"
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "<b>Reserva a 2 semanas:</b> comprobad la venta alrededor del 25 de octubre en la web oficial. La azotea puede cerrar por viento o lluvia; revisad las condiciones del billete. Tsukiji pasa al lunes porque muchos comercios cierran los domingos."
+      ]
+    ]
+  },
+  {
+    "n": "06",
+    "date": "LUN 9 NOV",
+    "name": "🎭 Tsukiji → teamLab Planets → Odaiba",
+    "base": "Tokio — Shinjuku Family Apartment (última noche)",
+    "notes": [
+      [
+        "good",
+        "<b>Lunes en la bahía:</b> Tsukiji por la mañana y teamLab después. Cerrad primero la franja de entrada y ajustad el desayuno; el horario de noviembre y las tarifas deben comprobarse al comprar."
+      ]
+    ],
+    "sched": [
+      [
+        "08:00",
+        "🦞 Mercado exterior de Tsukiji — desayuno y paseo; horarios según comercio"
+      ],
+      [
+        "09:30",
+        "🚇 Traslado a Toyosu / Shin-Toyosu con margen"
+      ],
+      [
+        "10:30",
+        "🎨 Objetivo teamLab Planets — entrada con hora, tarifa variable. Reservad 2–3 h más la posible cola"
+      ],
+      [
+        "13:30",
+        "🍱 Almuerzo y traslado a Odaiba"
+      ],
+      [
+        "15:00",
+        "🌉 Paseo por la bahía y Gundam en DiverCity, según energía"
+      ],
+      [
+        "17:00",
+        "🚆 Vuelta a Shinjuku. Descanso y maletas"
+      ],
+      [
+        "19:30",
+        "🥂 Cena de despedida de Tokio; reservar si queréis sentaros los 10"
+      ]
+    ],
+    "notes2": [
+      [
+        "info",
+        "<b>teamLab:</b> comprad entradas compatibles para el grupo. Es una visita descalzos, con zonas de agua y espejos; revisad las indicaciones oficiales de ropa y accesibilidad. No se considera que las 10:30 sean el primer pase."
+      ]
+    ]
+  },
+  {
+    "n": "07",
+    "date": "MAR 10 NOV",
+    "name": "🗻 Tokio→Kawaguchiko · Maruei + Onsen ⭐",
+    "base": "Kawaguchiko — Wakakusa no Yado Maruei (ÚNICA noche)",
+    "notes": [
+      [
+        "good",
+        "<b>Una noche de Fuji:</b> el ryokan, el onsen y la cena son la prioridad. Chureito queda sujeto a visibilidad y taxis; si está cubierto, la estancia sigue teniendo sentido."
+      ],
+      [
+        "info",
+        "<b>🏨 <a href='https://maruei55.com/' target='_blank'>Maruei</a> · reserva confirmada.</b> Si tenéis opción, confirmad lado FUJI. Las habitaciones son lado-Fuji O lado-lago (no se ven ambos). El rotenburo con Fuji lo tenéis igualmente en el baño público <b>«Fuji no Yu»</b> y en la azotea 360°, así que el lado de la habitación solo decide la vista de vuestra ventana."
+      ],
+      [
+        "warn",
+        "<b>Logística actualizada para noviembre:</b> check-in desde las 15:00 (cambio del 1/10/2026). Pickup en la estación de 15:00 a 17:00; hay que llamar a partir de las 15:00 y no se puede fijar hora. Confirmad consigna y bicicletas para 10; alternativa si no hay capacidad: taxis al hotel con depósito previamente acordado."
+      ]
+    ],
+    "sched": [
+      [
+        "08:00",
+        "🧳 Check-out y traslado a Busta Shinjuku. Llegad 30 min antes del bus reservado"
+      ],
+      [
+        "09:00",
+        "🚌 Objetivo de bus a Kawaguchiko, unas 2 h sin atascos; 2.200 ¥ normal / 2.000 ¥ web como referencia actual"
+      ],
+      [
+        "11:00",
+        "🏔️ Llegada orientativa a Kawaguchiko Station"
+      ],
+      [
+        "11:30",
+        "🔐 Depositar maletas; no dar por garantizadas 10 taquillas"
+      ],
+      [
+        "12:00",
+        "🍜 Almuerzo: Hoto Fudou o alternativa cercana"
+      ],
+      [
+        "13:00",
+        "🚲 Paseo corto en e-bike si están reservadas, o paseo junto al lago; regresar a tiempo para devolverlas"
+      ],
+      [
+        "15:00",
+        "📞 Recoger equipaje y llamar al Maruei desde la estación para el shuttle"
+      ],
+      [
+        "15:30",
+        "🏨 Check-in orientativo Maruei. Confirmar turno de cena, desayuno y shuttle del día siguiente"
+      ],
+      [
+        "16:00",
+        "♨️ Onsen y vistas desde el ryokan"
+      ],
+      [
+        "18:30",
+        "🍱 Cena kaiseki: hora definitiva asignada por el hotel, inicio entre 17:30 y 19:00"
+      ],
+      [
+        "21:00",
+        "🌙 Onsen nocturno y descanso"
+      ]
+    ],
+    "notes2": [
+      [
+        "warn",
+        "<b>Por confirmar con Maruei:</b> menú/restricciones alimentarias, plazas del shuttle y taxis de ida y vuelta a Chureito. Avisad si la llegada puede superar las 17:00. Las condiciones específicas de vuestra reserva prevalecen sobre este plan."
+      ]
+    ]
+  },
+  {
+    "n": "08",
+    "date": "MIÉ 11 NOV",
+    "name": "🌄 Chureito opcional → Kioto sin prisas",
+    "base": "Kioto — Airbnb Kiyomizu/Higashiyama (1ª de 3)",
+    "notes": [
+      [
+        "tip",
+        "<b>Traslado con margen:</b> Chureito solo si tenéis taxis y visibilidad. El bus a Mishima tarda 80–90 min; dejad al menos 60 min hasta el tren y más si hay avisos de tráfico. No son conexiones protegidas."
+      ],
+      [
+        "good",
+        "<b>Base en Kiyomizu/Higashiyama:</b> check-in desde las 15:00 según el plan del alojamiento. Llegar a media tarde permite dejar las maletas antes de pasear."
+      ],
+      [
+        "warn",
+        "<b>Horas orientativas:</b> el horario actual incluye bus 10:20 → 11:50 a Mishima norte. Reconfirmad el 11 de noviembre y elegid después un Hikari o combinación adecuada, con salida no anterior a las 12:50."
+      ]
+    ],
+    "sched": [
+      [
+        "05:15",
+        "⏰ Salida opcional en taxis reservados hacia Chureito, solo con mochila. Acordad punto y hora de recogida"
+      ],
+      [
+        "06:15",
+        "📸 Chureito Pagoda al amanecer. Hay una subida con escaleras; alternativa accesible por confirmar"
+      ],
+      [
+        "07:30",
+        "🚕 Regreso al ryokan; respetar el turno de desayuno acordado"
+      ],
+      [
+        "08:00",
+        "🍳 Desayuno japonés y equipaje. Si los taxis o el tiempo fallan, disfrutad la mañana en Maruei"
+      ],
+      [
+        "09:30",
+        "🧳 Objetivo de shuttle Maruei → Kawaguchiko Station, a confirmar para 10"
+      ],
+      [
+        "10:20",
+        "🚌 Bus orientativo Kawaguchiko → Mishima norte, llegada 11:50. 2.500 ¥ online / 2.700 ¥ normal"
+      ],
+      [
+        "12:50+",
+        "🚄 Primer momento razonable para reservar tren, no una salida confirmada. Mishima → Kioto aproximadamente 1h50–2h30 según servicio; presupuesto orientativo 11.100–11.500 ¥"
+      ],
+      [
+        "15–16h",
+        "🏠 Llegada orientativa a Kioto y traslado al alojamiento para el check-in"
+      ],
+      [
+        "16:30",
+        "🦊 Fushimi Inari opcional si vais con energía y tiempo; si no, paseo por Higashiyama"
+      ],
+      [
+        "18:30",
+        "🌆 Paseo nocturno por Gion, ya después del atardecer"
+      ],
+      [
+        "19:30",
+        "🍶 Cena cerca de la base"
+      ]
+    ],
+    "notes2": [
+      [
+        "info",
+        "<b>Equipaje Shinkansen:</b> hasta 160 cm de suma, baldas o junto a los pies sin bloquear pasillos. Más de 160 y hasta 250 cm: asiento con zona de equipaje reservada, sin suplemento por reservarla. El hueco de la última fila es exclusivo de las reservas correspondientes. En SmartEX organizad 2 reservas de 5 en el mismo tren."
+      ],
+      [
+        "tip",
+        "<b>Alternativa para Fushimi Inari:</b> el viernes 13 por la tarde, sustituyendo la ruta de Heian/Philosopher's Path/Ginkaku-ji. Evitad añadirlo encima del día completo."
+      ]
+    ]
+  },
+  {
+    "n": "09",
+    "date": "JUE 12 NOV",
+    "name": "🎋 Arashiyama → Kinkaku-ji → Ryoan-ji",
+    "base": "Kioto — Airbnb Kiyomizu/Higashiyama",
+    "geo": "Noroeste de Kioto. Los traslados con 10 personas necesitan margen; consultad la ruta del día y considerad taxis compartidos.",
+    "sched": [
+      [
+        "06:45",
+        "⏰ Salida desde Kiyomizu hacia Arashiyama; elegir transporte la víspera"
+      ],
+      [
+        "07:45",
+        "🎋 Bosque de bambú"
+      ],
+      [
+        "08:30",
+        "⛩️ Tenryu-ji — jardín, 500 ¥; otros espacios se pagan aparte"
+      ],
+      [
+        "09:30",
+        "🌉 Paseo por el río y puente Togetsukyo; pausa para café"
+      ],
+      [
+        "10:30",
+        "🚍 Traslado a Kinkaku-ji: reservar 60–75 min como margen de planificación"
+      ],
+      [
+        "11:45",
+        "✨ Kinkaku-ji — templo dorado"
+      ],
+      [
+        "13:00",
+        "🍱 Almuerzo por la zona, en subgrupos"
+      ],
+      [
+        "14:30",
+        "🪨 Ryoan-ji — paseo y jardín zen"
+      ],
+      [
+        "16:00",
+        "🚍 Regreso y descanso"
+      ],
+      [
+        "19:00",
+        "🍣 Cena: Musashi Sushi o izakaya"
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "<b>Extras por sustitución:</b> Monkey Park necesita tiempo de subida y visita; Nijo requiere llegar antes del último acceso. Elegid uno solo si recortáis otro bloque y verificáis horarios. No forman parte de la ruta principal."
+      ]
+    ]
+  },
+  {
+    "n": "10",
+    "date": "VIE 13 NOV",
+    "name": "🌸 Kiyomizudera→Higashiyama→Path→Ginkaku-ji",
+    "base": "Kioto — Airbnb Kiyomizu/Higashiyama (última noche)",
+    "geo": "Ruta por el este: contad unos 6–8 km o más con desvíos y visitas. Podéis usar bus o taxi entre bloques; el norte es opcional si Fushimi quedó pendiente.",
+    "sched": [
+      [
+        "07:30",
+        "⛩️ Kiyomizudera — cerca de la base; confirmad el acceso real desde la casa"
+      ],
+      [
+        "09:30",
+        "🚶 Ninenzaka + Sannenzaka — callejuelas, casas de té"
+      ],
+      [
+        "11:00",
+        "🌿 Heian Jingu y jardines, ~600 ¥"
+      ],
+      [
+        "12:30",
+        "🍱 Almuerzo cerca de Heian/Nanzen-ji; Omen encaja mejor al llegar a Ginkaku-ji"
+      ],
+      [
+        "13:30",
+        "🚶 Philosopher's Path — 2 km junto al canal, primeras hojas de otoño"
+      ],
+      [
+        "14:30",
+        "🌿 Ginkaku-ji (Pabellón de Plata)"
+      ],
+      [
+        "16:30",
+        "🛍️ Compras: té, cerámica, incienso"
+      ],
+      [
+        "19:00",
+        "🎎 Cena de despedida Kioto en restaurante reservado. Nishiki es una visita de día, no una cena de mercado a las 19:00"
+      ]
+    ],
+    "notes": [
+      [
+        "good",
+        "<b>Opción si faltó Fushimi:</b> mantened Kiyomizudera y las callejuelas por la mañana y dedicad la tarde a Fushimi Inari; quitad el recorrido norte. Mañana, Nara en ruta a Osaka con billetes y depósito de equipaje aparte."
+      ],
+      [
+        "warn",
+        "<b>Regla de convivencia:</b> zona residencial/turística estrecha. Nada de ruido fuerte al volver de cenar; el anuncio lo marca expresamente."
+      ]
+    ]
+  },
+  {
+    "n": "11",
+    "date": "SÁB 14 NOV",
+    "name": "🦌 Nara→Osaka→Dotonbori",
+    "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, 1ª de 3)",
+    "fiesta": true,
+    "geo": "Nara es un desvío útil entre bases: ahorra volver a Kioto, pero no es un trayecto gratuito ni el camino directo a Osaka.",
+    "sched": [
+      [
+        "08:00",
+        "🧳 Check-out Airbnb (salida antes de las 10:00). Taxis a Kyoto Station/Kintetsu Kyoto con las 10 maletas"
+      ],
+      [
+        "08:45",
+        "🚆 Objetivo de tren Kintetsu a Nara. Aproximadamente 45–60 min según servicio; el Limited Express lleva suplemento"
+      ],
+      [
+        "09:45",
+        "🔐 Llegada orientativa y depósito de maletas en Kintetsu-Nara. Reservad margen para las 10 piezas"
+      ],
+      [
+        "10:15",
+        "🦌 Paseo por Nara Park — solo mochila"
+      ],
+      [
+        "10:45",
+        "🏯 Todai-ji — Gran Buda; entrada al Daibutsuden 800 ¥, en efectivo"
+      ],
+      [
+        "12:15",
+        "⛩️ Kasuga Taisha — 3.000 linternas"
+      ],
+      [
+        "13:00",
+        "🍱 Almuerzo: kakinoha-zushi"
+      ],
+      [
+        "14:30",
+        "🚆 Recoger maletas. Nara → Osaka-Namba (Kintetsu, 35 min)"
+      ],
+      [
+        "15:30",
+        "🏨 Llegada Hotel Abitare Namba West. Check-in oficial desde las 16:00; si llegáis antes, pedir consigna"
+      ],
+      [
+        "16:15",
+        "😴 SIESTA estratégica antes de la noche"
+      ],
+      [
+        "18:00",
+        "🦑 Dotonbori — Glico, takoyaki. Empieza la noche"
+      ],
+      [
+        "19:30",
+        "🍢 Cena: yakiniku/okonomiyaki. Comprobar precio del menú y si la bebida libre se cobra aparte"
+      ],
+      [
+        "21:30",
+        "🍻 Bar-hopping por Soemoncho y el canal"
+      ],
+      [
+        "23:30",
+        "🕺 CLUB: Joule (Amerikamura) o Circus. Entrada ~2.000–3.000 ¥. Hasta ~5h"
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "<b>Fiesta de Osaka:</b> Dotonbori, Soemoncho y Amerikamura se pueden combinar a pie desde la base. Mirad cartel, horario y entradas; acordad vuelta al hotel. La siesta es recomendable y el domingo empieza más tarde."
+      ],
+      [
+        "info",
+        "<b>Consigna en Nara:</b> no deis por garantizadas 10 taquillas grandes en sábado. Confirmad depósito atendido, horario y capacidad antes del viaje. Si no hay solución para las maletas, valorad llevarlas primero a Osaka y recortar visitas."
+      ],
+      [
+        "good",
+        "<b>🏨 Hotel Abitare Namba West:</b> apartahotel en Saiwaicho/Sakuragawa, a ~2 min de Sakuragawa y ~10 min de Namba. Muy buen encaje para Dotonbori, Amerikamura y salir de noche."
+      ]
+    ]
+  },
+  {
+    "n": "12",
+    "date": "DOM 15 NOV",
+    "name": "🏯 Osaka clásica",
+    "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba)",
+    "geo": "Inicio suave en Namba tras la fiesta. Castillo como visita principal; Shinsekai y Umeda son extras que podéis elegir según energía.",
+    "sched": [
+      [
+        "10:30",
+        "🐙 Desayuno tardío por Kuromon/Namba; comprobar qué comercios abren el domingo"
+      ],
+      [
+        "12:00",
+        "🚇 Traslado al Castillo de Osaka"
+      ],
+      [
+        "12:45",
+        "🏯 Castillo de Osaka — museo 1.200 ¥; alternativa: solo jardines, fosos y exteriores"
+      ],
+      [
+        "15:00",
+        "🍢 Almuerzo tardío o merienda en Shinsekai, si os apetece"
+      ],
+      [
+        "16:30",
+        "👟 Vuelta a Namba / Amerikamura y descanso"
+      ],
+      [
+        "18:00",
+        "🌆 Umeda Sky Building opcional: visita nocturna, ya sin puesta de sol"
+      ],
+      [
+        "20:00",
+        "🍺 Cena en Namba y noche tranquila"
+      ]
+    ],
+    "notes": [
+      [
+        "info",
+        "<b>Recorte fácil:</b> después de una noche larga, elegid Castillo o Shinsekai. Umeda requiere otro traslado y puede saltarse para descansar antes de Universal/Himeji."
+      ]
+    ]
+  },
+  {
+    "n": "13",
+    "date": "LUN 16 NOV",
+    "name": "🎢 GRUPO DIVIDIDO: Universal / Himeji",
+    "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, última noche)",
+    "notes": [
+      [
+        "good",
+        "<b>Lunes entre semana:</b> es una elección razonable dentro de la estancia, pero Universal también puede tener mucha afluencia en lunes. Organizad entradas y horarios de ambos subgrupos antes de comprar."
+      ]
+    ],
+    "sched": [
+      [
+        "—",
+        "🎢 SUBGRUPO A — UNIVERSAL STUDIOS"
+      ],
+      [
+        "07:00",
+        "🚆 Salida orientativa Sakuragawa/Namba → Nishikujo → Universal City; unos 35–50 min puerta a puerta"
+      ],
+      [
+        "07:45",
+        "🎫 Llegada orientativa: ajustar al horario oficial. Studio Pass obligatorio; Express Pass si lo elegís, además de la entrada"
+      ],
+      [
+        "Apertura",
+        "🎮 Acceso a Nintendo/Harry Potter según vuestra reserva o disponibilidad en la app; no garantizado por entrar temprano"
+      ],
+      [
+        "—",
+        "🏯 SUBGRUPO B — HIMEJI"
+      ],
+      [
+        "08:00",
+        "🚆 Namba → Osaka/Umeda → Himeji en JR Special Rapid: reservar alrededor de 2 h puerta a puerta; tarifa por consultar. Shinkansen es otra opción con suplemento"
+      ],
+      [
+        "10:00",
+        "🏯 Castillo de Himeji — adulto 2.500 ¥ desde marzo 2026; combinado con Koko-en 2.600 ¥"
+      ],
+      [
+        "12:00",
+        "🌿 Jardín Koko-en"
+      ],
+      [
+        "13:00",
+        "🍱 Almuerzo: anago y paseo"
+      ],
+      [
+        "16:00",
+        "🚆 Regreso hacia Namba con margen"
+      ],
+      [
+        "—",
+        "🥂 CENA DE DESPEDIDA"
+      ],
+      [
+        "18:30",
+        "🧳 Reunión orientativa, check-in online del vuelo si está disponible y maletas listas. Universal debe planificar su salida para llegar"
+      ],
+      [
+        "19:30",
+        "🥂 Cena reservada cerca del alojamiento"
+      ],
+      [
+        "21:30",
+        "🛏️ Descanso: toca salir hacia KIX de madrugada"
+      ]
+    ],
+    "notes2": [
+      [
+        "info",
+        "<b>Cena y parque:</b> si el grupo de Universal prefiere quedarse hasta el cierre, que cene por su cuenta. Evitad una reserva conjunta con penalización incompatible con el parque. Dejad pagado y organizado el traslado al aeropuerto."
+      ]
+    ]
+  },
+  {
+    "n": "14",
+    "date": "MAR 17 NOV",
+    "name": "✈️ Osaka → KIX → Vuelo CX567 09:25",
+    "base": "Osaka → ✈️ Vuelo a casa",
+    "geo": "Objetivo: estar en KIX alrededor de las 06:25 para la salida prevista a las 09:25. Elegir el tren y transporte al andén con el horario vigente; el check-in online no sustituye la entrega de equipaje.",
+    "sched": [
+      [
+        "04:45",
+        "⏰ Despertar, maletas listas y check-out acordado con el alojamiento"
+      ],
+      [
+        "05:15",
+        "🚕 Salida orientativa en vehículos reservados hacia Nankai Namba; confirmar capacidad para 10 y maletas"
+      ],
+      [
+        "Primeros trenes",
+        "🚆 Elegir el servicio que llegue a KIX antes de las 06:25. No se da por confirmado un Rapi:t a las 06:35; consultar horario laborable de noviembre"
+      ],
+      [
+        "06:25",
+        "🛫 Objetivo de llegada a KIX. Localizar mostrador, entrega de equipaje y controles; confirmar terminal en el billete"
+      ],
+      [
+        "06:55",
+        "🧳 Apertura orientativa del mostrador Cathay si mantiene 150 min antes de una salida a las 09:25"
+      ],
+      [
+        "08:25",
+        "⏱️ Cierre publicado del mostrador: 60 min antes. Es un límite, no una hora objetivo de llegada"
+      ],
+      [
+        "09:25",
+        "✈️ Vuelo CX567 según el plan original; horario y operación por reconfirmar con Cathay"
+      ]
+    ],
+    "notes": [
+      [
+        "warn",
+        "<b>Traslado por cerrar:</b> si los primeros trenes no encajan o preferís asegurar el viaje de 10 con maletas, reservad traslado directo al aeropuerto con tiempo de carretera y margen acordados. El check-in online no permite saltarse bag drop si facturáis."
+      ]
+    ]
+  }
 ];
 
 const transfers = [
-  ["Narita T2 → Shinjuku","JR Narita Express, 59 min","~3.070 ¥"],
-  ["Shinjuku → Kamakura","JR Shonan-Shinjuku, 59 min","~940 ¥"],
-  ["Kamakura → Enoshima","Enoden, 30 min","260 ¥"],
-  ["Enoshima → Shinjuku","Odakyu, 70 min","~580 ¥"],
-  ["Busta Shinjuku → Kawaguchiko","Bus Keio, 2h","~1.800 ¥"],
-  ["Kawaguchiko → Mishima","Fujikyu bus, ~60 min","~1.500 ¥"],
-  ["Mishima → Kioto","Shinkansen Hikari, ~1h40","~6.500 ¥"],
-  ["Kioto → Nara","Kintetsu, ~45 min","~760 ¥"],
-  ["Nara → Osaka (Namba)","Kintetsu, 35 min","~560 ¥"],
-  ["Namba → Universal","JR vía Nishikujo, ~25 min","~190 ¥"],
-  ["Osaka Namba → KIX","Nankai Rapid, 37 min","~1.450 ¥"],
+  [
+    "Narita T2 → Shinjuku",
+    "Narita Express, aprox. 1h30–1h45 según tren",
+    "3.330 ¥"
+  ],
+  [
+    "Shinjuku → Kamakura",
+    "JR, aproximadamente 1h; incluir después el acceso a Hase",
+    "Consultar"
+  ],
+  [
+    "Kamakura → Enoshima",
+    "Enoden, unos 30 min + paseo a la isla",
+    "Consultar"
+  ],
+  [
+    "Katase-Enoshima → Shinjuku",
+    "Odakyu, según servicio y transbordo",
+    "Consultar"
+  ],
+  [
+    "Busta Shinjuku → Kawaguchiko",
+    "Bus reservado, unas 2h sin atascos",
+    "2.000 ¥ web / 2.200 ¥ normal"
+  ],
+  [
+    "Kawaguchiko → Mishima norte",
+    "Bus reservado, 80–90 min + margen de 60 min para el tren",
+    "2.500 ¥ web / 2.700 ¥ normal"
+  ],
+  [
+    "Mishima → Kioto",
+    "Shinkansen, aprox. 1h50–2h30 según tren/conexión",
+    "~11.100–11.500 ¥ estimados"
+  ],
+  [
+    "Kioto → Nara",
+    "Kintetsu, unos 45–60 min; Limited Express con suplemento",
+    "Consultar servicio"
+  ],
+  [
+    "Nara → Osaka-Namba",
+    "Kintetsu, unos 40 min según servicio",
+    "Consultar"
+  ],
+  [
+    "Sakuragawa/Namba → Universal City",
+    "Hanshin + JR vía Nishikujo; prever 35–50 min puerta a puerta",
+    "Consultar ambas compañías"
+  ],
+  [
+    "Namba → Himeji",
+    "Metro + JR Special Rapid; prever unas 2h puerta a puerta",
+    "Consultar; Shinkansen aparte"
+  ],
+  [
+    "Nankai Namba → KIX",
+    "Airport Express o Rapi:t; confirmar primer servicio y suplemento",
+    "Consultar servicio"
+  ]
 ];
 
 // ---------- RENDER ----------
@@ -682,7 +1609,7 @@ const ovHtml = overview.map(([n,d,desc])=>
    </a>`).join("");
 document.getElementById("ovTable").innerHTML = ovHtml;
 
-const arrow = `<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
+const arrow = `<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
 
 function noteHtml(arr){return (arr||[]).map(([t,h])=>`<div class="note ${t}">${linkify(h)}</div>`).join("")}
 function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
@@ -693,16 +1620,18 @@ function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
 
 const daysHtml = days.map(d=>`
   <div class="day${d.fiesta?' fiesta':''}" id="d${d.n}">
-    <div class="day-head" onclick="toggleDay(this)">
-      <div class="day-num">${d.n}</div>
-      <div class="day-titles">
-        <div class="day-date">${d.date}${d.fiesta?'<span class="badge b-fiesta">FIESTA</span>':''}</div>
-        <div class="day-name">${d.name}</div>
-        <div class="day-base">🏨 ${d.base}</div>
-      </div>
-      ${arrow}
-    </div>
-    <div class="day-body">
+    <h3 class="day-heading">
+      <button type="button" class="day-head" id="d${d.n}-toggle" aria-expanded="false" aria-controls="d${d.n}-body" onclick="toggleDay(this)">
+        <span class="day-num">${d.n}</span>
+        <span class="day-titles">
+          <span class="day-date">${d.date}${d.fiesta?'<span class="badge b-fiesta">FIESTA</span>':''}</span>
+          <span class="day-name">${d.name}</span>
+          <span class="day-base">🏨 ${d.base}</span>
+        </span>
+        ${arrow}
+      </button>
+    </h3>
+    <div class="day-body" id="d${d.n}-body" aria-labelledby="d${d.n}-toggle">
       ${d.geo?`<div class="geo">📍 ${d.geo}</div>`:""}
       ${noteHtml(d.notes)}
       ${schedHtml(d.sched)}
@@ -715,11 +1644,23 @@ document.getElementById("transfers").innerHTML =
   transfers.map(([a,b,c])=>`<tr><td><b>${linkify(a)}</b></td><td>${linkify(b)}</td><td>${c}</td></tr>`).join("");
 
 // ---------- INTERACTION ----------
-function toggleDay(head){head.parentElement.classList.toggle("open")}
-function openDay(n){const el=document.getElementById("d"+n);if(el)el.classList.add("open")}
-function setAll(open){document.querySelectorAll(".day").forEach(d=>d.classList.toggle("open",open))}
-// open day 1 by default
-document.getElementById("d01").classList.add("open");
+function setDayOpen(day,open){
+  day.classList.toggle('open',open);
+  day.querySelector('.day-head').setAttribute('aria-expanded',String(open));
+}
+function toggleDay(head){const day=head.closest('.day');setDayOpen(day,!day.classList.contains('open'))}
+function openDay(n){const day=document.getElementById('d'+n);if(day)setDayOpen(day,true)}
+function setAll(open){document.querySelectorAll('.day').forEach(day=>setDayOpen(day,open))}
+function openHashDay(){
+  const match = location.hash.match(/^#d(\d{2})$/);
+  const day = match && document.getElementById('d'+match[1]);
+  if(!day) return;
+  setDayOpen(day,true);
+  requestAnimationFrame(()=>day.scrollIntoView({block:'start'}));
+}
+openDay('01');
+openHashDay();
+window.addEventListener('hashchange',openHashDay);
 </script>
 </body>
 </html>
