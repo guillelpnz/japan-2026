@@ -12,4 +12,4 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Abrir `http://127.0.0.1:4173`. Los enlaces `#d01` a `#d14` abren cada día. La impresión muestra el itinerario completo, incluso con los días cerrados en pantalla.
 
-Revisión de contenido: 11 de septiembre de 2026. Las fuentes oficiales y las reservas pendientes figuran en la página. Los horarios son objetivos de planificación salvo indicación expresa; se deben contrastar al emitir billetes.
+Las fuentes oficiales y las reservas pendientes figuran en la página. Los horarios son objetivos de planificación salvo indicación expresa; se deben contrastar al emitir billetes.
