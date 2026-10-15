@@ -213,6 +213,16 @@
   .tbl td{padding:7px 9px;border-bottom:1px solid var(--line);color:var(--sumi-soft);vertical-align:top}
   .tbl tr:nth-child(even) td{background:var(--washi)}
 
+  .food-plan{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--paper)}
+  .food-plan h4{color:var(--indigo);font-size:15px;margin-bottom:8px}
+  .food-meal+.food-meal{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}
+  .food-meal h5{font-size:13px;color:var(--vermilion-deep);margin-bottom:5px}
+  .food-choice{font-size:13px;margin:8px 0}
+  .food-choice p,.food-meal>p{font-size:12px;color:var(--sumi-soft);margin-top:3px}
+  .food-meta{font-size:11px;color:var(--moss);display:block}
+  .food-choice a{font-weight:700}
+  @media print{.food-plan{break-inside:auto}.food-choice{break-inside:avoid}}
+
   /* ---------- BOTTOM NAV ---------- */
   nav.bottom{
     position:fixed;bottom:0;left:0;right:0;z-index:50;
@@ -411,7 +421,7 @@
       <li>Konbini — desayunos de 10 resueltos, ~400–600 ¥/persona</li>
     </ul>
     <h3>🍱 Qué SÍ reservar para 10</h3>
-    <p>Kaiseki del ryokan (Día 7, ya incluido) · cena de despedida Osaka (Día 13) · cualquier izakaya concreto. Un grupo de 10–11 entra perfectamente CON reserva; los izakayas grandes suelen pre-servir el menú (pedid platos que aguanten, la tempura se enfría).</p>
+    <p>Kaiseki del ryokan (Día 7, ya incluido) · Ikkakuju (Día 9, consultar estado en Reservas) · Meigetsukan (Día 12, pendiente de llamada). Para comer los diez juntos hay que confirmar capacidad y condiciones. Priorizamos solo mesa y carta; el Día 13 queda flexible porque dos vuelven de USJ.</p>
     <h3>🛠️ Cómo reservar siendo extranjeros</h3>
     <ol>
       <li>Consultad ya a los alojamientos si ayudan con las reservas. Los apartamentos pueden no tener conserjería; no esperéis al check-in para una cena de 10.</li>
@@ -428,43 +438,17 @@
   </div>
 
   <!-- FOOD ROUTE -->
-  <h2 class="sec" id="comer">Comer bien durante la ruta</h2>
+  <h2 class="sec" id="comer">Comer durante el viaje</h2>
   <div class="block">
-    <p><b>Prioridad del grupo: comer bien gastando poco.</b> Reservar solo si no obliga a un menú caro ni añade gastos de intermediación. El festín especial ya incluido es la cena kaiseki de Maruei; otro gasto alto solo si la experiencia lo justifica. Estas son paradas elegidas por especialidad y ubicación, no una lista que haya que completar entera. Filtro acordado: Google Maps 4,4 o más, junto con precio y encaje en la ruta. Kikanbo Kanda, Inoichi principal y Butagorira Shinkyogoku Rokkaku cumplen el mínimo; son las tres comidas seleccionadas. Snacks de la tabla pendientes de ese contraste. En ramen y sushi pequeño, grupos de 2–4 y turnos separados; para cenar juntos, reservar los 10.</p>
-    <p style="margin:10px 0"><b>Presupuesto:</b> importes por persona salvo las tartas. Son estimaciones para planificar, no precios garantizados, excepto el tsukemen indicado. Bebidas aparte. Los horarios pueden cambiar: comprobad el día de la visita. <b>Cenas objetivo 20:00–21:00 JST</b>, con Maruei como excepción.</p>
-    <div style="overflow-x:auto"><table><thead><tr><th>Cuándo / dónde</th><th>Qué probar</th><th>Encaje y reserva</th><th>Presupuesto orientativo</th></tr></thead><tbody>
-      <tr><td>Kamakura / Enoshima · 5<br><a href="https://visitkanagawa.jp/destination/tobiccho-honten/1317" target="_blank" rel="noopener noreferrer">Tobiccho + Toshimaya</a></td><td>Shirasudon en Enoshima; galletas de mantequilla Hato Sabure en Kamakura.</td><td>Tobiccho Honten en la isla, para comer; shirasu cocido si no hay captura para servirlo crudo. Toshimaya Honten junto a Komachi-dori. Evitad una cola que os coma la excursión.</td><td>Comida 1.500–2.500 ¥; dulce aparte</td></tr>
-      <tr><td>Akihabara / Asakusa · 6<br><a href="https://kikanbo.co.jp/pages/english-shop" target="_blank" rel="noopener noreferrer">Kikanbo + Kagetsudo</a></td><td>Ramen de miso con chile y pimienta de Sichuan; después, melonpan de Kagetsudo.</td><td>Kikanbo Kanda queda a unos 10–15 min andando al sur de Akihabara: pequeño desvío. Picante y sensación de hormigueo ajustables. Kagetsudo junto a Senso-ji: merienda durante el paseo, antes de que se agote.</td><td>Ramen 1.200–1.800 ¥; dulce 300–800 ¥</td></tr>
-      <tr><td>Omotesando · 7, comida<br><a href="https://mai-sen.com/restaurant/aoyama/" target="_blank" rel="noopener noreferrer">Tonkatsu Maisen Aoyama</a></td><td>Tonkatsu: cerdo empanado con arroz. Google 4,4 / 5.211 reseñas.</td><td>4-8-5 Jingumae, a 3 min de Omotesando. 11:00–22:00, último pedido 21:00. Ir sin reserva: el sábado solo reservan menús de banquete, que no encajan con el presupuesto. Sustituye a AFURI como comida propuesta; aceptad mesas separadas.</td><td>2.000–3.000 ¥ orientativos</td></tr>
-      <tr><td>Kioto · 12, cena 20:30<br><a href="https://sukemasa.kyoto/" target="_blank" rel="noopener noreferrer">Sukemasa · Takatsuji principal</a></td><td>Gyozas de cerdo, col y cebolleta de Kioto con dashi y miso. Google 4,4 / 1.759 reseñas.</td><td>263 Horinouchicho, al volver al centro desde los templos. Entre semana 17:00–22:00 (último pedido). No admite reservas; local de 24 plazas, contar con espera y mesas separadas. Inoichi queda como alternativa el 11 o 12, según turnos.</td><td>1.000–2.000 ¥ orientativos</td></tr>
-
-      <tr><td>Tsukiji · 9, 08:00<br><a href="https://www.tsukiji.or.jp/english/shoplist/cat-c/cat-10/466/" target="_blank" rel="noopener noreferrer">Yamacho / Sushizanmai Honten</a></td><td>Tamagoyaki en brocheta; alternativa: desayuno completo de sushi en Sushizanmai.</td><td>Elegid picoteo o desayuno de sushi: no intentéis hacerlo todo. Yamacho abre desde las 06:00; Sushizanmai Honten no admite reservas. Salida hacia teamLab a las 09:15.</td><td>Picoteo 500–1.500 ¥; sushi 2.000–4.000 ¥</td></tr>
-      <tr><td>Fuji · 10, almuerzo<br><a href="https://tabelog.com/yamanashi/A1903/A190303/19004308/" target="_blank" rel="noopener noreferrer">Houtou Fudou · estación</a></td><td>Houtou: fideos anchos con verduras y calabaza en caldo de miso.</td><td>Sucursal frente a Kawaguchiko, Funatsu 3631-2. Evita desplazarse a otra sucursal. Comida al llegar; cena kaiseki incluida en Maruei, inicio como máximo a las 19:00.</td><td>1.200–1.800 ¥</td></tr>
-      <tr><td>Kioto · 11 o 12<br><a href="https://menyainoichi.net/about" target="_blank" rel="noopener noreferrer">Menya Inoichi · principal</a></td><td>Ramen de dashi con soja blanca o negra y finas láminas de bonito.</td><td>542 Ebisunocho, cerca de Teramachi/Kawaramachi. Encaja al volver al centro, con un desvío desde Gion. 11:00–14:30 / 17:30–21:00; sin reserva. En días concurridos reparte turnos: consultar y recogerlos con antelación; llegar a las 20:00 no garantiza acceso.</td><td>1.500–2.500 ¥</td></tr>
-      <tr><td>Gion · 13, merienda<br><a href="https://giontsujiri.co.jp/en/" target="_blank" rel="noopener noreferrer">Saryo Tsujiri / Gion Tsujiri</a></td><td>Parfait de matcha; helado para llevar si preferís algo rápido.</td><td>En vuestro paseo por Gion tras la ceremonia, solo si queda margen antes de devolver los kimonos y desplazarse a Fushimi Inari.</td><td>Parfait 1.500–2.500 ¥; helado más barato</td></tr>
-      <tr><td>Nara · 14<br><a href="https://nakatanidou.jp/" target="_blank" rel="noopener noreferrer">Nakatanidou</a></td><td>Yomogi mochi recién hecho: artemisa, pasta de judía roja y kinako.</td><td>En Sanjo-dori, de camino desde Kintetsu Nara al parque. Comprar para llevar; la demostración de machacado no tiene una hora garantizada.</td><td>200–400 ¥ por pieza</td></tr>
-      <tr><td>Namba · 14 o 15<br><a href="https://www.takoyaki-wanaka.com/" target="_blank" rel="noopener noreferrer">Wanaka Sennichimae</a></td><td>Takoyaki: probad una ración con sal y otra con salsa para comparar.</td><td>11-19 Namba Sennichimae; encaja en el paseo por Namba/Dotonbori. Pedid para compartir y dejad hambre para la cena.</td><td>600–1.000 ¥ por ración</td></tr>
-      <tr><td>Namba · 14 o 15, merienda<br><a href="https://www.rikuro.co.jp/shoplist/5794.html" target="_blank" rel="noopener noreferrer">Rikuro · Namba Marui</a></td><td>Cheesecake japonés fluffy, con pasas en la base. Google 4,4 / 36 reseñas: muestra pequeña, no garantía de calidad.</td><td>3-8-9 Namba, planta 1. Tienda 11:00–20:00. Compra para llevar; tartas transportadas desde una fábrica cercana, sin espectáculo de horneado en el local. Dos tartas para compartir entre diez, si hay disponibilidad. La principal tiene 4,2 y queda fuera del filtro.</td><td><a href="https://www.rikuro.co.jp/cheesecake/">1.095 ¥ por tarta</a>; 2.190 ¥ total, 219 ¥ por persona</td></tr>
-      <tr><td>Ginza · 8, durante el paseo<br><a href="https://fruits-sand-three.com/pages/age-3" target="_blank" rel="noopener noreferrer">Age.3 GINZA</a></td><td>Sándwich dulce frito con nata y fruta; probar chocolate-fresa o crème brûlée. Google 4,7 / 17.071 reseñas. Es una versión frita, distinta del fruit sando clásico de pan blando.</td><td>1-24-11 Ginza, Sugiura Bldg 1F; 11:00–19:00. Pequeño desvío hacia Ginza oriental. Para llevar, sin reservar mesa. Solo si hay margen: no comprometer el traslado a Shibuya Sky. Compartir varios sabores y evitar una cola larga.</td><td>Hasta 1.000 ¥ por persona como presupuesto orientativo; elegir según carta</td></tr>
-      <tr><td>Shinsekai · 15<br><a href="https://www.kushikatu-daruma.com/location/" target="_blank" rel="noopener noreferrer">Kushikatsu Daruma</a></td><td>Brochetas fritas: carne, gambas y verduras.</td><td>Comida durante la visita a Shinsekai. La casa principal no admite reserva; aceptad dividir mesas o usad otra sucursal de la zona.</td><td>1.500–3.000 ¥</td></tr>
-      <tr><td>Himeji · 16, solo 8<br><a href="https://www.jrw-urban.co.jp/piole-himeji/shopguide/515" target="_blank" rel="noopener noreferrer">Maneki Ekisoba · Piole</a></td><td>Ekisoba: fideos amarillos con dashi japonés y tempura o tofu frito.</td><td>Comida rápida en el área de recuerdos de Piole, junto a la estación, tras castillo y jardines. Opción local y económica.</td><td>500–1.000 ¥</td></tr>
-    </tbody></table></div>
-    <div class="note warn"><b>Doble comprobación · 9 octubre 2026:</b> Google Maps consultado directamente, sucursal exacta. Fuunji Shinjuku 4,3 (5.739 opiniones); Kikanbo Kanda 4,4 (6.630); Inoichi principal 4,4 (3.997); Fukutaro Honten 4,2 (3.841); Butagorira Shinkyogoku Rokkaku 4,4 (772); Ajinoya Honten 4,2 (3.983). Con el mínimo acordado de 4,4+, entran Kikanbo, Inoichi y Butagorira. Fuunji, Fukutaro y Ajinoya quedan descartados como recomendaciones principales. No hay reservas nuevas. Hanamaru Ginza 10F figuraba con 4,1 (4.362), pero <a href="https://www.sushi-hanamaru.com/info/details/2026923.html" target="_blank" rel="noopener noreferrer">cerró el 23 de septiembre de 2026, según su web oficial</a>: retirado de la ruta. Las notas de Tabelog conservadas debajo son otra medida, no una conversión a Google.</div>
-    <h3 style="margin-top:18px">Selección contrastada y candidatos descartados</h3>
-    <p>Notas y volumen de opiniones consultados el 9 de octubre de 2026 en Tabelog; cambian con el tiempo y no se comparan directamente con estrellas de Google/Tripadvisor. Además de la nota, se han revisado precio, sucursal exacta, horarios y comentarios recientes. No garantiza una experiencia perfecta ni una cola corta.</p>
-    <ul>
-      <li><b>Tokio · Fuunji Shinjuku</b> — <a href="https://tabelog.com/en/tokyo/A1304/A130401/13044091/" target="_blank" rel="noopener noreferrer">3,76 / 5.409 opiniones</a>. Descartado por Google 4,3; no admite reserva. Mejor una comida o cena hacia las 20:00, con tiempo para la cola, que intentar entrar a las 21:00. Encaja el 4 si hay energía o el 9 tras volver de Odaiba. No dar por garantizado que los diez coman simultáneamente.</li>
-      <li><b>Tokio · Kikanbo Kanda · 6 noviembre</b> — <a href="https://tabelog.com/en/tokyo/A1310/A131002/13097205/" target="_blank" rel="noopener noreferrer">3,72 / 2.840 opiniones</a>. Ramen de miso, chile y pimienta de Sichuan; Google 4,4; comida seleccionada para el paseo por Akihabara. Reseña de septiembre de 2026 destaca caldo equilibrado y cerdo tierno, pero también espera antes de abrir. Visita sin reserva a la tienda principal. El FastPass online corresponde a Kikanbo Lab, cobra una tarifa no reembolsable aparte de la comida y permite hasta cinco personas: no contratarlo para este plan económico.</li>
-
-      <li><b>Kioto · Menya Inoichi · 11 o 12 noviembre</b> — <a href="https://tabelog.com/en/kyoto/A2601/A260201/26032368/" target="_blank" rel="noopener noreferrer">3,71 / 1.140 opiniones · Tabelog 100 ramen WEST 2025</a>. Ramen de dashi como comida prioritaria; presupuesto de 1.500–2.500 ¥ orientativo. <b>Corregimos la logística:</b> no basta con llegar a las 20:00; reparte turnos cuando hay demanda. Una reseña de septiembre describe recogida del turno antes de las 16:00 para cenar. Consultar cómo funciona ese día y pedir turno con antelación si el paseo encaja; sin reserva online, sin garantía de acceso.</li>
-      <li><b>Kioto · Butagorira Shinkyogoku Rokkaku · alternativa el 13 a las 20:00</b> — <a href="https://tabelog.com/en/kyoto/A2601/A260201/26018153/" target="_blank" rel="noopener noreferrer">3,43 / 210 opiniones</a>. Tonkatsu con arroz, opción económica y abundante: gasto reportado de 1.000–1.999 ¥, no presupuesto garantizado. En Shinkyogoku, 425-1 Matsugaecho, planta 2; pequeño paseo desde Gion/Kawaramachi. Figura que admite reservas, pero disponibilidad para diez sin comprobar; contacto 075-255-0369. Cierra a las 21:00, así que propuesta 20:00, no 21:00. Alternativa razonable, no la misma prioridad gastronómica que Inoichi.</li>
-      <li><b>Osaka · Fukutaro Honten · 14, 15 o 16 noviembre, 20:00–20:30</b> — <a href="https://tabelog.com/en/osaka/A2701/A270202/27002665/" target="_blank" rel="noopener noreferrer">3,71 / 2.772 opiniones · Tabelog 100 okonomiyaki 2025</a>. Descartado por Google 4,2, pese a su reputación en Tabelog. Especialidad: negiyaki y okonomiyaki en Sennichimae, cerca de Namba. <a href="https://2951.jp/en/menu.html" target="_blank" rel="noopener noreferrer">Carta oficial publicada</a>: okonomiyaki de cerdo 1.080 ¥, negiyaki de cerdo 1.280 ¥; confirmar precios allí. Presupuestar 2.000–3.000 ¥ de comida según platos, bebida aparte. Una reseña de septiembre valora comida y precio, pero critica servicio al cierre; mejor evitar última hora. <a href="https://2951.jp/en/" target="_blank" rel="noopener noreferrer">El restaurante no admite reservas anticipadas</a>. Dividirse y aceptar espera. El 16 solo si queda margen para dormir antes del vuelo.</li>
-      <li><b>Osaka · Ajinoya Honten · alternativa el 14 o 15</b> — <a href="https://tabelog.com/en/osaka/A2701/A270202/27001439/" target="_blank" rel="noopener noreferrer">3,59 / 1.766 opiniones · Tabelog 100 okonomiyaki 2025</a>. Descartado por Google 4,2. Especialidad: okonomiyaki en Namba. <b>Cierra los lunes: no proponer el 16.</b> Presupuesto de cena publicado 3.000–3.999 ¥; algo más alto que una cena básica. No duplicar con Fukutaro salvo que os encante este plato. Reserva para diez y condiciones sin comprobar.</li>
-    </ul>
-    <h3>Snacks y alternativas durante el paseo</h3>
-    <p>La tabla conserva mochi, melonpan, takoyaki y dulces como paradas opcionales por especialidad y ubicación; no todas han pasado la misma comprobación de reseñas que la selección principal. Sushizanmai queda como alternativa práctica, Daruma como opción de kushikatsu y Ekisoba como comida local rápida: no convertirlas en visitas obligatorias.</p>
-    <h3>Cenas y reservas · estado real</h3>
-    <p><b>Ninguna reserva nueva confirmada.</b> Kikanbo: ir a la tienda principal sin suplemento; Inoichi: sin reserva, consultar turnos; Butagorira: propuesta 13 de noviembre a las 20:00 para diez, <b>pendiente de confirmación por teléfono (+81 75-255-0369)</b>. No se ha localizado un canal de reserva online verificable. Torikizoku, Gonpachi, Gyuuzen y Chibo no se persiguen como cenas principales. Maruei continúa cerrado y pagado. Maisen: comida propuesta el 7, sin reserva para evitar el menú obligatorio del sábado. Sukemasa: cena propuesta el 12 a las 20:30, sin reserva. Los dulces son compras para llevar, sin reserva ni menú de grupo. Ginza Tenryu (Google 4,0) y Sanpei (4,3) quedan descartados como paradas principales por el filtro acordado; Sanpei además cierra el lunes 16. <b>Acción al llegar:</b> pedir ayuda en Hanabi para llamar a Butagorira y solicitar diez plazas el 13 a las 20:00, a la carta y sin menú obligatorio. No dar por confirmado hasta recibir respuesta.</p>
+    <p><b>La lista de confianza del grupo es la base.</b> <a href="https://maps.app.goo.gl/1waE5vFSR1GUn4mT9?g_st=iw" target="_blank" rel="noopener noreferrer">Abrir los 32 sitios recomendados</a>. Incorporamos sus recomendaciones aunque algunas tengan menos de 4,4 en Google; la nota y el precio se muestran como información, no como garantía. Las cadenas se eligen por sucursal cercana, no por la nota de la sucursal guardada.</p>
+    <p style="margin-top:10px">En cada día hay opciones de comida, cena y picoteo con enlace, especialidad y estado de reserva. Elegid una alternativa por comida; no son paradas que haya que completar. Objetivo habitual: 1.000–2.000 ¥ de comida, 2.000–3.000 ¥ de cena y cenas a las 20:00–21:00. Bebidas aparte y precios orientativos salvo indicación expresa. Ramen y locales pequeños: subgrupos de 2–4; una recomendación no implica mesa para diez.</p>
+    <div class="note info" style="margin-top:12px"><b>Reservas:</b> Ikkakuju Karasuma · 12/11, 21:00, diez, solo mesa: reserva online rechazada al confirmar tanto a las 21:00 como a las 20:45; pendiente de contacto directo al +81 75-352-1088. Meigetsukan · 15/11, 20:30: propuesta pendiente de llamada al +81 6-6763-2929. Butagorira · 13/11, 20:00: pendiente de llamada al +81 75-255-0369. Maruei sí está pagado y confirmado. No se han contratado menús caros, cangrejo, omakase ni reservas con suplementos.</div>
+    <div style="overflow-x:auto;margin-top:14px"><table class="tbl"><thead><tr><th>Día</th><th>Comida / cena / picoteo</th></tr></thead><tbody id="food-summary"></tbody></table></div>
+    <h3 style="margin-top:18px">Opciones con desvío</h3>
+    <p>Akasaka y Roppongi no forman parte del recorrido principal: elegid este bloque solo si sustituís una tarde. Evitamos cruzar Tokio únicamente para completar restaurantes.</p>
+    <div id="food-extras"></div>
+    <div class="note warn" style="margin-top:14px"><b>Fuera del recorrido actual:</b> Tonkatsu 16, patisserie MUSIM PANEN y Koshida están en Hiroshima, ciudad que no visitamos. Tailored Cafe Shibuya figura cerrado permanentemente en Maps. Ginza Sushi Den, Kaniyoshi y Kani Doraku quedan como caprichos con presupuesto por decidir; la nota antigua del amigo no se toma como precio actual. Hanamaru Ginza 10F sigue retirado: su web oficial comunicó el cierre.</div>
+    <p style="margin-top:10px;font-size:12px">Datos de la lista y fichas de Google Maps revisados el 15 de octubre de 2026. Horarios, cartas y condiciones de reserva contrastados con las webs enlazadas cuando estaban disponibles; una hora objetivo o un hueco libre no es una reserva confirmada. No se han comunicado alergias ni restricciones alimentarias en el grupo.</p>
   </div>
 
   <!-- RESERVATIONS -->
@@ -487,7 +471,7 @@
     <h3>🔴 Pendiente de cerrar</h3>
     <ul>
       <li><b>KIX · martes 17 · plan barato en tren</b> — Airport Express desde Nankai Namba: horario laborable actual 05:15 → 05:58; alternativa 05:28 → 06:16. Referencia 970 ¥ por persona (9.700 ¥ los 10), sin suplemento ni reserva de asiento. Confirmad horario antes del viaje, terminal, salida anticipada del hotel y ruta a pie con ascensores; objetivo en la estación 04:55–05:00. El traslado privado queda solo como alternativa si el tren deja de encajar.</li>
-      <li><b>Comidas seleccionadas · reservas sin confirmar</b> — Maisen el 7 a comer; Kikanbo el 6; Sukemasa el 12 a las 20:30; Inoichi según turnos el 11 o 12; Butagorira el 13 a las 20:00, pendiente de llamada. Pedir ayuda en Hanabi al llegar para reservar Butagorira para diez a la carta. Las demás visitas se hacen sin reserva; no se contratan menús caros ni suplementos. Age.3 el 8 y Rikuro Marui el 14 o 15, para llevar. <a href="#comer">Direcciones, precios y condiciones</a>.</li>
+      <li><b>Restaurantes · lista de confianza integrada por día</b> — Ikkakuju Karasuma el 12 a las 21:00 para diez, solo mesa: la web rechazó la reserva al confirmar a las 21:00 y 20:45; pendiente de contacto directo al +81 75-352-1088, no reservado. Meigetsukan Uehonmachi el 15 a las 20:30 y Butagorira el 13 a las 20:00 requieren llamada; no reservados. Ramen, cadenas, dulces y sushi pequeño quedan como visitas flexibles en subgrupos. Yutaka y Maisen sin reserva para evitar menús obligatorios. <a href="#comer">Ver alternativas, precios y estado real</a>.</li>
       <li><b>Karaoke · domingo 8, Shibuya, 19:00</b> — falta elegir local y confirmar una sala para diez, duración y precio total con bebidas. No hay reserva confirmada.</li>
       <li><b>✅ Maruei · comidas, shuttle y depósito confirmados</b> — 10–11 noviembre, 10 adultos en 4 habitaciones (2+2+2+4), todas con baño al aire libre privado. Cena y desayuno incluidos; estancia pagada, impuesto termal de 1.500 ¥ total a pagar allí. Llegad entre las 15:00 y las 17:00. Shuttle gratuito en ese horario: llamad al llegar; tarda normalmente unos 10 min. El centro de información de la estación puede llamar si no tenéis teléfono (cierra a las 17:00). La cena se asigna al check-in y debe empezar antes de las 19:00; no adaptan comidas. Respuesta recibida: el shuttle admite los 10 y el equipaje declarado. Admiten depósito antes del check-in, conservando los objetos de valor con vosotros; no hay shuttle gratuito antes de las 15:00, así que llegar temprano al hotel requiere taxi o bus turístico. Cena en sala privada para 10; desayuno en comedor compartido. El alojamiento reitera condiciones especiales de cancelación para grupos de 10 o más; guardad el mensaje junto a la reserva.</li>
       <li><b>Maletas · gestión individual, sin envío de grupo</b> — cada uno debe llegar a Fuji con una sola maleta para bodega y una mochila pequeña (máximo 27 litros y 10 kg dentro del bus a Mishima). Opción sin coste: cabina dentro de la grande, conjunto hasta 30 kg y 250 litros. Quien necesite llevar ambas separadas puede enviar solo una Tokio→Kioto; enviar la de cabina suele costar menos. Yamato, tarifa base actual Tokio→Kioto por pieza: categoría 120 (hasta 120 cm de suma y 15 kg), 2.170 ¥; categoría 160 (hasta 160 cm y 25 kg), 3.160 ¥; categoría 180 (hasta 180 cm y 30 kg), 4.480 ¥. El peso puede subir la categoría. No hay envíos contratados. Si se elige envío, consultar en Hanabi al llegar y preparar entrega el 8 o 9 de noviembre según el plazo confirmado, con recepción prevista el 11; llevar lo necesario y objetos de valor encima. El Airbnb sin recepción no sirve como destino: usar una oficina Yamato que admita recogida, con teléfono local de contacto, dirección, horario y plazo confirmados antes de entregar. Los buses están comprados con una maleta en bodega y una mochila pequeña por persona; la bodega no reserva una plaza individual para cada pieza. Las maletas grandes suman como máximo 160 cm, confirmado por el grupo, y permiten usar los asientos ordinarios reservados del Shinkansen. Alternativa sin envío si falla el bus: tren vía Otsuki, Hachioji y Shin-Yokohama, cambiando también el origen del Shinkansen y el horario de llegada a Kioto. En Nara el 14 sigue pendiente comparar depósito por pieza con dejar primero las maletas en Abitare, si permite depósito temprano.</li>
@@ -811,6 +795,499 @@ const overview = [
   ]
 ];
 
+const FOOD_PLACES = {
+  "suzuran": {
+    "name": "Suzuran Shinjuku",
+    "where": "3-11-12 Shinjuku, Tokio",
+    "what": "Ramen de niboshi (sardina seca), intenso y distinto al miso.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Visita flexible en grupos pequeños; no hay reserva confirmada.",
+    "rating": "4,0",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Suzuran%20Shinjuku%203-11-12%20Shinjuku%2C%20Tokio"
+  },
+  "sukiya": {
+    "name": "Sukiya · sucursal cercana",
+    "where": "Shinjuku / Namba",
+    "what": "Gyudon: bol de arroz con ternera. Cadena recomendada como comida cotidiana japonesa.",
+    "price": "500–1.200 ¥ objetivo",
+    "reserve": "Sin reserva de grupo; elegir la sucursal abierta más cercana. La nota de la lista corresponde a una sucursal, no a toda la cadena.",
+    "rating": "",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Sukiya%20%C2%B7%20sucursal%20cercana%20Shinjuku%20/%20Namba"
+  },
+  "coco": {
+    "name": "CoCo Ichibanya · sucursal cercana",
+    "where": "Ginza / Shinjuku / Namba",
+    "what": "Curry japonés con arroz; elegir topping y picante.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Alternativa práctica de la lista; sin mesa para diez confirmada. Revisar ubicación y horario de la sucursal.",
+    "rating": "",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=CoCo%20Ichibanya%20%C2%B7%20sucursal%20cercana%20Ginza%20/%20Shinjuku%20/%20Namba"
+  },
+  "azabu": {
+    "name": "Azabu Shokudo",
+    "where": "4-18-1 Nishiazabu, Tokio",
+    "what": "Omurice casero: arroz cubierto de tortilla. Llevar efectivo.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Solo si cambiáis una comida a Hiroo/Roppongi: queda fuera del recorrido principal.",
+    "rating": "4,4",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Azabu%20Shokudo%204-18-1%20Nishiazabu%2C%20Tokio"
+  },
+  "kameju": {
+    "name": "Kamejuu",
+    "where": "2-18-11 Kaminarimon, Asakusa, Tokio",
+    "what": "Dorayaki de masa esponjosa con anko de judía roja o blanca.",
+    "price": "Precio en mostrador",
+    "reserve": "Para llevar; compartir y evitar una cola que os quite Kappabashi.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Kamejuu%202-18-11%20Kaminarimon%2C%20Asakusa%2C%20Tokio"
+  },
+  "sushiden": {
+    "name": "Ginza Sushi Den",
+    "where": "GIRAC GINZA 11F, 6-13-9 Ginza, Tokio",
+    "what": "Omakase de sushi; capricho opcional.",
+    "price": "Maps indica más de 10.000 ¥",
+    "reserve": "No reservado: comprobar carta y precio actuales antes de contratar. Los ~50 € de la nota del amigo no se toman como precio vigente.",
+    "rating": "4,3",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Ginza%20Sushi%20Den%20GIRAC%20GINZA%2011F%2C%206-13-9%20Ginza%2C%20Tokio"
+  },
+  "alchemist": {
+    "name": "Alchemist Kyobashi",
+    "where": "2-4-12 Kyobashi, Tokio",
+    "what": "Café de especialidad para llevar durante el paseo por Ginza oriental.",
+    "price": "Hasta 1.000 ¥",
+    "reserve": "Sin reserva; pequeño desvío, opcional si queda margen.",
+    "rating": "4,6",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Alchemist%20Kyobashi%202-4-12%20Kyobashi%2C%20Tokio"
+  },
+  "kaniyoshi": {
+    "name": "Kaniyoshi West Namba",
+    "where": "2-4-5 Dotonbori, Osaka",
+    "what": "Degustación de cangrejo que destaca vuestro amigo.",
+    "price": "Más de 10.000 ¥",
+    "reserve": "Capricho opcional, sin reserva ni pago: requiere elegir presupuesto y menú antes de contratar.",
+    "rating": "4,7",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Kaniyoshi%20West%20Namba%202-4-5%20Dotonbori%2C%20Osaka"
+  },
+  "izuu": {
+    "name": "Izuu · Gion",
+    "where": "367 Kiyomotocho, Gion, Kioto",
+    "what": "Sushi prensado de caballa (saba-zushi), especialidad tradicional de Kioto.",
+    "price": "2.000–4.000 ¥",
+    "reserve": "Abre a las 11:00; martes cerrado. Para diez, contemplar turnos o compra para llevar; ninguna mesa confirmada.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.izuu.jp/"
+  },
+  "meigetsukan": {
+    "name": "Meigetsukan · Uehonmachi Honten",
+    "where": "12-2 Obasecho, Tennoji, Osaka",
+    "what": "Yakiniku: compartir bandejas de carne y acompañar con arroz.",
+    "price": "Carta según pedido; objetivo 3.000–5.000 ¥, bebidas aparte",
+    "reserve": "Propuesta 15/11 a las 20:30 para diez. La web oficial solo ofrece reserva por teléfono: +81 6-6763-2929. Abre hasta 22:00, último pedido 21:30. No reservado. Supone un desvío desde Namba; sustituye Umeda opcional.",
+    "rating": "4,3",
+    "source": "Lista de tu amigo",
+    "url": "https://meigetsukan.com/meigetsukan-uehonmachi/"
+  },
+  "hanamichi": {
+    "name": "MISO HANAMICHI Honten",
+    "where": "3-26-7 Sendagaya, Tokio",
+    "what": "Ramen de miso; opción entre Meiji Jingu y Harajuku.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Sin reserva confirmada; entrar en subgrupos. Alternativa al tonkatsu del sábado.",
+    "rating": "4,1",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=MISO%20HANAMICHI%20Honten%203-26-7%20Sendagaya%2C%20Tokio"
+  },
+  "tonton": {
+    "name": "Yakitori Ton Ton",
+    "where": "2-1-10 Yurakucho, Tokio",
+    "what": "Brochetas y cerveza bajo las vías; ambiente de izakaya.",
+    "price": "1.000–3.000 ¥ orientativos",
+    "reserve": "Sin reserva confirmada. Encaja solo si cenáis por Yurakucho al volver de Odaiba; aceptar mesas separadas.",
+    "rating": "3,9",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Yakitori%20Ton%20Ton%202-1-10%20Yurakucho%2C%20Tokio"
+  },
+  "takoichi": {
+    "name": "Kyoto Takoichi · Shijo Aburanokoji",
+    "where": "34 Fujimotoyoricho, Kioto",
+    "what": "Takoyaki para compartir como picoteo de tarde.",
+    "price": "1.000–2.000 ¥ de gasto reportado; picoteo según pedido",
+    "reserve": "Mejor para llevar o en subgrupos. Desvío al oeste de Karasuma; no lo convertimos en una cena obligatoria.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Kyoto%20Takoichi%20%C2%B7%20Shijo%20Aburanokoji%2034%20Fujimotoyoricho%2C%20Kioto"
+  },
+  "kitada": {
+    "name": "Kaidashi Men Kitada",
+    "where": "570-3 Kitafudodocho, cerca de Kyoto Station",
+    "what": "Ramen de almejas.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Visita en subgrupos; no hay reserva. Útil junto a Kyoto Station si os quedáis allí, no para volver desde Gion solo a cenar.",
+    "rating": "4,3",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Kaidashi%20Men%20Kitada%20570-3%20Kitafudodocho%2C%20cerca%20de%20Kyoto%20Station"
+  },
+  "sugari": {
+    "name": "Wajoryomen Sugari",
+    "where": "471-1 Kannondocho, Karasuma, Kioto",
+    "what": "Ramen o tsukemen de la lista; elegir entre caldo y fideos para mojar.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Sin reserva confirmada; pequeño local, grupos de 2–4 y posible cola. Alternativa cuando estéis en Karasuma.",
+    "rating": "4,1",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Wajoryomen%20Sugari%20471-1%20Kannondocho%2C%20Karasuma%2C%20Kioto"
+  },
+  "ikkakuju": {
+    "name": "Ikkakuju Karasuma",
+    "where": "248 Shinmeicho, B1F, Karasuma, Kioto",
+    "what": "Okonomiyaki y yakisoba a la plancha para compartir.",
+    "price": "2.000–3.000 ¥ orientativos de comida; bebida aparte",
+    "reserve": "12/11, diez personas: la web rechazó la confirmación a las 21:00 y 20:45 pese a mostrar huecos. NO reservado. Contacto directo: +81 75-352-1088; pedir solo mesa y carta.",
+    "rating": "4,4",
+    "source": "Lista de tu amigo",
+    "url": "https://www.ikkaku10.com/"
+  },
+  "takakura": {
+    "name": "Men-ya Takakura Nijo",
+    "where": "64-1 Kannoncho, Nakagyo, Kioto",
+    "what": "Ramen/tsukemen, de los favoritos del amigo.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Cierra a las 21:00 según Maps: alternativa temprana, no llegar a última hora. Desvío al norte de Karasuma; sin reserva confirmada.",
+    "rating": "4,1",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Men-ya%20Takakura%20Nijo%2064-1%20Kannoncho%2C%20Nakagyo%2C%20Kioto"
+  },
+  "yutaka": {
+    "name": "Tonkatsu Yutaka",
+    "where": "1-15-9 Asakusa, Tokio",
+    "what": "Tonkatsu de cerdo con arroz; alternativa durante Asakusa.",
+    "price": "2.000–3.000 ¥",
+    "reserve": "La web no acepta solo mesa: reserva ligada a menú. Para ahorrar, sin reserva y en subgrupos. Miércoles/jueves cerrado; último pedido de comida 14:00 y de cena 20:00.",
+    "rating": "4,5",
+    "source": "Lista de tu amigo",
+    "url": "https://www.tonkatu-yutaka-asakusa.com/english/"
+  },
+  "lemon": {
+    "name": "Lemon Pie Confectionery",
+    "where": "2-4-6 Kotobuki, Asakusa, Tokio",
+    "what": "Tarta de limón para compartir tras Kappabashi.",
+    "price": "Precio en mostrador",
+    "reserve": "Para llevar; queda al sur de Tawaramachi, con pequeño desvío al volver. Sin reserva.",
+    "rating": "4,5",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Lemon%20Pie%20Confectionery%202-4-6%20Kotobuki%2C%20Asakusa%2C%20Tokio"
+  },
+  "wakura": {
+    "name": "Wakura Okachimachiten",
+    "where": "Okachimachi, Tokio",
+    "what": "Ramen de Hakata de la lista.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Alternativa secundaria si estáis por Okachimachi; no desplaza a Kikanbo. Sucursal y horario a confirmar al elegirla.",
+    "rating": "3,6",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Wakura%20Okachimachiten%20Okachimachi%2C%20Tokio"
+  },
+  "nishimura": {
+    "name": "Nishimura · にし邑",
+    "where": "3-12-6 Ginza, Tokio",
+    "what": "Tonkatsu abundante.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Alternativa del lunes 9 si cenáis en Ginza al volver de Odaiba. No reservado; no trasladarlo al domingo 8 sin comprobar apertura.",
+    "rating": "4,3",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Nishimura%20%C2%B7%20%E3%81%AB%E3%81%97%E9%82%91%203-12-6%20Ginza%2C%20Tokio"
+  },
+  "tsukiji": {
+    "name": "Tsukiji Outer Market",
+    "where": "Tsukiji, Tokio",
+    "what": "Picoteo de pescado, marisco y tamagoyaki.",
+    "price": "500–1.500 ¥ picoteo; sushi aparte",
+    "reserve": "Lunes 9 antes de teamLab. Salir a las 09:15; nada de colas largas ni mesa de grupo.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.tsukiji.or.jp/english/"
+  },
+  "hagakure": {
+    "name": "Hagakure",
+    "where": "3-10-20 Akasaka, B1F, Tokio",
+    "what": "Udon e izakaya.",
+    "price": "Hasta 1.000 ¥ de gasto reportado; cena según pedido",
+    "reserve": "Fuera del recorrido principal; solo si vais a Akasaka. Sin reserva confirmada.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Hagakure%203-10-20%20Akasaka%2C%20B1F%2C%20Tokio"
+  },
+  "akai": {
+    "name": "Akai Kujira",
+    "where": "5-4-11 Akasaka, Tokio",
+    "what": "Tantanmen (fideos dan dan), más picantes y con sésamo.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "Fuera del recorrido principal, alternativa si cambiáis una comida a Akasaka. Sin reserva confirmada.",
+    "rating": "4,1",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Akai%20Kujira%205-4-11%20Akasaka%2C%20Tokio"
+  },
+  "iruka": {
+    "name": "Iruka TOKYO · Roppongi",
+    "where": "4-12-12 Roppongi, Tokio",
+    "what": "Ramen elaborado con distintos caldos y soja.",
+    "price": "2.000–3.000 ¥",
+    "reserve": "Desvío opcional a Roppongi; cierre temprano y posible cola, no proponer como cena a las 21:00.",
+    "rating": "4,0",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Iruka%20TOKYO%20%C2%B7%20Roppongi%204-12-12%20Roppongi%2C%20Tokio"
+  },
+  "oyoge": {
+    "name": "Taiyaki-ya OYOGE",
+    "where": "7-13-10 Roppongi, Tokio",
+    "what": "Dulces rellenos con forma de pez, para compartir.",
+    "price": "Precio en mostrador",
+    "reserve": "Solo si vais a Roppongi; para llevar, sin reserva.",
+    "rating": "4,1",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Taiyaki-ya%20OYOGE%207-13-10%20Roppongi%2C%20Tokio"
+  },
+  "verve": {
+    "name": "Verve Coffee Roasters · Roppongi",
+    "where": "5-16-7 Roppongi, Tokio",
+    "what": "Café de especialidad.",
+    "price": "1.000–2.000 ¥ de gasto reportado",
+    "reserve": "La sucursal guardada es Roppongi, no Shinjuku. Desvío opcional, sin reserva.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://www.google.com/maps/search/?api=1&query=Verve%20Coffee%20Roasters%20%C2%B7%20Roppongi%205-16-7%20Roppongi%2C%20Tokio"
+  },
+  "kanidoraku": {
+    "name": "Kani Doraku · Dotonbori Nakamise",
+    "where": "1-6-2 Dotonbori, Osaka",
+    "what": "Cangrejo en varios pases o hotpot.",
+    "price": "Precio del menú actual por confirmar; capricho",
+    "reserve": "No reservado. Consultar la carta de esta sucursal; no contratar menú caro para diez sin decidirlo primero.",
+    "rating": "4,2",
+    "source": "Lista de tu amigo",
+    "url": "https://douraku.co.jp/"
+  },
+  "kikanbo": {
+    "name": "Kikanbo · Kanda",
+    "where": "Kanda, junto a Akihabara, Tokio",
+    "what": "Ramen de miso con chile y pimienta de Sichuan ajustables.",
+    "price": "1.200–1.800 ¥",
+    "reserve": "Sin reserva a la tienda principal, en subgrupos. Evitar el FastPass de Kikanbo Lab con suplemento.",
+    "rating": "4,4",
+    "source": "Selección anterior",
+    "url": "https://kikanbo.co.jp/pages/english-shop"
+  },
+  "maisen": {
+    "name": "Tonkatsu Maisen · Aoyama",
+    "where": "4-8-5 Jingumae, Omotesando, Tokio",
+    "what": "Tonkatsu y arroz.",
+    "price": "2.000–3.000 ¥",
+    "reserve": "Sábado: sin reserva para evitar menú de banquete obligatorio; aceptar mesas separadas.",
+    "rating": "4,4",
+    "source": "Selección anterior",
+    "url": "https://mai-sen.com/restaurant/aoyama/"
+  },
+  "age3": {
+    "name": "Age.3 GINZA",
+    "where": "1-24-11 Ginza, Tokio",
+    "what": "Sándwiches dulces fritos de nata y fruta. Compartir sabores.",
+    "price": "Hasta 1.000 ¥ objetivo",
+    "reserve": "Para llevar, sin reserva. No alargar la cola antes de Shibuya Sky.",
+    "rating": "4,7",
+    "source": "Pedido del grupo",
+    "url": "https://fruits-sand-three.com/pages/age-3"
+  },
+  "rikuro": {
+    "name": "Rikuro · Namba Marui",
+    "where": "Namba Marui, Osaka",
+    "what": "Cheesecake japonés esponjoso: compartir una o dos tartas.",
+    "price": "Precio por tarta en tienda",
+    "reserve": "Para llevar; comprar antes del cierre del centro comercial. No reserva de mesa.",
+    "rating": "",
+    "source": "Pedido del grupo",
+    "url": "https://www.rikuro.co.jp/shoplist/"
+  },
+  "inoichi": {
+    "name": "Menya Inoichi · principal",
+    "where": "542 Ebisunocho, Kioto",
+    "what": "Ramen de dashi con soja blanca o negra.",
+    "price": "1.500–2.500 ¥",
+    "reserve": "Sin reserva. Consultar reparto de turnos con antelación: llegar a las 20:00 no garantiza entrar.",
+    "rating": "4,4",
+    "source": "Selección anterior",
+    "url": "https://menyainoichi.net/about"
+  },
+  "sukemasa": {
+    "name": "Sukemasa · Takatsuji principal",
+    "where": "263 Horinouchicho, Kioto",
+    "what": "Gyozas de cerdo con col, cebolleta, dashi y miso.",
+    "price": "1.000–2.000 ¥",
+    "reserve": "No admite reservas; 24 plazas, espera y mesas separadas. Alternativa de cena, no mesa de diez confirmada.",
+    "rating": "4,4",
+    "source": "Pedido del grupo",
+    "url": "https://sukemasa.kyoto/"
+  },
+  "butagorira": {
+    "name": "Butagorira · Shinkyogoku Rokkaku",
+    "where": "425-1 Matsugaecho, 2F, Kioto",
+    "what": "Tonkatsu económico y abundante.",
+    "price": "1.000–2.000 ¥ orientativos",
+    "reserve": "Propuesta 13/11 a las 20:00 para diez. Pendiente de llamada al +81 75-255-0369; no se ha localizado reserva online verificable. Cierra a las 21:00.",
+    "rating": "4,4",
+    "source": "Selección anterior",
+    "url": "https://tabelog.com/en/kyoto/A2601/A260201/26018153/"
+  },
+  "tobiccho": {
+    "name": "Tobiccho Honten",
+    "where": "Enoshima, Kanagawa",
+    "what": "Shirasudon; elegir pescado cocido si no hay captura para servirlo crudo.",
+    "price": "1.500–2.500 ¥",
+    "reserve": "Comida después de llegar a la isla, no antes desde Kamakura. Sin reserva confirmada; limitar la cola.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://visitkanagawa.jp/destination/tobiccho-honten/1317"
+  },
+  "toshimaya": {
+    "name": "Toshimaya Honten",
+    "where": "Komachi-dori, Kamakura",
+    "what": "Hato Sabure: galletas japonesas de mantequilla.",
+    "price": "Precio en mostrador",
+    "reserve": "Para llevar durante el paseo, sin reserva.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.google.com/maps/search/?api=1&query=Toshimaya%20Honten%20Komachi-dori%2C%20Kamakura"
+  },
+  "fudou": {
+    "name": "Houtou Fudou · frente a la estación",
+    "where": "3631-2 Funatsu, Kawaguchiko",
+    "what": "Houtou: fideos anchos con calabaza y verduras en miso.",
+    "price": "1.200–1.800 ¥",
+    "reserve": "Al llegar a Kawaguchiko; no hace falta desplazarse a otra sucursal. No hay reserva confirmada.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.google.com/maps/search/?api=1&query=Houtou%20Fudou%20%C2%B7%20frente%20a%20la%20estaci%C3%B3n%203631-2%20Funatsu%2C%20Kawaguchiko"
+  },
+  "maruei": {
+    "name": "Maruei · cena kaiseki",
+    "where": "Wakakusa no Yado Maruei, Kawaguchiko",
+    "what": "Cena japonesa en sala privada para los diez; desayuno incluido al día siguiente.",
+    "price": "Incluido en el alojamiento pagado",
+    "reserve": "CONFIRMADO. Hora asignada al check-in; cena antes de las 19:00. No reservar otra cena el 10.",
+    "rating": "",
+    "source": "Pagado",
+    "url": "https://maruei55.com/"
+  },
+  "tochuken": {
+    "name": "Tochuken · Mishima Station",
+    "where": "ASTY Mishima / estación de Mishima",
+    "what": "Ekiben con productos de Shizuoka; elegir según lo que haya en el mostrador.",
+    "price": "1.000–1.800 ¥ objetivo",
+    "reserve": "Comprar al llegar del bus y comer antes del tren o a bordo. No hay encargo de diez cajas.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.asty-shizuoka.co.jp/asty/mishima/shopdata/322"
+  },
+  "gontaro": {
+    "name": "Gontaro · Kinkakuji",
+    "where": "26 Hiranomiyashikicho, Kioto",
+    "what": "Udon, soba u oyakodon entre Kinkaku-ji y Ryoan-ji.",
+    "price": "1.100–1.800 ¥ según plato; yuba 2.400 ¥",
+    "reserve": "Jueves abierto desde las 11:00; 80 plazas. Sin reserva, aceptar mesas separadas. Evitar los menús de hotpot de 5.000 ¥ si buscáis ahorrar.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://gontaro.co.jp/kyoto/kinkakuji.php"
+  },
+  "hiraso": {
+    "name": "Hiraso · Nara",
+    "where": "Imamikadocho, Nara",
+    "what": "Kakinoha-zushi: sushi envuelto en hoja de caqui. Se retira la hoja antes de comer.",
+    "price": "Consultar carta vigente; para llevar según caja",
+    "reserve": "Encaja de vuelta desde el parque hacia Naramachi/Kintetsu. Sin reserva confirmada; caja para llevar si hay cola.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://hiraso.jp/shop/shop-nara/nara-menu/"
+  },
+  "nakatanidou": {
+    "name": "Nakatanidou",
+    "where": "Nara, Sanjo-dori",
+    "what": "Yomogi mochi recién hecho con anko.",
+    "price": "Precio por pieza en tienda",
+    "reserve": "Para llevar durante el paseo, sin reserva.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.google.com/maps/search/?api=1&query=Nakatanidou%20Nara%2C%20Sanjo-dori"
+  },
+  "daruma": {
+    "name": "Kushikatsu Daruma · sucursal de la zona",
+    "where": "Shinsekai / Dotonbori, Osaka",
+    "what": "Brochetas fritas de carne, verduras y marisco.",
+    "price": "1.500–3.000 ¥ objetivo",
+    "reserve": "Alternativa práctica de ruta, no incluida en la lista del amigo. Elegir sucursal; no hay mesa para diez confirmada y puede haber espera.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.kushikatu-daruma.com/location/"
+  },
+  "ekisoba": {
+    "name": "Maneki Ekisoba · Piole Himeji",
+    "where": "Piole, estación de Himeji",
+    "what": "Fideos amarillos con dashi y tempura o tofu frito.",
+    "price": "500–1.000 ¥",
+    "reserve": "Para los ocho de Himeji; sin reserva y sin condicionar el regreso a Osaka.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.jrw-urban.co.jp/piole-himeji/shopguide/515"
+  },
+  "kaneko": {
+    "name": "Kaneko Hannosuke · DiverCity",
+    "where": "DiverCity Tokyo Plaza 2F, Odaiba",
+    "what": "Tendon: tempura sobre arroz.",
+    "price": "1.000–2.000 ¥ objetivo",
+    "reserve": "Food court después de teamLab, sin reserva; buscar sitio en subgrupos.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://mitsui-shopping-park.com/divercity-tokyo/shopguide/700170.html"
+  },
+  "lawson": {
+    "name": "Lawson · KIX T1 4F",
+    "where": "Kansai Airport, Terminal 1, planta 4, antes del control",
+    "what": "Onigiri, sándwich de huevo, café o desayuno para llevar.",
+    "price": "500–1.000 ¥ objetivo",
+    "reserve": "Abierto 24 horas según el aeropuerto. Priorizar entrega de equipaje y seguridad; sin reserva.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.kansai-airport.or.jp/shop/s166"
+  },
+  "konbini": {
+    "name": "Konbini cercano",
+    "where": "Junto al alojamiento o en la ruta",
+    "what": "Onigiri, sándwich de huevo y bebida como alternativa rápida.",
+    "price": "500–1.000 ¥ objetivo",
+    "reserve": "Sin reserva; no es una parada gastronómica obligatoria, solo permite respetar citas y traslados.",
+    "rating": "",
+    "source": "Apoyo de ruta",
+    "url": "https://www.google.com/maps/search/?api=1&query=Konbini%20cercano%20Junto%20al%20alojamiento%20o%20en%20la%20ruta"
+  },
+  "tsujiri": {
+    "name": "Gion Tsujiri / Saryo Tsujiri",
+    "where": "Gion, Kioto",
+    "what": "Helado o parfait de matcha.",
+    "price": "500–1.800 ¥ según formato",
+    "reserve": "Opcional: ya probáis matcha en la ceremonia. Para llevar si hay cola.",
+    "rating": "",
+    "source": "Selección anterior",
+    "url": "https://giontsujiri.co.jp/en/"
+  }
+};
+
 const days = [
   {
     "n": "01",
@@ -852,6 +1329,23 @@ const days = [
         "info",
         "<b>🏨 Base Tokio confirmada:</b> Hanabi Hotel, del 4 al 10 de noviembre (6 noches), 2-8-5 Hyakunincho. Cerca de JR Shin-Okubo, una parada al norte de Shinjuku. Confirmad distribución de habitaciones, llegada y consigna con vuestra reserva; para el Narita Express y Busta Shinjuku hay un tramo local adicional."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida",
+        "places": [
+          "konbini"
+        ],
+        "note": "Comida a bordo del vuelo; al llegar no reservamos una mesa con hora fija."
+      },
+      {
+        "label": "Cena · 20:00–21:00",
+        "places": [
+          "suzuran",
+          "sukiya"
+        ],
+        "note": "Según la hora real del check-in y el jet lag; Shinjuku queda algo más lejos que comer junto a Hanabi."
+      }
     ]
   },
   {
@@ -888,7 +1382,7 @@ const days = [
       ],
       [
         "12:00",
-        "🐟 Almuerzo: shirasu-don"
+        "🍪 Picoteo ligero por Kamakura; comida principal en Enoshima tras el Enoden"
       ],
       [
         "13:00",
@@ -896,6 +1390,10 @@ const days = [
       ],
       [
         "14:00",
+        "🐟 Comida en Enoshima: Tobiccho Honten, shirasudon; alternativa local si la cola es larga"
+      ],
+      [
+        "15:00",
         "🏝️ Enoshima — santuario y vistas; cuevas Iwaya opcionales según horario y energía"
       ],
       [
@@ -912,6 +1410,30 @@ const days = [
         "warn",
         "<b>Día de ~30.000 pasos.</b> Zapatillas cómodas. Plan B si flaqueáis: saltad las cuevas y quedaos con el faro y el atardecer."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 14:00, Enoshima",
+        "places": [
+          "tobiccho"
+        ],
+        "note": "En Kamakura, picoteo ligero antes del Enoden; comida principal al llegar a la isla."
+      },
+      {
+        "label": "Cena · 20:00–21:00, Shinjuku",
+        "places": [
+          "suzuran",
+          "coco"
+        ],
+        "note": "Cena al volver de la excursión, sin imponer una hora de reserva."
+      },
+      {
+        "label": "Dulce",
+        "places": [
+          "toshimaya"
+        ],
+        "note": "Comprar durante Komachi-dori, antes del traslado a Enoshima."
+      }
     ]
   },
   {
@@ -928,7 +1450,7 @@ const days = [
       ],
       [
         "12:30",
-        "🍜 Almuerzo Akiba"
+        "🍜 Kikanbo Kanda como primera opción; Wakura Okachimachi como alternativa de la lista. Entrar en subgrupos"
       ],
       [
         "13:15",
@@ -947,16 +1469,16 @@ const days = [
         "🚆 Vuelta a Hanabi Hotel para descansar y cambiarse antes de salir"
       ],
       [
-        "18:30",
-        "🍢 Cena temprana por Shin-Okubo/Shinjuku"
+        "19:30–20:00",
+        "🍛 Cena económica antes de los bares en Shibuya; curry o gyudon, sin reserva larga"
       ],
       [
-        "20:30",
-        "🚆 Tren a Shibuya — empieza la NOCHE DE FIESTA"
+        "19:15",
+        "🚆 Tren a Shibuya tras descansar y cambiarse en Hanabi; cena allí antes de empezar los bares"
       ],
       [
-        "21:00",
-        "🍻 Calentamiento: 1–2 bares por Center-gai / Nonbei Yokocho"
+        "20:00",
+        "🍛 Cena económica en Shibuya: CoCo Ichibanya o Sukiya; elegir sucursal cercana y comer en subgrupos"
       ],
       [
         "23:00",
@@ -972,6 +1494,33 @@ const days = [
         "warn",
         "<b>🎉 FIESTA TOKIO (viernes · clubbing):</b> Akihabara + Asakusa y un paseo breve por Kappabashi. Ueno o Yanaka pueden sustituir ese paseo si preferís parques o barrio; no encadenéis los tres. El kimono y la ceremonia del té se hacen en Kioto el viernes 13. WOMB / clubasia / ZEROTOKYO según cartel; acordad punto de reunión y vuelta."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 12:00–12:30, Akihabara",
+        "places": [
+          "kikanbo",
+          "wakura"
+        ],
+        "note": "Kikanbo es la primera opción; Wakura es la alternativa de la lista en Okachimachi. Elegid uno, grupos pequeños."
+      },
+      {
+        "label": "Cena · 20:00, Shibuya",
+        "places": [
+          "coco",
+          "sukiya"
+        ],
+        "note": "Cena económica antes de los bares con Fran; elegir sucursal en Shibuya, no reservar una cena larga."
+      },
+      {
+        "label": "Asakusa · dulce o alternativa de comida",
+        "places": [
+          "kameju",
+          "lemon",
+          "yutaka"
+        ],
+        "note": "Yutaka sustituye al ramen solo si cambiáis el almuerzo a Asakusa antes de las 14:00. Kameju durante Senso-ji; Lemon Pie tras Kappabashi si queda margen."
+      }
     ]
   },
   {
@@ -995,7 +1544,7 @@ const days = [
       ],
       [
         "13:00",
-        "🍱 Almuerzo: Gyukatsu Motomura"
+        "🍱 Maisen Aoyama o MISO HANAMICHI Honten, según el recorrido. Opciones y condiciones debajo"
       ],
       [
         "14:30",
@@ -1010,8 +1559,8 @@ const days = [
         "🎸 Shimokitazawa — vintage, vinilos"
       ],
       [
-        "19:30",
-        "🍢 Cena en Shimokitazawa: izakaya local"
+        "20:00–21:00",
+        "🍛 Cena flexible: curry en Shimokitazawa o ramen tras volver a Shinjuku. Ver opciones del día"
       ]
     ],
     "notes": [
@@ -1019,6 +1568,33 @@ const days = [
         "info",
         "<b>Mañana flexible tras el club:</b> quedad a las 11:30 en Harajuku. Meiji Jingu es un santuario sintoísta en un bosque y Senso-ji es un templo budista: son visitas distintas. Recortad por cansancio, no por duplicidad."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 13:00, Harajuku/Omotesando",
+        "places": [
+          "maisen",
+          "hanamichi"
+        ],
+        "note": "Elegid tonkatsu o ramen. Hanamichi es la sucursal de Sendagaya: encaja antes de bajar a Omotesando."
+      },
+      {
+        "label": "Cena · 20:00–21:00",
+        "places": [
+          "coco",
+          "suzuran"
+        ],
+        "note": "Curry en Shimokitazawa o ramen tras volver a Shinjuku; no obligamos a regresar solo por comer."
+      },
+      {
+        "label": "Si cambiáis la tarde a Roppongi",
+        "places": [
+          "azabu",
+          "iruka",
+          "oyoge"
+        ],
+        "note": "Alternativas de la lista con desvío; no intentar añadirlas al recorrido completo Harajuku–Shibuya–Shimokitazawa."
+      }
     ]
   },
   {
@@ -1054,7 +1630,7 @@ const days = [
       ],
       [
         "19:00",
-        "🎤 Karaoke en grupo (Big Echo) y cena"
+        "🎤 Karaoke en grupo (pendiente de reserva); cena después, sobre las 20:30–21:00"
       ],
       [
         "21:30",
@@ -1066,6 +1642,32 @@ const days = [
         "warn",
         "<b>Apertura de venta:</b> 24 de octubre a las 17:00 en Madrid (25 de octubre a las 00:00 en Japón). Reservad 10 entradas para las 15:40 o alternativa 16:00 del domingo 8. La azotea puede cerrar por viento o lluvia; revisad las condiciones del billete. Tsukiji pasa al lunes porque muchos comercios cierran los domingos."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 13:00, Ginza",
+        "places": [
+          "coco",
+          "sushiden"
+        ],
+        "note": "El curry es la opción económica. Sushi Den es solo un capricho con presupuesto por decidir; NO tiene reserva ni precio de 50 € confirmado."
+      },
+      {
+        "label": "Cena · 20:30–21:00, Shibuya",
+        "places": [
+          "coco",
+          "sukiya"
+        ],
+        "note": "Después del karaoke; la reserva del karaoke no incluye una cena confirmada."
+      },
+      {
+        "label": "Ginza · dulce y café",
+        "places": [
+          "age3",
+          "alchemist"
+        ],
+        "note": "Compartir Age.3 y café opcional. Salir hacia Shibuya a las 14:15 aunque quede cola."
+      }
     ]
   },
   {
@@ -1106,7 +1708,7 @@ const days = [
       ],
       [
         "21:00 objetivo",
-        "🍢 Cena económica cerca de Hanabi/Shinjuku; restaurante pendiente de selección con Google 4,4+. Sin reserva confirmada. <a href='#comer'>Opciones gastronómicas</a>"
+        "🍜 Suzuran Shinjuku como cena cerca de la base. Si preferís Ginza/Yurakucho al volver de Odaiba, elegir Nishimura o Ton Ton y volver después al hotel"
       ]
     ],
     "notes2": [
@@ -1118,6 +1720,31 @@ const days = [
         "tip",
         "<b>Ropa para teamLab:</b> entraréis descalzos y hay zonas con agua y suelos de espejo; llevad pantalones que se puedan remangar. Hay pantalones cortos de préstamo. El Miraikan sigue fuera: estará cerrado por reformas durante vuestro viaje."
       ]
+    ],
+    "food": [
+      {
+        "label": "Desayuno · 08:00",
+        "places": [
+          "tsukiji"
+        ],
+        "note": "Tamagoyaki y pequeños bocados; salida hacia teamLab a las 09:15."
+      },
+      {
+        "label": "Comida · 13:30–14:30, Odaiba",
+        "places": [
+          "kaneko"
+        ],
+        "note": "Opción concreta de food court al salir de teamLab; flexible si la visita se alarga."
+      },
+      {
+        "label": "Cena · 20:00–21:00",
+        "places": [
+          "suzuran",
+          "nishimura",
+          "tonton"
+        ],
+        "note": "Suzuran mantiene la vuelta directa a Hanabi. Nishimura o Ton Ton solo si decidís cenar por Ginza/Yurakucho al volver de Odaiba, antes de regresar a Shinjuku y preparar las maletas."
+      }
     ]
   },
   {
@@ -1190,6 +1817,22 @@ const days = [
         "warn",
         "<b>Respuesta de Maruei:</b> shuttle para los 10 y equipaje confirmado; depósito temprano permitido, sin shuttle gratuito antes de las 15:00. Cena juntos en sala privada para 10; desayuno en comedor compartido. No admiten cambios de menú. Guardad el mensaje sobre condiciones especiales de cancelación para grupos de 10 o más. Taxis a Chureito solo si decidís pagar esa excursión; el Fuji desde el ryokan es la alternativa sin coste de traslado. Avisad si la llegada puede superar las 17:00. La confirmación de Booking y el mensaje del alojamiento difieren sobre cancelación para grupos; no se considera aclarado, aunque no tenéis previsto cancelar."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 12:00, Kawaguchiko",
+        "places": [
+          "fudou"
+        ],
+        "note": "Frente a la estación, antes de disfrutar del lago."
+      },
+      {
+        "label": "Cena · hora del ryokan",
+        "places": [
+          "maruei"
+        ],
+        "note": "Incluida y pagada: la excepción a cenar a las 20:00–21:00. No contratar otra cena."
+      }
     ]
   },
   {
@@ -1257,8 +1900,8 @@ const days = [
         "🌆 Paseo nocturno por Gion, ya después del atardecer"
       ],
       [
-        "19:30",
-        "🍶 Cena cerca de la base"
+        "20:00–20:30",
+        "🍣 Izuu en Gion o ramen en Inoichi/Sugari según turnos y cola; opciones detalladas debajo"
       ]
     ],
     "notes2": [
@@ -1270,6 +1913,31 @@ const days = [
         "tip",
         "<b>Alternativa para Fushimi Inari:</b> viernes 13 sobre las 16:30, después del té y de devolver los kimonos. Si queda pendiente, recortad las fotos por Gion y priorizad los torii sobre compras. Heian/Philosopher's Path/Ginkaku-ji salen del día principal para dejar margen."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 12:00, Mishima",
+        "places": [
+          "tochuken"
+        ],
+        "note": "Desayuno ya incluido en Maruei. El ekiben aprovecha el margen de 1 h 56 min entre bus y tren."
+      },
+      {
+        "label": "Cena · 20:00–20:30, Gion/centro",
+        "places": [
+          "izuu",
+          "inoichi",
+          "sugari"
+        ],
+        "note": "Izuu encaja con el paseo por Gion. Inoichi requiere consultar turnos; Sugari es alternativa con desvío a Karasuma. Kitada solo si seguís cerca de Kyoto Station."
+      },
+      {
+        "label": "Junto a Kyoto Station, alternativa",
+        "places": [
+          "kitada"
+        ],
+        "note": "No volver desde el alojamiento solo para esta parada."
+      }
     ]
   },
   {
@@ -1305,7 +1973,7 @@ const days = [
       ],
       [
         "13:00",
-        "🍱 Almuerzo por la zona, en subgrupos"
+        "🍜 Gontaro Kinkakuji: soba/udon u oyakodon en el camino hacia Ryoan-ji; a la carta"
       ],
       [
         "14:30",
@@ -1316,8 +1984,8 @@ const days = [
         "🚍 Regreso y descanso"
       ],
       [
-        "19:00",
-        "🍣 Cena: Musashi Sushi o izakaya"
+        "21:00 objetivo",
+        "🍳 Ikkakuju Karasuma: solo mesa para diez: intento online rechazado; pendiente de contacto directo. Alternativa sin reserva: Sukemasa"
       ]
     ],
     "notes": [
@@ -1325,6 +1993,30 @@ const days = [
         "warn",
         "<b>Extras por sustitución:</b> Monkey Park necesita tiempo de subida y visita; Nijo requiere llegar antes del último acceso. Elegid uno solo si recortáis otro bloque y verificáis horarios. No forman parte de la ruta principal."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 13:00, Kinkaku-ji",
+        "places": [
+          "gontaro"
+        ],
+        "note": "Está en el camino hacia Ryoan-ji: soba/udon u oyakodon a la carta, sin contratar hotpot."
+      },
+      {
+        "label": "Cena · 21:00, Karasuma",
+        "places": [
+          "ikkakuju",
+          "sukemasa"
+        ],
+        "note": "Ikkakuju no está reservado: la web rechazó ambos intentos. Sukemasa queda como alternativa sin reserva; no hacer dos cenas ni dos reservas para la misma noche."
+      },
+      {
+        "label": "Picoteo opcional al volver",
+        "places": [
+          "takoichi"
+        ],
+        "note": "Solo si os pilla cerca de Shijo Aburanokoji; una ración para compartir, no otra comida completa."
+      }
     ]
   },
   {
@@ -1380,6 +2072,33 @@ const days = [
         "warn",
         "<b>Regla de convivencia:</b> zona residencial/turística estrecha. Nada de ruido fuerte al volver de cenar ni fotos a personas sin permiso. Evitad callejones privados de Gion."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 11:00, antes de MAIKOYA",
+        "places": [
+          "izuu",
+          "konbini"
+        ],
+        "note": "Izuu abre a las 11:00: solo si os atienden pronto. Salir como máximo a las 12:00 y llegar a MAIKOYA sobre las 12:15; con cola, comida rápida y sushi otro día."
+      },
+      {
+        "label": "Cena · 20:00, centro de Kioto",
+        "places": [
+          "butagorira",
+          "inoichi",
+          "sukemasa"
+        ],
+        "note": "Butagorira pendiente de llamada. Para Inoichi, consultar turnos antes de ir a Fushimi; Sukemasa es la alternativa sin reserva."
+      },
+      {
+        "label": "Matcha y alternativa de ramen temprano",
+        "places": [
+          "tsujiri",
+          "takakura"
+        ],
+        "note": "Tsujiri es opcional después del té; Takakura solo si cambiáis la cena a la zona norte de Karasuma, bastante antes de su cierre a las 21:00."
+      }
     ]
   },
   {
@@ -1435,8 +2154,8 @@ const days = [
         "🦑 Dotonbori — Glico, takoyaki. Cheesecake Rikuro Namba Marui opcional antes de las 20:00; dos tartas para compartir. Empieza la noche"
       ],
       [
-        "19:30",
-        "🍢 Cena: yakiniku/okonomiyaki. Comprobar precio del menú y si la bebida libre se cobra aparte"
+        "20:00–20:30",
+        "🍢 Cena económica en Dotonbori/Namba: kushikatsu o curry. Cangrejo solo como capricho decidido por el grupo"
       ],
       [
         "21:30",
@@ -1460,6 +2179,31 @@ const days = [
         "good",
         "<b>🏨 Hotel Abitare Namba West:</b> apartahotel en Saiwaicho/Sakuragawa, a ~2 min de Sakuragawa y ~10 min de Namba. Muy buen encaje para Dotonbori, Amerikamura y salir de noche."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 13:00, Nara",
+        "places": [
+          "hiraso"
+        ],
+        "note": "Kakinoha-zushi durante el regreso del parque; para llevar si hay cola."
+      },
+      {
+        "label": "Cena · 20:00–20:30, Namba",
+        "places": [
+          "daruma",
+          "coco"
+        ],
+        "note": "Cena económica y flexible antes de salir de fiesta. Elegir sucursal de Dotonbori/Namba."
+      },
+      {
+        "label": "Nara y Namba · dulces",
+        "places": [
+          "nakatanidou",
+          "rikuro"
+        ],
+        "note": "Mochi en Nara y cheesecake en Namba para compartir; respetar el cierre del centro comercial."
+      }
     ]
   },
   {
@@ -1491,11 +2235,11 @@ const days = [
       ],
       [
         "18:00",
-        "🌆 Umeda Sky Building opcional: visita nocturna, ya sin puesta de sol"
+        "🌆 Umeda Sky Building opcional solo si cenáis en Namba; si se confirma Meigetsukan, sustituir por paseo y traslado a Uehonmachi"
       ],
       [
-        "20:00",
-        "🍺 Cena en Namba y noche tranquila"
+        "20:30 objetivo",
+        "🥩 Meigetsukan Uehonmachi: yakiniku de la lista, reserva para diez pendiente de llamada. Alternativa barata: curry en Namba"
       ]
     ],
     "notes": [
@@ -1503,6 +2247,32 @@ const days = [
         "info",
         "<b>Recorte fácil:</b> después de una noche larga, elegid Castillo o Shinsekai. Umeda requiere otro traslado y puede saltarse para descansar antes de Universal/Himeji."
       ]
+    ],
+    "food": [
+      {
+        "label": "Desayuno y comida tardíos",
+        "places": [
+          "sukiya",
+          "daruma"
+        ],
+        "note": "Desayuno cerca de Namba tras la fiesta; kushikatsu al llegar a Shinsekai por la tarde."
+      },
+      {
+        "label": "Cena · 20:30, Uehonmachi",
+        "places": [
+          "meigetsukan",
+          "coco"
+        ],
+        "note": "Meigetsukan requiere llamada para diez y aceptar el desvío; sustituye el Umeda Sky opcional de la tarde. Si no se confirma, curry en Namba sin reserva."
+      },
+      {
+        "label": "Capricho de cangrejo · solo si se decide",
+        "places": [
+          "kaniyoshi",
+          "kanidoraku"
+        ],
+        "note": "Alternativas caras de la lista, sin contratar ni añadir otra cena. Sustituyen una cena, no se suman a Meigetsukan."
+      }
     ]
   },
   {
@@ -1567,7 +2337,7 @@ const days = [
       ],
       [
         "20:30 objetivo",
-        "🍳 Cena económica de okonomiyaki/yakisoba en Namba. Restaurante pendiente de selección con Google 4,4+; el 16 cena flexible para dormir antes del vuelo. Sin reserva confirmada. Coordinar con los 2 de USJ; si vuelven tarde, cenar por separado. <a href='#comer'>Opciones gastronómicas</a>"
+        "🍢 Cena económica y flexible en Namba: Daruma de la zona, CoCo Ichibanya o Sukiya. Sin reserva de diez; los dos de USJ pueden incorporarse según regreso. Dormir antes del vuelo"
       ],
       [
         "22:00",
@@ -1577,8 +2347,26 @@ const days = [
     "notes2": [
       [
         "info",
-        "<b>Cena y parque:</b> USJ cerrado para 2; confirmad el plan de los otros 8. Reservad la despedida cerca del hotel con condiciones flexibles si los dos del parque vuelven tarde. Dejad equipaje listo, Suica cargada y ruta hasta Nankai Namba revisada para el Airport Express de madrugada."
+        "<b>Cena y parque:</b> USJ cerrado para 2; confirmad el plan de los otros 8. Cena flexible cerca del hotel; no fijamos una reserva para diez porque los dos del parque pueden volver tarde. Dejad equipaje listo, Suica cargada y ruta hasta Nankai Namba revisada para el Airport Express de madrugada."
       ]
+    ],
+    "food": [
+      {
+        "label": "Comida · 14:00, ocho en Himeji",
+        "places": [
+          "ekisoba"
+        ],
+        "note": "Los dos de USJ comen dentro del parque según su ritmo y accesos; no se les cuenta en Himeji."
+      },
+      {
+        "label": "Cena · 20:00–20:30, Namba",
+        "places": [
+          "daruma",
+          "coco",
+          "sukiya"
+        ],
+        "note": "Flexible para que puedan incorporarse los dos de USJ. Sin una reserva de diez que obligue a esperarles; dormir antes del vuelo."
+      }
     ]
   },
   {
@@ -1626,6 +2414,15 @@ const days = [
         "info",
         "<b>Vuelta y seguro:</b> escala en Hong Kong de 11 h 40 min. CX315 sale el miércoles 18 a las 00:40 y llega a Madrid T4S a las 08:30. El seguro debe cubrir del 3 al 18 de noviembre, ambos incluidos."
       ]
+    ],
+    "food": [
+      {
+        "label": "Desayuno · KIX",
+        "places": [
+          "lawson"
+        ],
+        "note": "Compra rápida en la planta 4 antes de seguridad, sin comprometer el check-in. Comida y cena después, según los vuelos y la escala en Hong Kong."
+      }
     ]
   }
 ];
@@ -1711,6 +2508,13 @@ function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
    : `<div class="slot"><div class="slot-time">${t}</div><div class="slot-txt">${linkify(x)}</div></div>`
 ).join("")+`</div>`}
 
+function foodChoice(id){
+  const p=FOOD_PLACES[id];
+  if(!p) return '';
+  return `<div class="food-choice"><a href="${p.url}" target="_blank" rel="noopener noreferrer">${p.name}</a><span class="food-meta">${p.source}${p.rating?' · Google '+p.rating:''} · ${p.price}</span><p>${p.what}</p><p>📍 ${p.where}</p><p>${p.reserve}</p></div>`;
+}
+function foodHtml(meals){return meals?.length?`<section class="food-plan" aria-label="Dónde comer este día"><h4>🍽️ Dónde comer este día</h4>${meals.map(m=>`<div class="food-meal"><h5>${m.label}</h5>${m.places.map(foodChoice).join('')}<p><b>Encaje:</b> ${m.note}</p></div>`).join('')}</section>`:'';}
+
 const daysHtml = days.map(d=>`
   <div class="day${d.fiesta?' fiesta':''}" id="d${d.n}">
     <h3 class="day-heading">
@@ -1728,10 +2532,17 @@ const daysHtml = days.map(d=>`
       ${d.geo?`<div class="geo">📍 ${d.geo}</div>`:""}
       ${noteHtml(d.notes)}
       ${schedHtml(d.sched)}
+      ${foodHtml(d.food)}
       ${noteHtml(d.notes2)}
     </div>
   </div>`).join("");
 document.getElementById("days").innerHTML = daysHtml;
+document.getElementById('food-summary').innerHTML=days.map(d=>`<tr><td><a href="#d${d.n}">${d.date}</a></td><td>${d.food.map(m=>`<p><b>${m.label}:</b> ${m.places.map(id=>`<a href="${FOOD_PLACES[id].url}" target="_blank" rel="noopener noreferrer">${FOOD_PLACES[id].name}</a>`).join(' / ')}</p>`).join('')}</td></tr>`).join('');
+document.getElementById('food-extras').innerHTML=foodHtml([
+ {label:'Roppongi / Hiroo · sustituye otra tarde',places:['azabu','iruka','oyoge','verve'],note:'La sucursal de Verve de la lista está en Roppongi. Iruka cierra pronto: comida o cena temprana, no a las 21:00.'},
+ {label:'Akasaka · solo si vais a esa zona',places:['akai','hagakure'],note:'Alternativas de la lista con desvío; no programadas como cena de diez.'}
+]);
+
 
 document.getElementById("transfers").innerHTML =
   transfers.map(([a,b,c])=>`<tr><td><b>${linkify(a)}</b></td><td>${linkify(b)}</td><td>${c}</td></tr>`).join("");
