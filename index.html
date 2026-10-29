@@ -483,7 +483,7 @@
       <li><b>Documentación y vuelos</b> — cada uno comprueba nombres, pasaporte y requisitos de entrada según su nacionalidad; guardad copias, localizadores, póliza y entradas accesibles sin conexión. Cada viajero completa Visit Japan Web con vuelo y alojamiento definitivos y guarda su QR.</li>
       <li><b>Vuelos del billete y Visit Japan Web</b> — salida de Madrid el 3/11 a las 11:25 (CX372); llegada a Japón el 4/11 a las 14:10, Narita T2, CX504 de Cathay Pacific desde Hong Kong. En Visit Japan Web: llegada 04/11/2026, aerolínea CX, número 504 y embarque HONG KONG; primer alojamiento Hanabi Hotel, 2-8-5 Hyakunincho, Shinjuku-ku, Tokyo. Vuelta: 17/11, Kansai T1 09:25 → Hong Kong 13:00 (CX567); conexión el 18/11 a las 00:40 (CX315) y llegada a Madrid a las 08:30. Reconfirmad horarios con Cathay antes de salir.</li>
       <li><b>Narita Express · comprar al llegar el 4 de noviembre</b> — después de inmigración y recoger las maletas, comprad solo ida Narita → Shinjuku para el siguiente servicio con asientos disponibles. Podéis ir repartidos por coches. No fijamos un tren de antemano; la zona de maletas no requiere reserva, pero su capacidad es limitada. Alternativa más económica: Keisei Main Line hasta Nippori + Yamanote a Shin-Okubo, con menos comodidad para 20 maletas.</li>
-      <li><b>eSIM · gestión individual</b> — cada viajero elige y contrata la suya; no hay compra de grupo. Comprobad compatibilidad y activación para el 4–17 noviembre. Para llamar al shuttle, el centro de información de Kawaguchiko puede ayudar hasta las 17:00.</li>
+      <li><b>eSIM · gestión individual</b> — Guille ya ha comprado Saily para Japón; el resto elige y contrata la suya. Hong Kong: pendiente individual, Jetpac 5 GB / 1 día como opción para comprar en Japón y activar solo el 17/11. Comprobad compatibilidad. Para llamar al shuttle, el centro de información de Kawaguchiko puede ayudar hasta las 17:00.</li>
     </ul>
   </div>
 
@@ -788,11 +788,31 @@ const overview = [
   [
     "14",
     "Mar 17",
-    "Osaka→KIX→Vuelo CX567 09:25"
+    "Osaka → vuelo 09:25 → tarde en Hong Kong"
   ]
 ];
 
 const FOOD_PLACES = {
+  "tsimchai": {
+    "name": "Tsim Chai Kee · Wellington Street",
+    "where": "98 Wellington Street, Central, Hong Kong",
+    "what": "Wonton de gambas y cerdo con fideos; recomendado por la Guía Michelin en categoría económica.",
+    "price": "$ · consultar carta en HKD",
+    "reserve": "Sin reserva confirmada; podéis separaros en mesas y compartir con otros clientes.",
+    "rating": "Sin nota de Google verificada",
+    "source": "Guía Michelin",
+    "url": "https://guide.michelin.com/gb/en/hong-kong-region/hong-kong/restaurant/tsim-chai-kee-wellington-street"
+  },
+  "cheunghing": {
+    "name": "Cheung Hing Kee · Tsim Sha Tsui",
+    "where": "48 Lock Road, Tsim Sha Tsui, Hong Kong",
+    "what": "Sheng jian bao: bollitos de cerdo con caldo y base crujiente. Opción callejera económica de la Guía Michelin.",
+    "price": "$ · consultar carta en HKD",
+    "reserve": "Sin reserva; opción rápida para llevar, cierra a las 21:00 según Michelin.",
+    "rating": "Sin nota de Google verificada",
+    "source": "Guía Michelin",
+    "url": "https://guide.michelin.com/en/hong-kong-region/hong-kong/restaurant/cheung-hing-kee-tsim-sha-tsui"
+  },
   "suzuran": {
     "name": "Suzuran Shinjuku",
     "where": "3-11-12 Shinjuku, Tokio",
@@ -2373,8 +2393,8 @@ const days = [
   {
     "n": "14",
     "date": "MAR 17 NOV",
-    "name": "✈️ Osaka → KIX → Vuelo CX567 09:25",
-    "base": "Osaka → ✈️ Vuelo a casa",
+    "name": "✈️ Osaka → Hong Kong · escala con vistas",
+    "base": "Osaka → Hong Kong → Madrid",
     "geo": "Plan barato: Airport Express desde Nankai Namba, horario laborable actual 05:15 → 05:58, alternativa 05:28 → 06:16. Reconfirmar antes del viaje. Sin reserva ni suplemento; el check-in online no sustituye la entrega de equipaje.",
     "sched": [
       [
@@ -2404,6 +2424,46 @@ const days = [
       [
         "09:25",
         "✈️ Cathay Pacific CX567: Kansai T1 → Hong Kong, llegada 13:00 según el billete; reconfirmar antes del viaje"
+      ],
+      [
+        "13:00–14:15 aprox.",
+        "🛬 Llegada a Hong Kong; pasar inmigración y salir a la ciudad. En KIX confirmad que la maleta facturada va etiquetada hasta Madrid y que tenéis la tarjeta del segundo vuelo; si no, dejad margen para recoger y volver a facturar"
+      ],
+      [
+        "14:15–15:00 objetivo",
+        "🚆 Airport Express desde el aeropuerto hasta Hong Kong Station: unos 24 min de tren. Vuelta el mismo día incluida con la tarifa válida; usad el mismo medio de pago en ambos trayectos"
+      ],
+      [
+        "15:00–16:00",
+        "🍜 Comida tardía en Central: Tsim Chai Kee para wonton y fideos; mesas pequeñas, efectivo y sin reserva. Si hay demasiada cola, elegid otro sitio cercano y mantened la tarde flexible"
+      ],
+      [
+        "16:00–17:20",
+        "🏙️ Paseo por Central y sus calles. Victoria Peak es opcional solo si llegáis con margen, el cielo acompaña y no hay cola larga; si no, priorizad el puerto y el ferry"
+      ],
+      [
+        "17:20–18:30",
+        "⛴️ Star Ferry desde Central Pier 7 a Tsim Sha Tsui y paseo por Avenue of Stars: vistas del skyline al atardecer, alrededor de las 17:40, y después iluminado"
+      ],
+      [
+        "18:30–20:00",
+        "🍴 Paseo y cena temprana por Tsim Sha Tsui; si preferís cenar después del espectáculo, tomad un snack y dejad la cena rápida para las 20:10. Cheung Hing Kee sirve bollitos para llevar hasta las 21:00 según Michelin"
+      ],
+      [
+        "20:00–20:15",
+        "✨ Symphony of Lights desde el paseo de Tsim Sha Tsui: gratis y sujeta al tiempo y a posibles suspensiones"
+      ],
+      [
+        "20:15–21:15",
+        "🍽️ Si aún no habéis cenado, cena rápida o bollitos; después Star Ferry de vuelta a Central y caminar a Hong Kong Station. Si vais justos, coged taxi hacia la estación o aeropuerto"
+      ],
+      [
+        "21:15–21:45 objetivo",
+        "🚆 Airport Express desde Hong Kong Station, salida objetivo 21:15–21:20: llegada al aeropuerto sobre 21:40–21:45. Si hay retrasos o falta facturar, adelantar regreso y recortar el paseo"
+      ],
+      [
+        "00:40 · 18 NOV",
+        "✈️ CX315 Hong Kong → Madrid; llegada prevista a las 08:30. Reconfirmad puerta y horario con Cathay"
       ]
     ],
     "notes": [
@@ -2413,7 +2473,15 @@ const days = [
       ],
       [
         "info",
-        "<b>Vuelta y seguro:</b> escala en Hong Kong de 11 h 40 min. CX315 sale el miércoles 18 a las 00:40 y llega a Madrid T4S a las 08:30. El seguro debe cubrir del 3 al 18 de noviembre, ambos incluidos."
+        "<b>Hong Kong:</b> escala de 11 h 40 min; horarios de visita aproximados y sujetos a inmigración y vuelo. Pasaporte español: visita sin visado hasta 90 días, sujeto a condiciones de entrada. El seguro debe cubrir Hong Kong; comprobar la póliza. Si alguien lleva otro pasaporte, comprobar sus requisitos. <a href='https://www.immd.gov.hk/eng/services/visas/visit-transit/visit-visa-entry-permit.html' target='_blank' rel='noopener noreferrer'>Inmigración HK</a> · <a href='https://www.cathaypacific.com/cx/en_HK/faqs/check-in/through-check-to-final-destination-on-separate-tickets/will-my-baggage-and-i-get-through-checked-to-the-final-destination-if-my-itinerary-includes-connecting-flights.html' target='_blank' rel='noopener noreferrer'>Equipaje Cathay</a>."
+      ],
+      [
+        "info",
+        "<b>Tren y ferry:</b> Airport Express a Hong Kong Station: 120 HKD por adulto con pago válido, ida y vuelta en el mismo día. Cada persona usa el mismo medio para ambos trayectos; si se usa tarjeta bancaria o QR, no usarlo para otros viajes entre ambos. Ferry Central–Tsim Sha Tsui: 4 HKD cubierta inferior o 5 HKD superior por trayecto en laborable. <a href='https://www.mtr.com.hk/en/customer/services/ael-air-offer.html' target='_blank' rel='noopener noreferrer'>Condiciones MTR</a> · <a href='https://www.starferry.com.hk/en/service' target='_blank' rel='noopener noreferrer'>Horarios y precios Star Ferry</a>."
+      ],
+      [
+        "info",
+        "<b>Sin reservas para la escala:</b> tratad de viajar ligeros. Guille tiene Saily Japón pagada; Jetpac Hong Kong, 5 GB / 1 día, queda pendiente de compra individual en Japón. Activar el 17/11, no durante la escala de ida. El Peak es opcional; el paseo por el puerto es gratis."
       ]
     ],
     "food": [
@@ -2422,7 +2490,17 @@ const days = [
         "places": [
           "lawson"
         ],
-        "note": "Compra rápida en la planta 4 antes de seguridad, sin comprometer el check-in. Comida y cena después, según los vuelos y la escala en Hong Kong."
+        "note": "Compra rápida en la planta 4 antes de seguridad, sin comprometer el check-in."
+      },
+      {
+        "label": "Comida tardía · Central, Hong Kong",
+        "places": ["tsimchai"],
+        "note": "Wonton en un local económico seleccionado por Michelin. Solo efectivo según la guía; la cola puede obligar a separarse o cambiar de sitio."
+      },
+      {
+        "label": "Cena / snack · Tsim Sha Tsui, Hong Kong",
+        "places": ["cheunghing"],
+        "note": "Bollitos fritos para llevar; alternativa rápida si cenáis tras el espectáculo. Cierra a las 21:00 según Michelin; no hay reserva."
       }
     ]
   }
