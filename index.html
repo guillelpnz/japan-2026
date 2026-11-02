@@ -1704,7 +1704,7 @@ const days = [
           "age3",
           "alchemist"
         ],
-        "note": "Compartir Age.3 y café opcional. Salir hacia Shibuya a las 14:15 aunque quede cola."
+        "note": "Compartir Age.3 y café opcional. Salid hacia Shibuya sobre las 13:10 para llegar con margen a la entrada de las 14:20."
       }
     ]
   },
@@ -2531,7 +2531,7 @@ const transfers = [
   [
     "Narita T2 → Shinjuku → Shin-Okubo (Hanabi)",
     "Narita Express comprado al llegar + Yamanote a Shin-Okubo; comparar Keisei Main Line vía Nippori para ahorrar",
-    "3.330 ¥ NEX + tramo local"
+    "3.330 ¥ NEX; consultad si el billete cubre el tramo JR local"
   ],
   [
     "Shinjuku → Kamakura",
@@ -2590,6 +2590,89 @@ const transfers = [
   ]
 ];
 
+// Instrucciones prácticas: tiempos orientativos; comprobar servicio en tiempo real.
+const routeGuides = {
+ "01": [
+  `Al aterrizar en <b>Narita T2 a las 14:10</b>, seguid «Immigration»: pasaporte y QR de Visit Japan Web. Después recoged el equipaje y pasad aduanas con el QR o el procedimiento que indiquen allí.`,
+  `Conectaos a internet y preparad una <b>Suica o tarjeta IC por persona</b>. Sirve para trenes urbanos, metro y muchos buses; no sustituye a las reservas de largo recorrido.`,
+  `Seguid las señales «Railways / JR» hasta la estación <b>Narita Airport Terminal 2·3</b>. En el mostrador o máquina JR comprad el siguiente <b>Narita Express que pare en Shinjuku</b>: lleva asiento reservado y cuesta 3.330 ¥ hasta Shinjuku. Compradlo al llegar, dejando margen tras aduanas; no todos tienen que ir en el mismo vagón.`,
+  `En <b>Shinjuku</b>, seguid las señales de la línea JR Yamanote hacia Ikebukuro: <b>Shin-Okubo</b> es la siguiente parada. Comprobad con JR si vuestro billete cubre el transbordo antes de salir por los tornos. Desde Shin-Okubo caminad al Hanabi Hotel unos 5–10 min. ${routeMap('Narita Airport Terminal 2','Hanabi Hotel Tokyo')}`,
+  `Alternativa para ahorrar: consultad la <b>Keisei Main Line vía Nippori</b> y allí la Yamanote hasta Shin-Okubo; es más lenta y exige transbordo. Con maletas, elegid según cansancio y horario. <a href="https://www.jreast.co.jp/multi/nex/tickets/" target="_blank" rel="noopener noreferrer">Tarifas oficiales N'EX</a>.`
+ ],
+ "02": [
+  `De <b>Shin-Okubo a Shinjuku</b> hay una parada en Yamanote hacia Shibuya. Allí tomad JR Shonan-Shinjuku hacia <b>Kamakura</b>; elegid un servicio que continúe hacia Zushi o haced transbordo en Ofuna si corresponde. Contad aproximadamente 1 h–1 h 20 min desde Shinjuku. ${routeMap('Shin-Okubo Station','Kamakura Station')}`,
+  `Para el Gran Buda: en Kamakura cambiad al <b>Enoden hacia Hase</b> (unos 5 min) y caminad unos 10–15 min. Para Komachi y el centro, volved a Kamakura en Enoden o caminad si os apetece.`,
+  `Después coged el <b>Enoden hacia Enoshima</b>; desde su estación hay que caminar hacia el puente y la isla. A la vuelta podéis ir desde <b>Katase-Enoshima</b> por Odakyu a Shinjuku, con transbordo según el tren, y de allí una parada JR a Shin-Okubo. ${routeMap('Kamakura Station','Enoshima')}`
+ ],
+ "03": [
+  `Shin-Okubo → Shinjuku en Yamanote y transbordo a la <b>JR Chuo-Sobu local</b> hacia Akihabara. Desde la estación podéis recorrer la zona andando. ${routeMap('Shin-Okubo Station','Akihabara Station')}`,
+  `Para Asakusa, caminad hasta <b>Suehirocho</b> y tomad la línea de metro <b>Ginza hacia Asakusa</b>. Senso-ji está a un paseo desde la estación.`,
+  `De Asakusa a <b>Kappabashi</b> podéis ir andando; después, desde Tawaramachi, el metro Ginza os conecta con Shibuya o con otras líneas. Para la fiesta revisad la dirección del local elegido: Shibuya y Shinjuku no son la misma zona. Volved en tren si aún funciona; de madrugada, taxi compartido si hace falta. ${routeMap('Senso-ji Tokyo','Kappabashi Kitchen Tools Street')}`
+ ],
+ "04": [
+  `Shin-Okubo → <b>Harajuku</b> con la JR Yamanote hacia Shinjuku/Shibuya. Caminad por Harajuku y Omotesando; desde allí podéis bajar andando a Shibuya. ${routeMap('Shin-Okubo Station','Harajuku Station')}`,
+  `En <b>Shibuya</b> coged la línea <b>Keio Inokashira hacia Kichijoji</b> hasta Shimokitazawa: unos 5–10 min según servicio. Para volver, Odakyu a Shinjuku y Yamanote una parada hasta Shin-Okubo. ${routeMap('Shibuya Station','Shimokitazawa Station')}`
+ ],
+ "05": [
+  `Id hacia <b>Shimbashi</b> en JR o metro y caminad hasta la entrada de Hamarikyu; desde el jardín, Ginza queda a un paseo de unos 15–25 min según la puerta. ${routeMap('Shin-Okubo Station','Hamarikyu Gardens')}`,
+  `De <b>Ginza a Shibuya</b>, línea de metro Ginza en dirección Shibuya. Salid sobre las <b>13:10</b> y buscad Shibuya Scramble Square; las 10 entradas de <b>Shibuya Sky son para 14:20–14:39</b>. Tened preparados los dos comprobantes de compra. ${routeMap('Ginza Station','Shibuya Scramble Square')}`,
+  `Para volver al Hanabi, JR Yamanote desde Shibuya hacia Shinjuku/Ikebukuro hasta Shin-Okubo. Suica válida en estos trayectos urbanos.`
+ ],
+ "06": [
+  `Id a <b>Tsukiji Outer Market</b> en metro; una opción es Oedo hasta Tsukijishijo y caminar. Revisad el itinerario desde Shin-Okubo en Maps. ${routeMap('Shin-Okubo Station','Tsukiji Outer Market')}`,
+  `Salid de Tsukiji sobre las <b>09:15</b>. Desde <b>Tsukijishijo</b>, línea Oedo hacia Tsukishima; cambiad allí a Yurakucho hacia Toyosu y en <b>Toyosu</b> al Yurikamome hasta <b>Shin-Toyosu</b>. teamLab está junto a la estación; entrada 10:30–11:00. ${routeMap('Tsukiji Outer Market','teamLab Planets TOKYO')}`,
+  `Para Odaiba, desde Shin-Toyosu tomad el <b>Yurikamome hacia Shimbashi</b> y bajad en Daiba para la zona de playa. Después podéis seguir hasta Shimbashi y volver en JR. ${routeMap('teamLab Planets TOKYO','Odaiba Seaside Park')}`
+ ],
+ "07": [
+  `Con las maletas, JR Yamanote <b>Shin-Okubo → Shinjuku</b>, una parada. Seguid «New South Gate / Busta Shinjuku» hasta la terminal de buses del <b>piso 4</b>. Estad allí <b>08:30–08:45</b>; mirad la pantalla para localizar andén.`,
+  `<b>Bus comprado 09:15 → Kawaguchiko 11:00 previsto</b>: enseñad las dos reservas de 9 + 1. En el tramo a Mishima se ha planificado una maleta en bodega y una mochila pequeña por persona; los demás bultos hay que resolverlos antes.`,
+  `Al llegar, opción barata: dejad maletas en estación <b>si hay espacio para todas</b>, pasead por el lago y volved a recogerlas. Luego llamad al Maruei para coordinar su shuttle gratuito desde la estación <b>a partir del check-in</b>. Si las dejáis antes en el hotel, id en bus turístico o taxis; no hay shuttle gratuito antes del check-in. ${routeMap('Kawaguchiko Station','Ryokan Maruei')}`,
+  `Para la ribera cercana al hotel y las vistas del Fuji, caminad cuando dejéis las maletas; el mejor momento depende de nubes y luz. No reservéis todo el tiempo a traslados.`
+ ],
+ "08": [
+  `Desayunad y acordad con el Maruei el <b>shuttle a Kawaguchiko Station</b>. Dejad margen para cargar las 10 maletas y llegad a la terminal hacia las <b>10:00</b>; llevad las dos reservas del bus.`,
+  `<b>Bus 0108 pagado:</b> Kawaguchiko 10:20 → Mishima Station North 11:50 previsto. Un retraso del bus no protege el enlace, así que seguid la situación y no apuréis al salir.`,
+  `En Mishima, buscad «<b>Shinkansen / JR</b>», comed cerca de la estación y localizad el andén. <b>Hikari 713, 13:46 → Kioto 15:37</b>; coche 13, filas 13 y 14. Distribuid por adelantado un QR de SmartEX por viajero, o preparad los billetes físicos; Suica solo sirve para este tren si se ha asociado correctamente a cada asiento. ${routeMap('Mishima Station','Kyoto Station')}`,
+  `Desde Kioto al alojamiento de Higashiyama, una opción en tren es <b>JR Nara Line → Tofukuji</b> y allí <b>Keihan hacia Demachiyanagi → Kiyomizu-Gojo</b>; después caminata hasta la dirección exacta del Airbnb. Con diez maletas y cuesta, comprobad el recorrido y valorad taxis compartidos para el último tramo. ${routeMap('Kyoto Station','Kiyomizu-Gojo Station')}`
+ ],
+ "09": [
+  `Desde el alojamiento, llegad a <b>Kyoto Station</b> y tomad la JR Sagano/San-in hacia <b>Saga-Arashiyama</b>. Desde la estación caminad hacia el bosque y Tenryu-ji. ${routeMap('Kiyomizu-Gojo Station','Saga-Arashiyama Station')}`,
+  `Para <b>Kinkaku-ji</b>, consultad la combinación de bus y tren del momento: hay transbordos y tráfico; dejad unos 60–75 min de margen. Después, <b>Ryoan-ji</b> queda relativamente cerca: bus o paseo según energía. ${routeMap('Arashiyama Bamboo Forest','Kinkaku-ji')}`,
+  `Para volver a Higashiyama, Maps os indicará el mejor bus y tren de ese momento. En noviembre los buses turísticos pueden llenarse: dividíos si hace falta y acordad punto de encuentro.`
+ ],
+ "10": [
+  `El alojamiento está en Higashiyama: <b>Kiyomizu-dera, calles históricas y Gion</b> se enlazan andando. Id desde allí al lugar y hora exactos que figuren en la reserva de kimono y ceremonia. ${routeMap('Kiyomizu-dera','MAIKOYA Kyoto Kiyomizu')}`,
+  `Si encaja Fushimi Inari, desde <b>Kiyomizu-Gojo</b> o <b>Gion-Shijo</b> coged Keihan hacia Osaka y bajad en <b>Fushimi-Inari</b>; comprobad que el servicio elegido pare allí. Desde la estación son unos minutos andando. Volved en la dirección contraria hacia Gion. ${routeMap('Kiyomizu-Gojo Station','Fushimi Inari Taisha')}`
+ ],
+ "11": [
+  `Check-out con equipaje: id a <b>Kyoto Station</b>, en transporte público o taxis compartidos si compensa con las maletas. Tomad JR Special Rapid hacia <b>Osaka Station</b>; en Umeda enlazad con metro Midosuji a Namba y Sennichimae a Sakuragawa. ${routeMap('Kyoto Station','Sakuragawa Station Osaka')}`,
+  `Intentad dejar las maletas en Abitare <b>solo si os confirman depósito temprano</b>; si no, buscad consignas disponibles. No deis por confirmado ese servicio.`,
+  `Sin maletas, desde <b>Sakuragawa</b> id a Namba; seguid señales de <b>Kintetsu Osaka-Namba</b> y tomad tren hacia <b>Kintetsu-Nara</b>, unos 40 min en servicio rápido. No hace falta pagar un limited express para la opción normal. Desde la estación caminad hacia el parque y Todai-ji. ${routeMap('Osaka-Namba Station','Kintetsu-Nara Station')}`,
+  `Volved por el mismo camino para hacer check-in en Osaka; Dotonbori se recorre a pie desde Namba.`
+ ],
+ "12": [
+  `Desde Sakuragawa, metro Sennichimae a Namba; Midosuji hacia <b>Hommachi</b> y línea Chuo a <b>Tanimachi 4-chome</b>. Caminad hasta el parque del castillo. ${routeMap('Sakuragawa Station Osaka','Osaka Castle')}`,
+  `Para Shinsekai podéis caminar hasta JR <b>Morinomiya</b> y coger la Osaka Loop hacia <b>Shin-Imamiya</b>; después paseo corto. Volved a Namba en tren/metro o caminando según la zona. ${routeMap('Osaka Castle','Shinsekai Osaka')}`
+ ],
+ "13": [
+  `<b>Los 8 de Himeji:</b> metro desde Namba a Umeda, seguid a pie las señales de <b>JR Osaka Station</b> y coged el JR <b>Special Rapid hacia Himeji</b>. Contad aproximadamente 1 h 30–2 h desde el alojamiento. Desde JR Himeji, el castillo está a unos 20–25 min andando. Entradas compradas para las <b>11:00–11:30</b>; Koko-en está junto al castillo. ${routeMap('Namba Station Osaka','Himeji Castle')}`,
+  `<b>Los 2 de USJ:</b> desde Sakuragawa, línea Hanshin hacia <b>Nishikujo</b>; allí cambiad a JR Yumesaki hacia <b>Universal City</b> y seguid andando al parque. Calculad 35–50 min puerta a puerta y consultad la apertura y vuestras entradas. ${routeMap('Sakuragawa Station Osaka','Universal Studios Japan')}`
+ ],
+ "14": [
+  `Para el vuelo <b>CX567 a las 09:25</b>, salid pronto con todas las maletas hacia <b>Nankai Namba</b> —no confundáis esta estación con las demás de Namba—. Objetivo: estar allí antes de las 05:15.`,
+  `Tomad el <b>Nankai Airport Express de 05:15</b>, llegada prevista a Kansai Airport 05:58 en el horario laborable publicado. No requiere reserva; Suica funciona para la tarifa ordinaria. Confirmad horario y posibles cambios la víspera. Si lo perdéis, el publicado siguiente es 05:28 → 06:16. ${routeMap('Sakuragawa Station Osaka','Nankai Namba Station')} <a href="https://www.nankai.co.jp/tc_railway/access-timetable" target="_blank" rel="noopener noreferrer">Horario oficial Nankai</a>.`,
+  `En <b>KIX Terminal 1</b>, facturad o dejad equipaje y pasad seguridad y pasaportes. Al llegar a <b>Hong Kong a las 13:00</b>, comprobad que las maletas van facturadas hasta Madrid y que tenéis tarjetas de embarque; después inmigración si vais a salir.`,
+  `Para ir al centro, seguid «<b>Airport Express</b>» hasta Kowloon o Hong Kong Station y desde allí metro, ferry o paseo según el plan de la escala. Volved con margen: objetivo <b>estar de nuevo en HKG hacia las 21:30</b> para el CX315 de las 00:40 del día 18. Verificad los horarios y calculad el regreso antes de alejaros. ${routeMap('Hong Kong International Airport','Hong Kong Station')}`
+ ]
+};
+function routeMap(origin,destination){
+ return `<a href="https://www.google.com/maps/dir/?api=1&amp;origin=${encodeURIComponent(origin)}&amp;destination=${encodeURIComponent(destination)}&amp;travelmode=transit" target="_blank" rel="noopener noreferrer">Ver ruta en Maps ↗</a>`;
+}
+function routeHtml(day){
+ const steps=routeGuides[day];
+ return steps ? `<section class="food-plan" aria-label="Cómo llegar"><h4>🚆 Cómo llegar · paso a paso</h4><p>Horarios y tiempos orientativos: comprobad conexiones en Maps el mismo día. Una Suica por persona para los trayectos locales.</p><ol>${steps.map(step=>`<li style="margin:0 0 12px;line-height:1.55">${step}</li>`).join('')}</ol></section>` : '';
+}
+
 // ---------- RENDER ----------
 const ovHtml = overview.map(([n,d,desc])=>
   `<a class="ov-row" href="#d${n}" onclick="openDay('${n}')">
@@ -2632,6 +2715,7 @@ const daysHtml = days.map(d=>`
       ${d.geo?`<div class="geo">📍 ${d.geo}</div>`:""}
       ${noteHtml(d.notes)}
       ${schedHtml(d.sched)}
+      ${routeHtml(d.n)}
       ${foodHtml(d.food)}
       ${noteHtml(d.notes2)}
     </div>
