@@ -310,6 +310,12 @@
 
   <!-- DAYS -->
   <h2 class="sec" id="dias">Día a día</h2>
+  <div class="block" id="itinerary-search" hidden>
+    <label for="itinerary-query"><b>Buscar en el itinerario</b></label>
+    <input id="itinerary-query" type="search" placeholder="Ej. Meiji, ramen, Enoshima" autocomplete="off" style="display:block;width:100%;margin-top:6px;padding:9px;font:inherit;color:var(--sumi);background:var(--paper);border:1px solid var(--line);border-radius:8px">
+    <p id="itinerary-search-status" role="status"></p>
+    <ul id="itinerary-search-results"></ul>
+  </div>
   <div class="toolbar">
     <button class="tbtn" onclick="setAll(true)">▼ Abrir todos</button>
     <button class="tbtn" onclick="setAll(false)">▲ Cerrar todos</button>
@@ -2706,6 +2712,44 @@ function openHashDay(){
   setDayOpen(day,true);
   requestAnimationFrame(()=>day.scrollIntoView({block:'start'}));
 }
+const itineraryQuery = document.getElementById('itinerary-query');
+const itineraryResults = document.getElementById('itinerary-search-results');
+const itineraryStatus = document.getElementById('itinerary-search-status');
+const searchDays = Array.from(document.querySelectorAll('#days .day'));
+
+function normalizeSearch(text){
+  return text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+itineraryQuery.addEventListener('input', () => {
+  const query = normalizeSearch(itineraryQuery.value);
+  itineraryResults.replaceChildren();
+  itineraryStatus.textContent = '';
+  if(!query) return;
+
+  const matches = searchDays.filter(day => normalizeSearch(day.textContent).includes(query));
+  itineraryStatus.textContent = matches.length ? matches.length + (matches.length === 1 ? ' día encontrado' : ' días encontrados') : 'Sin resultados';
+  for(const day of matches){
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = '#' + day.id;
+    link.textContent = day.querySelector('.day-date').textContent + ' · ' + day.querySelector('.day-name').textContent;
+    link.addEventListener('click', () => setDayOpen(day, true));
+    item.append(link);
+
+    const excerpt = Array.from(day.querySelectorAll('.slot, .note, .food-choice, .food-plan li')).find(element => normalizeSearch(element.textContent).includes(query));
+    if(excerpt){
+      const preview = document.createElement('p');
+      const line = excerpt.querySelector('.slot-txt');
+      preview.textContent = (line ? line.textContent : excerpt.textContent).trim().slice(0, 180);
+      item.append(preview);
+    }
+    itineraryResults.append(item);
+  }
+});
+
+document.getElementById('itinerary-search').hidden = false;
+
 openDay('01');
 openHashDay();
 window.addEventListener('hashchange',openHashDay);
