@@ -765,7 +765,7 @@ const overview = [
   [
     "04",
     "Sáb 7",
-    "Harajuku → Omotesando → ropa vintage en Shimokitazawa"
+    "Meiji → Harajuku → Omotesando → Akihabara"
   ],
   [
     "05",
@@ -1597,9 +1597,9 @@ const days = [
   {
     "n": "04",
     "date": "SÁB 7 NOV",
-    "name": "🏙️ Harajuku → Omotesando → ropa vintage en Shimokitazawa",
+    "name": "⛩️ Meiji → Harajuku → Omotesando → Akihabara",
     "base": "Tokio — Hanabi Hotel",
-    "geo": "Harajuku y Omotesando por la mañana; Shimokitazawa por la tarde para ropa de segunda mano.",
+    "geo": "Mañana en Meiji, Harajuku y Omotesando. Akihabara de 16:00 a 18:30 sustituye la tarde de ropa vintage en Shimokitazawa.",
     "sched": [
       [
         "10:30",
@@ -1618,18 +1618,38 @@ const days = [
         "🍱 Maisen Aoyama o MISO HANAMICHI Honten, según el recorrido. Opciones y condiciones debajo"
       ],
       [
-        "15:00",
-        "👕 Shimokitazawa — empezad por <a href='https://www.shimokitazawa-board.com/flamingo-shimokitazawa/'>Flamingo</a> cerca de la estación. Seguid por Flamingo 3rd (2-30-10 Kitazawa) para prendas vintage de los 60 a los 90."
+        "15:00–16:00",
+        "🚆 Traslado hacia Akihabara. Desde Harajuku, Yamanote a Yoyogi y transbordo a Chuo-Sobu local hacia Akihabara. Si estáis en Omotesando, consultad en Maps la mejor conexión desde allí. Reservad unos 45–60 min puerta a puerta."
+      ],
+      [
+        "16:00–16:45",
+        "🎮 Akihabara Electric Town — paseo por Chuo-dori y calles próximas: anime, manga, figuras y videojuegos. Elegid tiendas según gustos y acordad un punto de reencuentro."
+      ],
+      [
+        "16:45–17:30",
+        "🕹️ Bloque de videojuegos y arcades. Repartíos entre máquinas recreativas, juegos rítmicos y retro según os apetezca; mirad el precio de cada partida."
+      ],
+      [
+        "17:30–18:30",
+        "🎲 Gachapon, figuras o últimas tiendas a elección. Cerrad la visita hacia las 18:30 para volver con margen a la base."
+      ],
+      [
+        "18:30 objetivo",
+        "🚆 Akihabara → Shinjuku en JR Chuo-Sobu local; allí Yamanote una parada hacia Ikebukuro hasta Shin-Okubo. Contad unos 40–55 min puerta a puerta al Hanabi."
       ],
       [
         "20:00–21:00",
-        "🍛 Cena flexible: curry en Shimokitazawa o ramen tras volver a Shinjuku. Ver opciones del día"
+        "🍜 Cena flexible cerca de Hanabi/Shinjuku tras volver de Akihabara. Si os quedáis a cenar por Akihabara, elegid un local cercano y volved después."
       ]
     ],
     "notes": [
       [
         "info",
         "<b>Mañana flexible tras el club:</b> quedad a las 11:30 en Harajuku. Meiji Jingu es un santuario sintoísta en un bosque y Senso-ji es un templo budista: son visitas distintas. Recortad por cansancio, no por duplicidad."
+      ],
+      [
+        "info",
+        "<b>Reparto actualizado:</b> Shibuya Crossing y compras ya hechos el jueves 5; Asakusa queda programada esa noche. Akihabara pasa al sábado 7. Shimokitazawa queda como alternativa si cambiáis de preferencia, sin un bloque adicional asignado."
       ]
     ],
     "food": [
@@ -1647,7 +1667,7 @@ const days = [
           "coco",
           "suzuran"
         ],
-        "note": "Curry en Shimokitazawa o ramen tras volver a Shinjuku; no obligamos a regresar solo por comer."
+        "note": "Cena en Shinjuku/Shin-Okubo al volver. CoCo es una cadena: elegid sucursal según ubicación; Suzuran está en Shinjuku. Sin reserva para diez."
       }
     ]
   },
@@ -2625,8 +2645,9 @@ const routeGuides = {
   `Después coged el <b>Enoden hacia Enoshima</b>; desde su estación hay que caminar hacia el puente y la isla. A la vuelta podéis ir desde <b>Katase-Enoshima</b> por Odakyu a Shinjuku, con transbordo según el tren, y de allí una parada JR a Shin-Okubo. ${routeMap('Kamakura Station','Enoshima')}`
  ],
  "04": [
-  `Shin-Okubo → <b>Harajuku</b> con la JR Yamanote hacia Shinjuku/Shibuya. Caminad por Harajuku y Omotesando; desde allí podéis bajar andando a Shibuya. ${routeMap('Shin-Okubo Station','Harajuku Station')}`,
-  `En <b>Shibuya</b> coged la línea <b>Keio Inokashira hacia Kichijoji</b> hasta Shimokitazawa: unos 5–10 min según servicio. Para volver, Odakyu a Shinjuku y Yamanote una parada hasta Shin-Okubo. ${routeMap('Shibuya Station','Shimokitazawa Station')}`
+  `Desde Shin-Okubo, JR Yamanote hacia <b>Harajuku</b>. Meiji Jingu queda junto a la estación; seguid después a pie por Harajuku y Omotesando. ${routeMap('Shin-Okubo Station','Harajuku Station')}`,
+  `Para Akihabara: desde <b>Harajuku</b>, Yamanote a <b>Yoyogi</b> y allí <b>Chuo-Sobu local hacia Akihabara</b>. Si seguís en Omotesando, consultad la ruta del momento desde la estación más cercana. ${routeMap('Harajuku Station','Akihabara Station')}`,
+  `Vuelta a Hanabi: <b>Chuo-Sobu local Akihabara → Shinjuku</b>; Yamanote hacia Ikebukuro una parada hasta <b>Shin-Okubo</b>. ${routeMap('Akihabara Station','Hanabi Hotel Tokyo')}`
  ],
  "05": [
   `Id hacia <b>Shimbashi</b> en JR o metro y caminad hasta la entrada de Hamarikyu; desde el jardín, Ginza queda a un paseo de unos 15–25 min según la puerta. ${routeMap('Shin-Okubo Station','Hamarikyu Gardens')}`,
