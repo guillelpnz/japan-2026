@@ -310,6 +310,7 @@
 
   <!-- DAYS -->
   <h2 class="sec" id="dias">Día a día</h2>
+  <div class="note tip"><b>Kioto · elegid ritmo cada día.</b> <a href="#d08">Miércoles 11</a>, Higashiyama corto o hasta Gion. <a href="#d09">Jueves 12</a>, Saga y vuelta tranquila o Pabellón Dorado y Ryōan-ji. <a href="#d10">Viernes 13</a>, Higashiyama o Ginkaku-ji y Camino del Filósofo tras el té. Podéis dividiros y reuniros en Shōren-in el jueves y Kōdai-ji el viernes.</div>
   <div class="block" id="itinerary-search" hidden>
     <label for="itinerary-query"><b>Buscar en el itinerario</b></label>
     <input id="itinerary-query" type="search" placeholder="Ej. Meiji, ramen, Enoshima" autocomplete="off" style="display:block;width:100%;margin-top:6px;padding:9px;font:inherit;color:var(--sumi);background:var(--paper);border:1px solid var(--line);border-radius:8px">
@@ -1925,6 +1926,14 @@ const days = [
       [
         "warn",
         "<b>Equipaje confirmado:</b> cada uno lleva al bus una maleta en bodega y una mochila pequeña dentro; cabina dentro de la grande o envío individual si hace falta. No hay envíos de grupo contratados. Las maletas grandes suman como máximo 160 cm y permiten viajar en los asientos ordinarios reservados del Hikari. Diez plazas pagadas en el coche 13, filas 13 y 14 completas."
+      ],
+      [
+        "good",
+        "<b>Modo normal · llegada</b><br>Si todavía queda tarde y os falta Higashiyama, haced un paseo corto desde el Airbnb por Sannenzaka, Ninenzaka y la pagoda Yasaka por fuera. Después, cena. Si hoy ya no encaja, recuperad este paseo el jueves o el viernes."
+      ],
+      [
+        "tip",
+        "<b>Modo esquizofrénico · llegada</b><br>Después de las calles de Higashiyama, seguid a pie hasta el santuario Yasaka y el canal Shirakawa en Gion. Si ya hicisteis Gion el miércoles, el jueves podéis seguir hacia Sanjō después de Shōren-in."
       ]
     ],
     "sched": [
@@ -1966,11 +1975,11 @@ const days = [
       ],
       [
         "16:45",
-        "🚶 Paseo por Higashiyama tras dejar las maletas"
+        "🚶 Si todavía os queda tarde: elegid modo normal o modo esquizofrénico para el primer paseo de Higashiyama"
       ],
       [
         "18:30",
-        "🌆 Paseo libre de llegada. Si ya habéis hecho Gion esta noche, el jueves cenad por Sanjō tras Shōren-in"
+        "🌆 Gion y Shirakawa solo en modo esquizofrénico, si os da tiempo y aún no lo habéis visto. Si lo hacéis hoy, el jueves cenad por Sanjō tras Shōren-in"
       ],
       [
         "20:00–20:30",
@@ -2022,7 +2031,7 @@ const days = [
     "date": "JUE 12 NOV",
     "name": "⛩️ Kiyomizu al amanecer → Arashiyama y Saga → Kinkaku-ji",
     "base": "Kioto — Airbnb Kiyomizu/Higashiyama",
-    "geo": "Kiyomizu-dera está junto al Airbnb. Tras la visita, id hacia Arashiyama y Saga. Para encajar el Pabellón Dorado por la tarde, valorad taxis compartidos.",
+    "geo": "Mañana común en Kiyomizu-dera, Arashiyama y Saga. Por la tarde, elegid entre volver a Higashiyama o sumar el Pabellón Dorado. Reencuentro a las 19:15 en Shōren-in.",
     "sched": [
       [
         "06:30–07:20",
@@ -2038,7 +2047,7 @@ const days = [
       ],
       [
         "14:30–16:30",
-        "✨ Kinkaku-ji, el Pabellón Dorado (cierra a las 17:00). Añadid Ryōan-ji si queda margen para su jardín zen"
+        "↔️ Elegid después de comer. Modo normal: paseo con calma por Saga o vuelta para recuperar Higashiyama. Modo esquizofrénico: Kinkaku-ji y Ryōan-ji si hay margen"
       ],
       [
         "19:15–20:00",
@@ -2055,8 +2064,12 @@ const days = [
     ],
     "notes": [
       [
+        "good",
+        "<b>Modo normal · desde la comida</b><br>Quedaos un rato más por Saga o, si os faltan las calles de Higashiyama, volved con tiempo para hacer Sannenzaka → Ninenzaka → pagoda Yasaka por fuera. Kiyomizu-dera ya está en el bloque de las 06:30. Reencuentro a las 19:15 en Shōren-in."
+      ],
+      [
         "tip",
-        "<b>Si se alarga Saga o la comida:</b> recortad primero Ryōan-ji. Kinkaku-ji también es prescindible si preferís seguir paseando por Saga."
+        "<b>Modo esquizofrénico · 14:30–16:30</b><br>Kinkaku-ji (Pabellón Dorado, cierra a las 17:00). Añadid Ryōan-ji si queda margen; es el primer recorte si se alarga Saga. Reencuentro a las 19:15 en Shōren-in."
       ]
     ],
     "food": [
@@ -2125,7 +2138,7 @@ const days = [
     "notes": [
       [
         "good",
-        "<b>Modo normal · desde las 15:30</b><br>Después de devolver el kimono, haced una pausa de café o seguid paseando por Higashiyama. <b>18:30</b> Kōdai-ji iluminado y <b>20:00</b> cena en Pontocho o Kiyamachi."
+        "<b>Modo normal · desde las 15:30</b><br>Si os falta Higashiyama, dedicad este rato a Sannenzaka → Ninenzaka → pagoda Yasaka por fuera. Si ya lo habéis visto, haced una pausa de café. Reencuentro a las <b>18:30</b> en Kōdai-ji iluminado y cena sobre las <b>20:00</b> en Pontocho o Kiyamachi."
       ],
       [
         "tip",
