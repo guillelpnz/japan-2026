@@ -123,15 +123,16 @@
     box-shadow:0 4px 18px var(--shadow);border:1px solid var(--line);
     overflow:hidden;scroll-margin-top:14px;
   }
+  .day.is-today{border:2px solid #21744d}
+  .day.is-today .day-head{background:#e3f4e9}
+  .b-today{background:#1c6643;color:#fff}
   .day-heading{font:inherit}
   .day-head{
     width:100%;border:0;font:inherit;color:inherit;text-align:left;
-    padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:12px;
+    padding:16px 18px;display:flex;align-items:center;gap:12px;
     background:linear-gradient(135deg, var(--paper), var(--washi-2));
-    border-bottom:1px solid transparent;transition:border-color .2s;
-    user-select:none;
+    border-bottom:1px solid var(--line);
   }
-  .day.open .day-head{border-bottom-color:var(--line)}
   .day-num{
     font-family:'Shippori Mincho',serif;font-weight:800;font-size:21px;
     color:#fff;background:var(--indigo);width:42px;height:42px;flex:none;
@@ -144,12 +145,7 @@
   .day-date{font-size:12px;font-weight:700;color:var(--vermilion-deep);letter-spacing:.5px}
   .day-name{font-family:'Shippori Mincho',serif;font-weight:600;font-size:16.5px;color:var(--sumi);line-height:1.3;margin-top:2px}
   .day-base{font-size:12px;color:var(--sumi-soft);margin-top:3px}
-  .arrow{flex:none;width:22px;height:22px;color:var(--sumi-soft);transition:transform .3s}
-  .day.open .arrow{transform:rotate(180deg)}
-
-  .day-body{display:none;padding:6px 0 4px}
-  .day.open .day-body{display:block;animation:fade .3s ease}
-  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .day-body{padding:6px 0 4px}
 
   .geo{
     font-size:12.5px;color:var(--indigo-soft);font-style:italic;
@@ -267,12 +263,11 @@
     header.hero{padding:0 0 14px}
     .hero h1{font-size:30pt}
     .hero .chips{margin-top:10px}
-    .hero .sun,.hero::before,.toolbar,nav.bottom,.arrow{display:none!important}
+    .hero .sun,.hero::before,nav.bottom{display:none!important}
     *,*::before,*::after{animation:none!important;transition:none!important;box-shadow:none!important;text-shadow:none!important}
     .day,.block,.overview,.quick-card{background:#fff;border-radius:0}
     .day{overflow:visible;break-inside:auto;margin-bottom:14px}
     .day-head{background:#fff;break-after:avoid;border-bottom-color:var(--line);padding:10px 12px}
-    .day-body,.day.open .day-body{display:block!important;animation:none!important}
     .day-num{background:none!important;color:#000;border:1px solid var(--line)}
     .day-heading,h2.sec,h3,h4{break-after:avoid}
     .slot,.note,.ov-row,.quick-card,tr{break-inside:avoid}
@@ -310,16 +305,11 @@
 
   <!-- DAYS -->
   <h2 class="sec" id="dias">Día a día</h2>
-  <div class="note tip"><b>Kioto · elegid ritmo el jueves y el viernes.</b> <a href="#d09">Jueves 12</a>, Saga y vuelta tranquila o Pabellón Dorado y Ryōan-ji. <a href="#d10">Viernes 13</a>, Higashiyama o Ginkaku-ji y Camino del Filósofo tras el té. Podéis dividiros y reuniros en Shōren-in el jueves y Kōdai-ji el viernes.</div>
   <div class="block" id="itinerary-search" hidden>
     <label for="itinerary-query"><b>Buscar en el itinerario</b></label>
     <input id="itinerary-query" type="search" placeholder="Ej. Meiji, ramen, Enoshima" autocomplete="off" style="display:block;width:100%;margin-top:6px;padding:9px;font:inherit;color:var(--sumi);background:var(--paper);border:1px solid var(--line);border-radius:8px">
     <p id="itinerary-search-status" role="status"></p>
     <ul id="itinerary-search-results"></ul>
-  </div>
-  <div class="toolbar">
-    <button class="tbtn" onclick="setAll(true)">▼ Abrir todos</button>
-    <button class="tbtn" onclick="setAll(false)">▲ Cerrar todos</button>
   </div>
   <div id="days"></div>
 
@@ -502,9 +492,6 @@
     <ol>
       <li>Tras las fiestas de Tokio y Osaka, empezad más tarde. Quien quiera madrugar puede hacer la primera visita por su cuenta.</li>
       <li>Chureito depende del tiempo y de los taxis. Si amenaza el desayuno o el bus, disfrutad del Fuji desde el ryokan.</li>
-      <li>El viernes, Fushimi Inari a las 06:20. Si alargáis la subida, recortad Tōfuku-ji para llegar a MAIKOYA a las 12:15.</li>
-      <li>El jueves, Kiyomizu-dera a primera hora y después Arashiyama y Saga. Si se alarga el paseo, recortad primero Ryōan-ji.</li>
-      <li>Kōdai-ji tiene iluminación nocturna el viernes. Última entrada a las 21:30; podéis ir antes o después de cenar.</li>
     </ol>
     <h3>Mantener</h3>
     <ul>
@@ -751,78 +738,6 @@ function linkify(html){
   return template.innerHTML;
 }
 
-const overview = [
-  [
-    "01",
-    "Mié 4",
-    "Llegada · Shinjuku nocturno"
-  ],
-  [
-    "02",
-    "Jue 5",
-    "Shibuya completado → Asakusa de noche"
-  ],
-  [
-    "03",
-    "Vie 6",
-    "Kamakura + Enoshima · <span class='ov-fiesta'>🎉 WOMB Shibuya</span>"
-  ],
-  [
-    "04",
-    "Sáb 7",
-    "Meiji → Harajuku → Akihabara → Shinjuku de noche"
-  ],
-  [
-    "05",
-    "Dom 8",
-    "Jardines del Este → Ginza → Shibuya Sky 14:20 (pagado para 10)"
-  ],
-  [
-    "06",
-    "Lun 9",
-    "Tsukiji → teamLab 10:30 → Odaiba"
-  ],
-  [
-    "07",
-    "Mar 10",
-    "Tokio→Kawaguchiko · Maruei + Onsen"
-  ],
-  [
-    "08",
-    "Mié 11",
-    "Chureito opcional → Kioto · Higashiyama y Gion"
-  ],
-  [
-    "09",
-    "Jue 12",
-    "Kiyomizu temprano → Arashiyama y Saga → Kinkaku-ji"
-  ],
-  [
-    "10",
-    "Vie 13",
-    "Fushimi al amanecer → Tōfuku-ji → té 12:30 → Kōdai-ji"
-  ],
-  [
-    "11",
-    "Sáb 14",
-    "Osaka: maletas a Abitare → Nara → Namba · <span class='ov-fiesta'>🎉 FIESTA Namba</span>"
-  ],
-  [
-    "12",
-    "Dom 15",
-    "Osaka flexible: Kuromon → Castillo"
-  ],
-  [
-    "13",
-    "Lun 16",
-    "USJ reservado · 2 / Himeji pagado · 8"
-  ],
-  [
-    "14",
-    "Mar 17",
-    "Osaka → vuelo 09:25 → tarde en Hong Kong"
-  ]
-];
 
 const FOOD_PLACES = {
   "tsimchai": {
@@ -1340,7 +1255,7 @@ const FOOD_PLACES = {
 const days = [
   {
     "n": "01",
-    "date": "MIÉ 4 NOV",
+    "date": "2026-11-04",
     "name": "🛬 Llegada · Shinjuku nocturno",
     "base": "Tokio — Hanabi Hotel (6 noches)",
     "sched": [
@@ -1399,7 +1314,7 @@ const days = [
   },
   {
     "n": "02",
-    "date": "JUE 5 NOV",
+    "date": "2026-11-05",
     "name": "🛍️ Shibuya completado → Asakusa de noche",
     "base": "Tokio — Hanabi Hotel",
     "geo": "Shibuya Crossing y compras completados. Tarde a pie por Asakusa, Sensō-ji y el río Sumida. Horas orientativas desde las 17:22; si salís más tarde, desplazad los bloques y recortad el mirador opcional.",
@@ -1492,7 +1407,7 @@ const days = [
   },
   {
     "n": "03",
-    "date": "VIE 6 NOV",
+    "date": "2026-11-06",
     "name": "🌊 Kamakura + Enoshima → WOMB en Shibuya",
     "base": "Tokio — Hanabi Hotel",
     "notes": [
@@ -1593,7 +1508,7 @@ const days = [
   },
   {
     "n": "04",
-    "date": "SÁB 7 NOV",
+    "date": "2026-11-07",
     "name": "⛩️ Meiji → Harajuku → Omotesando → Akihabara",
     "base": "Tokio — Hanabi Hotel",
     "geo": "Mañana en Meiji, Harajuku y Omotesando. Akihabara de 16:00 a 18:30 sustituye la tarde de ropa vintage en Shimokitazawa.",
@@ -1682,7 +1597,7 @@ const days = [
   },
   {
     "n": "05",
-    "date": "DOM 8 NOV",
+    "date": "2026-11-08",
     "name": "🎨 Jardines del Este → Ginza → Shibuya Sky",
     "base": "Tokio — Hanabi Hotel",
     "geo": "Jardines del Este del Palacio Imperial por la mañana, Ginza después y salida hacia Shibuya a las 13:10.",
@@ -1746,7 +1661,7 @@ const days = [
   },
   {
     "n": "06",
-    "date": "LUN 9 NOV",
+    "date": "2026-11-09",
     "name": "✨ Tsukiji → teamLab Planets → Odaiba",
     "base": "Tokio — Hanabi Hotel (última noche)",
     "notes": [
@@ -1823,7 +1738,7 @@ const days = [
   },
   {
     "n": "07",
-    "date": "MAR 10 NOV",
+    "date": "2026-11-10",
     "name": "🗻 Tokio→Kawaguchiko · Maruei + Onsen ⭐",
     "base": "Kawaguchiko — Wakakusa no Yado Maruei (ÚNICA noche)",
     "notes": [
@@ -1911,7 +1826,7 @@ const days = [
   },
   {
     "n": "08",
-    "date": "MIÉ 11 NOV",
+    "date": "2026-11-11",
     "name": "🌄 Chureito opcional → Kioto sin prisas",
     "base": "Kioto — Airbnb Kiyomizu/Higashiyama (1ª de 3)",
     "notes": [
@@ -2020,14 +1935,13 @@ const days = [
   },
   {
     "n": "09",
-    "date": "JUE 12 NOV",
-    "name": "⛩️ Kiyomizu al amanecer → Arashiyama y Saga → Kinkaku-ji",
+    "date": "2026-11-12",
+    "name": "⛩️ Kiyomizu al amanecer → Arashiyama y Saga → Shōren-in",
     "base": "Kioto — Airbnb Kiyomizu/Higashiyama",
-    "geo": "Mañana común en Kiyomizu-dera, Arashiyama y Saga. Por la tarde, elegid entre volver a Higashiyama o sumar el Pabellón Dorado. Reencuentro a las 19:15 en Shōren-in.",
     "sched": [
       [
         "06:30–07:20",
-        "⛩️ Kiyomizu-dera con la primera luz. Abre a las 06:00. Dejad el paseo por Ninenzaka y Sannenzaka para el viernes si vais justos"
+        "⛩️ Kiyomizu-dera con la primera luz. Abre a las 06:00. Después, JR Sagano desde Kyoto Station hacia Saga-Arashiyama o taxi directo."
       ],
       [
         "08:15–09:40",
@@ -2039,29 +1953,19 @@ const days = [
       ],
       [
         "14:30–16:30",
-        "↔️ Elegid después de comer. Modo normal: paseo con calma por Saga o vuelta para recuperar Higashiyama. Modo esquizofrénico: Kinkaku-ji y Ryōan-ji si hay margen"
+        "<b>Normal · ya vio Higashiyama:</b> paseo por Saga o puente Togetsukyō.<br><b>Normal · le falta Higashiyama:</b> vuelta al barrio para Sannenzaka → Ninenzaka → pagoda Yasaka (Hōkan-ji) por fuera.<br><b>Esquizo · ya vio Higashiyama:</b> Kinkaku-ji y Ryōan-ji si da tiempo.<br><b>Esquizo · le falta Higashiyama:</b> Kinkaku-ji → Sannenzaka → Ninenzaka → pagoda Yasaka (Hōkan-ji) por fuera. Ryōan-ji solo si sobra margen."
       ],
       [
         "19:15–20:00",
-        "🏮 Shōren-in iluminado. Entrada ¥1.500; última admisión 21:30 y cierre 22:00"
+        "🏮 Reencuentro en Shōren-in iluminado. Entrada ¥1.500; última admisión 21:30 y cierre 22:00."
       ],
       [
         "20:00–20:40",
-        "⛩️ Cruzad Maruyama hacia el santuario Yasaka, accesible las 24 horas, y bajad a Gion si aún no lo habéis paseado"
+        "⛩️ Si os falta Gion, cruzad Maruyama hacia el santuario Yasaka (acceso 24 h) y seguid a Shirakawa. Si ya paseasteis por Gion, salid de Shōren-in hacia Higashiyama-Sanjō."
       ],
       [
         "20:45 en adelante",
-        "🍶 Cena en Gion y paseo corto por Shirakawa si os apetece. Si ya hicisteis Gion el miércoles, desde Shōren-in podéis seguir hacia Higashiyama-Sanjō y cenar por allí"
-      ]
-    ],
-    "notes": [
-      [
-        "good",
-        "<b>Modo normal · desde la comida</b><br>Quedaos un rato más por Saga o, si os faltan las calles de Higashiyama, volved con tiempo para hacer Sannenzaka → Ninenzaka → pagoda Yasaka por fuera. Kiyomizu-dera ya está en el bloque de las 06:30. Reencuentro a las 19:15 en Shōren-in."
-      ],
-      [
-        "tip",
-        "<b>Modo esquizofrénico · 14:30–16:30</b><br>Kinkaku-ji (Pabellón Dorado, cierra a las 17:00). Añadid Ryōan-ji si queda margen; es el primer recorte si se alarga Saga. Reencuentro a las 19:15 en Shōren-in."
+        "🍶 Cena en Gion o Higashiyama-Sanjō, según el recorrido."
       ]
     ],
     "food": [
@@ -2089,18 +1993,17 @@ const days = [
   },
   {
     "n": "10",
-    "date": "VIE 13 NOV",
+    "date": "2026-11-13",
     "name": "🦊 Fushimi al amanecer → Tōfuku-ji → kimono y té → Kōdai-ji",
     "base": "Kioto — Airbnb Kiyomizu/Higashiyama (última noche)",
-    "geo": "Fushimi Inari y Tōfuku-ji por la mañana. Regreso a Higashiyama para MAIKOYA Gion Kiyomizu a las 12:30 (100 Rokurocho). Dos opciones tras el té: modo normal o modo esquizofrénico con Ginkaku-ji y el Camino del Filósofo. Ambos terminan en Kōdai-ji iluminado y cena al otro lado del río.",
     "sched": [
       [
         "06:20–08:40",
-        "🦊 Fushimi Inari al amanecer (06:29). Id a los Senbon Torii y subid hasta Yotsutsuji. Circuito de la cima si vais bien de tiempo"
+        "🦊 Fushimi Inari al amanecer (06:29). Taxi o Keihan local desde Kiyomizu-Gojō. Haced Senbon Torii y Yotsutsuji. Si completáis la cima y os quedáis hasta las 09:15, acortad Tōfuku-ji o saltáoslo."
       ],
       [
         "09:00–10:15",
-        "⛩️ Tōfuku-ji al abrir. Priorizad el jardín zen del Hōjō; añadid el puente Tsūtenkyō si hay tiempo"
+        "⛩️ Keihan hacia Tōfuku-ji. Al abrir, priorizad el jardín zen del Hōjō y añadid el puente Tsūtenkyō si hay tiempo."
       ],
       [
         "11:00",
@@ -2112,15 +2015,15 @@ const days = [
       ],
       [
         "14:30–15:30",
-        "📸 Paseo y fotos por Ninenzaka y Sannenzaka si se permite salir con el kimono. Volved a MAIKOYA para devolverlo"
+        "👘 Si os permiten salir con el kimono y os falta Higashiyama, haced Sannenzaka → Ninenzaka → pagoda Yasaka (Hōkan-ji) por fuera. Devolved el kimono a las 15:30 si seguís hacia Ginkaku-ji."
       ],
       [
         "15:30–18:00",
-        "↔️ Elegid al devolver el kimono: modo normal por Higashiyama o modo esquizofrénico con taxi a Ginkaku-ji y paseo por el Camino del Filósofo. Horarios de ambas opciones debajo"
+        "<b>Normal · ya vio Higashiyama:</b> café o paseo por el río Kamo.<br><b>Normal · le falta Higashiyama:</b> Sannenzaka → Ninenzaka → pagoda Yasaka (Hōkan-ji) por fuera, si no lo hicisteis con el kimono.<br><b>Esquizo · ya vio Higashiyama:</b> taxi directo a Ginkaku-ji al devolver el kimono.<br><b>Esquizo · le falta Higashiyama:</b> haced el paseo con kimono y después coged el taxi. Si sigue pendiente y preferís verlo, quedaos en el barrio.<br><b>Ruta esquizo:</b> <a href='https://www.shokoku-ji.jp/en/ginkakuji/faq/'>Ginkaku-ji</a> sobre las 16:00 (última entrada 17:00) y luego Camino del Filósofo hacia Nanzen-ji. Si no llegáis con margen, quedaos en Higashiyama."
       ],
       [
         "18:30",
-        "🏮 Kōdai-ji iluminado. Si vais después de cenar, última entrada 21:30 y cierre a las 22:00"
+        "🏮 Reencuentro en Kōdai-ji iluminado. Última entrada 21:30 y cierre 22:00."
       ],
       [
         "20:00 objetivo",
@@ -2128,22 +2031,6 @@ const days = [
       ]
     ],
     "notes": [
-      [
-        "good",
-        "<b>Modo normal · desde las 15:30</b><br>Si os falta Higashiyama, dedicad este rato a Sannenzaka → Ninenzaka → pagoda Yasaka por fuera. Si ya lo habéis visto, haced una pausa de café. Reencuentro a las <b>18:30</b> en Kōdai-ji iluminado y cena sobre las <b>20:00</b> en Pontocho o Kiyamachi."
-      ],
-      [
-        "tip",
-        "<b>Modo esquizofrénico · desde las 15:30</b><br><b>15:30</b> Devolved el kimono y salid en taxis compartidos. <b>16:00–16:40 aprox.</b> <a href='https://www.shokoku-ji.jp/en/ginkakuji/faq/'>Ginkaku-ji</a> (Pabellón de Plata, última entrada 17:00). <b>16:40–17:30 aprox.</b> Bajad por el Camino del Filósofo hacia Nanzen-ji, unos 2 km y parte del paseo al anochecer. Después, seguid hacia Kōdai-ji y la cena. Si el té o la devolución se alargan y ya no podéis llegar con margen antes de las 17:00, haced el modo normal."
-      ],
-      [
-        "tip",
-        "<b>Si queréis completar Fushimi con calma:</b> quedaos hasta las 09:15 y haced solo el jardín de Tōfuku-ji, o saltad esa visita si se os hace tarde. Proteged la llegada a MAIKOYA a las 12:15."
-      ],
-      [
-        "info",
-        "<b>✅ Ceremonia pagada:</b> viernes 13 de noviembre de 2026 a las 12:30, 10 adultos en MAIKOYA Gion Kiyomizu, 100 Rokurocho. Precio del formulario de pago: ¥77.000 total, impuestos incluidos. Sesión compartida y guiada en inglés, en una casa tradicional con jardín. Guardad el correo de confirmación y seguid sus instrucciones de llegada."
-      ],
       [
         "warn",
         "<b>Regla de convivencia:</b> zona residencial/turística estrecha. Nada de ruido fuerte al volver de cenar ni fotos a personas sin permiso. Evitad callejones privados de Gion."
@@ -2179,7 +2066,7 @@ const days = [
   },
   {
     "n": "11",
-    "date": "SÁB 14 NOV",
+    "date": "2026-11-14",
     "name": "🧳 Osaka: maletas al hotel → Nara → Dotonbori",
     "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, 1ª de 3)",
     "fiesta": true,
@@ -2288,7 +2175,7 @@ const days = [
   },
   {
     "n": "12",
-    "date": "DOM 15 NOV",
+    "date": "2026-11-15",
     "name": "🏯 Osaka clásica",
     "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba)",
     "geo": "Inicio suave en Namba tras la fiesta. Castillo como visita principal; Shinsekai y Umeda son extras que podéis elegir según energía.",
@@ -2357,7 +2244,7 @@ const days = [
   },
   {
     "n": "13",
-    "date": "LUN 16 NOV",
+    "date": "2026-11-16",
     "name": "🎢 USJ · 2 / Himeji pagado · 8",
     "base": "Osaka — Hotel Abitare Namba West (Sakuragawa/Namba, última noche)",
     "notes": [
@@ -2451,7 +2338,7 @@ const days = [
   },
   {
     "n": "14",
-    "date": "MAR 17 NOV",
+    "date": "2026-11-17",
     "name": "✈️ Osaka → Hong Kong · escala con vistas",
     "base": "Osaka → Hong Kong → Madrid",
     "geo": "Plan barato: Airport Express desde Nankai Namba, horario laborable actual 05:15 → 05:58, alternativa 05:28 → 06:16. Reconfirmar antes del viaje. Sin reserva ni suplemento; el check-in online no sustituye la entrega de equipaje.",
@@ -2678,15 +2565,6 @@ const routeGuides = {
   `En Mishima, buscad «<b>Shinkansen / JR</b>», comed cerca de la estación y localizad el andén. <b>Hikari 713, 13:46 → Kioto 15:37</b>; coche 13, filas 13 y 14. Distribuid por adelantado un QR de SmartEX por viajero, o preparad los billetes físicos; Suica solo sirve para este tren si se ha asociado correctamente a cada asiento. ${routeMap('Mishima Station','Kyoto Station')}`,
   `Desde Kioto al alojamiento de Higashiyama, una opción en tren es <b>JR Nara Line → Tofukuji</b> y allí <b>Keihan hacia Demachiyanagi → Kiyomizu-Gojo</b>; después caminata hasta la dirección exacta del Airbnb. Con diez maletas y cuesta, comprobad el recorrido y valorad taxis compartidos para el último tramo. ${routeMap('Kyoto Station','Kiyomizu-Gojo Station')}`
  ],
- "09": [
-  `Tras <b>Kiyomizu-dera</b>, tomad la JR Sagano desde Kyoto Station hasta Saga-Arashiyama o compartid taxis si queréis llegar al jardín a las 08:30. ${routeMap('Kiyomizu-dera','Arashiyama Bamboo Forest')}`,
-  `Desde Tenryū-ji, compartid taxis hasta <b>Otagi Nenbutsu-ji</b>. Bajad a pie por <b>Saga-Toriimoto</b> hasta <b>Giō-ji</b>. Desde allí, consultad el traslado a Kinkaku-ji y dejad Ryōan-ji como extra. ${routeMap('Otagi Nenbutsu-ji','Gio-ji')}`,
-  `Para volver a Higashiyama, Maps os indicará el mejor bus y tren de ese momento. En noviembre los buses turísticos pueden llenarse: dividíos si hace falta y acordad punto de encuentro.`
- ],
- "10": [
-  `Para estar en <b>Fushimi Inari a las 06:20</b>, reservad taxis la víspera o comprobad los primeros trenes. En Keihan, tomad un local desde Kiyomizu-Gojō hasta Fushimi-Inari. ${routeMap('Kiyomizu-Gojo Station','Fushimi Inari Taisha')}`,
-  `Desde Fushimi, volved en Keihan hacia <b>Tōfuku-ji</b>. Después, regresad a Higashiyama para comer y estar en MAIKOYA sobre las 12:15. Por la noche, id a pie a Kōdai-ji y cruzad el río hacia Pontocho o Kiyamachi para cenar. ${routeMap('Tofukuji Temple','MAIKOYA Kyoto Kiyomizu')}`
- ],
  "11": [
   `Check-out con equipaje: id a <b>Kyoto Station</b>, en transporte público o taxis compartidos si compensa con las maletas. Tomad JR Special Rapid hacia <b>Osaka Station</b>; en Umeda enlazad con metro Midosuji a Namba y Sennichimae a Sakuragawa. ${routeMap('Kyoto Station','Sakuragawa Station Osaka')}`,
   `Intentad dejar las maletas en Abitare <b>solo si os confirman depósito temprano</b>; si no, buscad consignas disponibles. No deis por confirmado ese servicio.`,
@@ -2717,15 +2595,24 @@ function routeHtml(day){
 }
 
 // ---------- RENDER ----------
-const ovHtml = overview.map(([n,d,desc])=>
-  `<a class="ov-row" href="#d${n}" onclick="openDay('${n}')">
+const japanToday = new Intl.DateTimeFormat('sv-SE', {
+  timeZone:'Asia/Tokyo', year:'numeric', month:'2-digit', day:'2-digit'
+}).format(new Date());
+const todayDay = days.find(day => day.date === japanToday);
+const dayLabel = new Intl.DateTimeFormat('es-ES', {
+  timeZone:'UTC', weekday:'short', day:'numeric', month:'short'
+});
+function formatDay(date){
+  return dayLabel.format(new Date(date)).replace(/[.,]/g,'').toUpperCase();
+}
+
+const ovHtml = days.map(({n,date,name})=>
+  `<a class="ov-row" href="#d${n}">
      <div class="ov-day">${n}</div>
-     <div class="ov-date">${d}</div>
-     <div class="ov-desc">${desc}</div>
+     <div class="ov-date">${formatDay(date)}</div>
+     <div class="ov-desc">${name}</div>
    </a>`).join("");
 document.getElementById("ovTable").innerHTML = ovHtml;
-
-const arrow = `<svg class="arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>`;
 
 function noteHtml(arr){return (arr||[]).map(([t,h])=>`<div class="note ${t}">${linkify(h)}</div>`).join("")}
 function schedHtml(arr){return `<div class="sched">`+arr.map(([t,x])=>
@@ -2742,29 +2629,26 @@ function foodChoice(id){
 function foodHtml(meals){return meals?.length?`<section class="food-plan" aria-label="Dónde comer este día"><h4>🍽️ Dónde comer este día</h4>${meals.map(m=>`<div class="food-meal"><h5>${m.label}</h5>${m.places.map(foodChoice).join('')}<p><b>Encaje:</b> ${m.note}</p></div>`).join('')}</section>`:'';}
 
 const daysHtml = days.map(d=>`
-  <div class="day${d.fiesta?' fiesta':''}" id="d${d.n}">
-    <h3 class="day-heading">
-      <button type="button" class="day-head" id="d${d.n}-toggle" aria-expanded="false" aria-controls="d${d.n}-body" onclick="toggleDay(this)">
+  <div class="day${d.fiesta?' fiesta':''}${d === todayDay?' is-today':''}" id="d${d.n}">
+    <h3 class="day-heading day-head" id="d${d.n}-heading">
         <span class="day-num">${d.n}</span>
         <span class="day-titles">
-          <span class="day-date">${d.date}${d.fiesta?'<span class="badge b-fiesta">FIESTA</span>':''}</span>
+          <span class="day-date">${formatDay(d.date)}${d.fiesta?'<span class="badge b-fiesta">FIESTA</span>':''}${d === todayDay?'<span class="badge b-today">HOY</span>':''}</span>
           <span class="day-name">${d.name}</span>
           <span class="day-base">🏨 ${d.base}</span>
         </span>
-        ${arrow}
-      </button>
     </h3>
-    <div class="day-body" id="d${d.n}-body" aria-labelledby="d${d.n}-toggle">
+    <div class="day-body" id="d${d.n}-body" aria-labelledby="d${d.n}-heading">
       ${d.geo?`<div class="geo">📍 ${d.geo}</div>`:""}
-      ${noteHtml(d.notes)}
       ${schedHtml(d.sched)}
+      ${noteHtml(d.notes)}
       ${routeHtml(d.n)}
       ${foodHtml(d.food)}
       ${noteHtml(d.notes2)}
     </div>
   </div>`).join("");
 document.getElementById("days").innerHTML = daysHtml;
-document.getElementById('food-summary').innerHTML=days.map(d=>`<tr><td><a href="#d${d.n}">${d.date}</a></td><td>${d.food.map(m=>`<p><b>${m.label}:</b> ${m.places.map(id=>`<a href="${FOOD_PLACES[id].url}" target="_blank" rel="noopener noreferrer">${FOOD_PLACES[id].name}</a>`).join(' / ')}</p>`).join('')}</td></tr>`).join('');
+document.getElementById('food-summary').innerHTML=days.map(d=>`<tr><td><a href="#d${d.n}">${formatDay(d.date)}</a></td><td>${d.food.map(m=>`<p><b>${m.label}:</b> ${m.places.map(id=>`<a href="${FOOD_PLACES[id].url}" target="_blank" rel="noopener noreferrer">${FOOD_PLACES[id].name}</a>`).join(' / ')}</p>`).join('')}</td></tr>`).join('');
 document.getElementById('food-extras').innerHTML=foodHtml([
  {label:'Roppongi / Hiroo · sustituye otra tarde',places:['azabu','iruka','oyoge','verve'],note:'La sucursal de Verve de la lista está en Roppongi. Iruka cierra pronto: comida o cena temprana, no a las 21:00.'},
  {label:'Akasaka · solo si vais a esa zona',places:['akai','hagakure'],note:'Alternativas de la lista con desvío; no programadas como cena de diez.'}
@@ -2775,18 +2659,11 @@ document.getElementById("transfers").innerHTML =
   transfers.map(([a,b,c])=>`<tr><td><b>${linkify(a)}</b></td><td>${linkify(b)}</td><td>${c}</td></tr>`).join("");
 
 // ---------- INTERACTION ----------
-function setDayOpen(day,open){
-  day.classList.toggle('open',open);
-  day.querySelector('.day-head').setAttribute('aria-expanded',String(open));
-}
-function toggleDay(head){const day=head.closest('.day');setDayOpen(day,!day.classList.contains('open'))}
-function openDay(n){const day=document.getElementById('d'+n);if(day)setDayOpen(day,true)}
-function setAll(open){document.querySelectorAll('.day').forEach(day=>setDayOpen(day,open))}
-function openHashDay(){
+function scrollToHashDay(useToday = false){
   const match = location.hash.match(/^#d(\d{2})$/);
-  const day = match && document.getElementById('d'+match[1]);
+  const dayNumber = match?.[1] || (useToday && !location.hash ? todayDay?.n : null);
+  const day = dayNumber && document.getElementById('d'+dayNumber);
   if(!day) return;
-  setDayOpen(day,true);
   requestAnimationFrame(()=>day.scrollIntoView({block:'start'}));
 }
 const itineraryQuery = document.getElementById('itinerary-query');
@@ -2811,7 +2688,6 @@ itineraryQuery.addEventListener('input', () => {
     const link = document.createElement('a');
     link.href = '#' + day.id;
     link.textContent = day.querySelector('.day-date').textContent + ' · ' + day.querySelector('.day-name').textContent;
-    link.addEventListener('click', () => setDayOpen(day, true));
     item.append(link);
 
     const excerpt = Array.from(day.querySelectorAll('.slot, .note, .food-choice, .food-plan li')).find(element => normalizeSearch(element.textContent).includes(query));
@@ -2827,9 +2703,8 @@ itineraryQuery.addEventListener('input', () => {
 
 document.getElementById('itinerary-search').hidden = false;
 
-openDay('01');
-openHashDay();
-window.addEventListener('hashchange',openHashDay);
+scrollToHashDay(true);
+window.addEventListener('hashchange',()=>scrollToHashDay());
 </script>
 </body>
 </html>
